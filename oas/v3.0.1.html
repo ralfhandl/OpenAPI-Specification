@@ -291,7 +291,7 @@ The available status codes are defined by [<cite><a class="bibref" data-link-typ
 Note that <code>integer</code> as a type is also supported and is defined as a JSON number without a fraction or exponent part.
 <code>null</code> is not supported as a type (see <a href="#schemaNullable"><code>nullable</code></a> for an alternative solution).
 Models are defined using the <a href="#schema-object">Schema Object</a>, which is an extended subset of JSON Schema Specification Wright Draft 00.</p>
-<p><a id="dataTypeFormat" class="logo"></a>Primitives have an optional modifier property: <code>format</code>.
+<p><span id="dataTypeFormat"></span>Primitives have an optional modifier property: <code>format</code>.
 OAS uses several known formats to define in fine detail the data type being used.
 However, to support documentation needs, the <code>format</code> property is an open <code>string</code>-valued property, and can have any value.
 Formats such as <code>"email"</code>, <code>"uuid"</code>, and so on, <em class="rfc2119">MAY</em> be used even though undefined by this specification.
@@ -397,42 +397,42 @@ Relative references are resolved using the URLs defined in the <a href="#server-
 </thead>
 <tbody>
 <tr>
-<td><a id="oasVersion" class="logo"></a>openapi</td>
+<td><span id="oasVersion"></span>openapi</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. This string <em class="rfc2119">MUST</em> be the <a href="https://semver.org/spec/v2.0.0.html">semantic version number</a> of the <a href="#versions">OpenAPI Specification version</a> that the OpenAPI document uses. The <code>openapi</code> field <em class="rfc2119">SHOULD</em> be used by tooling specifications and clients to interpret the OpenAPI document. This is <em>not</em> related to the API <a href="#infoVersion"><code>info.version</code></a> string.</td>
 </tr>
 <tr>
-<td><a id="oasInfo" class="logo"></a>info</td>
+<td><span id="oasInfo"></span>info</td>
 <td style="text-align:center"><a href="#info-object">Info Object</a></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. Provides metadata about the API. The metadata <em class="rfc2119">MAY</em> be used by tooling as required.</td>
 </tr>
 <tr>
-<td><a id="oasServers" class="logo"></a>servers</td>
+<td><span id="oasServers"></span>servers</td>
 <td style="text-align:center">[<a href="#server-object">Server Object</a>]</td>
 <td>An array of Server Objects, which provide connectivity information to a target server. If the <code>servers</code> property is not provided, or is an empty array, the default value would be a <a href="#server-object">Server Object</a> with a <a href="#serverUrl">url</a> value of <code>/</code>.</td>
 </tr>
 <tr>
-<td><a id="oasPaths" class="logo"></a>paths</td>
+<td><span id="oasPaths"></span>paths</td>
 <td style="text-align:center"><a href="#paths-object">Paths Object</a></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The available paths and operations for the API.</td>
 </tr>
 <tr>
-<td><a id="oasComponents" class="logo"></a>components</td>
+<td><span id="oasComponents"></span>components</td>
 <td style="text-align:center"><a href="#components-object">Components Object</a></td>
 <td>An element to hold various schemas for the specification.</td>
 </tr>
 <tr>
-<td><a id="oasSecurity" class="logo"></a>security</td>
+<td><span id="oasSecurity"></span>security</td>
 <td style="text-align:center">[<a href="#security-requirement-object">Security Requirement Object</a>]</td>
 <td>A declaration of which security mechanisms can be used across the API. The list of values includes alternative security requirement objects that can be used. Only one of the security requirement objects need to be satisfied to authorize a request. Individual operations can override this definition.</td>
 </tr>
 <tr>
-<td><a id="oasTags" class="logo"></a>tags</td>
+<td><span id="oasTags"></span>tags</td>
 <td style="text-align:center">[<a href="#tag-object">Tag Object</a>]</td>
 <td>A list of tags used by the specification with additional metadata. The order of the tags can be used to reflect on their order by the parsing tools. Not all tags that are used by the <a href="#operation-object">Operation Object</a> must be declared. The tags that are not declared <em class="rfc2119">MAY</em> be organized randomly or based on the tools’ logic. Each tag name in the list <em class="rfc2119">MUST</em> be unique.</td>
 </tr>
 <tr>
-<td><a id="oasExternalDocs" class="logo"></a>externalDocs</td>
+<td><span id="oasExternalDocs"></span>externalDocs</td>
 <td style="text-align:center"><a href="#external-documentation-object">External Documentation Object</a></td>
 <td>Additional external documentation.</td>
 </tr>
@@ -453,32 +453,32 @@ The metadata <em class="rfc2119">MAY</em> be used by the clients if needed, and 
 </thead>
 <tbody>
 <tr>
-<td><a id="infoTitle" class="logo"></a>title</td>
+<td><span id="infoTitle"></span>title</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The title of the application.</td>
 </tr>
 <tr>
-<td><a id="infoDescription" class="logo"></a>description</td>
+<td><span id="infoDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A short description of the application. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="infoTermsOfService" class="logo"></a>termsOfService</td>
+<td><span id="infoTermsOfService"></span>termsOfService</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A URL to the Terms of Service for the API. <em class="rfc2119">MUST</em> be in the format of a URL.</td>
 </tr>
 <tr>
-<td><a id="infoContact" class="logo"></a>contact</td>
+<td><span id="infoContact"></span>contact</td>
 <td style="text-align:center"><a href="#contact-object">Contact Object</a></td>
 <td>The contact information for the exposed API.</td>
 </tr>
 <tr>
-<td><a id="infoLicense" class="logo"></a>license</td>
+<td><span id="infoLicense"></span>license</td>
 <td style="text-align:center"><a href="#license-object">License Object</a></td>
 <td>The license information for the exposed API.</td>
 </tr>
 <tr>
-<td><a id="infoVersion" class="logo"></a>version</td>
+<td><span id="infoVersion"></span>version</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The version of the OpenAPI document (which is distinct from the <a href="#oasVersion">OpenAPI Specification version</a> or the API implementation version).</td>
 </tr>
@@ -529,17 +529,17 @@ The metadata <em class="rfc2119">MAY</em> be used by the clients if needed, and 
 </thead>
 <tbody>
 <tr>
-<td><a id="contactName" class="logo"></a>name</td>
+<td><span id="contactName"></span>name</td>
 <td style="text-align:center"><code>string</code></td>
 <td>The identifying name of the contact person/organization.</td>
 </tr>
 <tr>
-<td><a id="contactUrl" class="logo"></a>url</td>
+<td><span id="contactUrl"></span>url</td>
 <td style="text-align:center"><code>string</code></td>
 <td>The URL pointing to the contact information. <em class="rfc2119">MUST</em> be in the format of a URL.</td>
 </tr>
 <tr>
-<td><a id="contactEmail" class="logo"></a>email</td>
+<td><span id="contactEmail"></span>email</td>
 <td style="text-align:center"><code>string</code></td>
 <td>The email address of the contact person/organization. <em class="rfc2119">MUST</em> be in the format of an email address.</td>
 </tr>
@@ -572,12 +572,12 @@ The metadata <em class="rfc2119">MAY</em> be used by the clients if needed, and 
 </thead>
 <tbody>
 <tr>
-<td><a id="licenseName" class="logo"></a>name</td>
+<td><span id="licenseName"></span>name</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The license name used for the API.</td>
 </tr>
 <tr>
-<td><a id="licenseUrl" class="logo"></a>url</td>
+<td><span id="licenseUrl"></span>url</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A URL to the license used for the API. <em class="rfc2119">MUST</em> be in the format of a URL.</td>
 </tr>
@@ -608,17 +608,17 @@ The metadata <em class="rfc2119">MAY</em> be used by the clients if needed, and 
 </thead>
 <tbody>
 <tr>
-<td><a id="serverUrl" class="logo"></a>url</td>
+<td><span id="serverUrl"></span>url</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. A URL to the target host.  This URL supports Server Variables and <em class="rfc2119">MAY</em> be relative, to indicate that the host location is relative to the location where the OpenAPI document is being served. Variable substitutions will be made when a variable is named in <code>{</code>brackets<code>}</code>.</td>
 </tr>
 <tr>
-<td><a id="serverDescription" class="logo"></a>description</td>
+<td><span id="serverDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>An optional string describing the host designated by the URL. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="serverVariables" class="logo"></a>variables</td>
+<td><span id="serverVariables"></span>variables</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#server-variable-object">Server Variable Object</a>]</td>
 <td>A map between a variable name and its value.  The value is used for substitution in the server’s URL template.</td>
 </tr>
@@ -723,17 +723,17 @@ The metadata <em class="rfc2119">MAY</em> be used by the clients if needed, and 
 </thead>
 <tbody>
 <tr>
-<td><a id="serverVariableEnum" class="logo"></a>enum</td>
+<td><span id="serverVariableEnum"></span>enum</td>
 <td style="text-align:center">[<code>string</code>]</td>
 <td>An enumeration of string values to be used if the substitution options are from a limited set.</td>
 </tr>
 <tr>
-<td><a id="serverVariableDefault" class="logo"></a>default</td>
+<td><span id="serverVariableDefault"></span>default</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The default value to use for substitution, and to send, if an alternate value is <em>not</em> supplied. Unlike the <a href="#schema-object">Schema Object’s</a> <code>default</code>, this value <em class="rfc2119">MUST</em> be provided by the consumer.</td>
 </tr>
 <tr>
-<td><a id="serverVariableDescription" class="logo"></a>description</td>
+<td><span id="serverVariableDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>An optional description for the server variable. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
@@ -754,47 +754,47 @@ All objects defined within the components object will have no effect on the API 
 </thead>
 <tbody>
 <tr>
-<td><a id="componentsSchemas" class="logo"></a> schemas</td>
+<td><span id="componentsSchemas"></span> schemas</td>
 <td style="text-align:left">Map[<code>string</code>, <a href="#schema-object">Schema Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>An object to hold reusable <a href="#schema-object">Schema Objects</a>.</td>
 </tr>
 <tr>
-<td><a id="componentsResponses" class="logo"></a> responses</td>
+<td><span id="componentsResponses"></span> responses</td>
 <td style="text-align:left">Map[<code>string</code>, <a href="#response-object">Response Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>An object to hold reusable <a href="#response-object">Response Objects</a>.</td>
 </tr>
 <tr>
-<td><a id="componentsParameters" class="logo"></a> parameters</td>
+<td><span id="componentsParameters"></span> parameters</td>
 <td style="text-align:left">Map[<code>string</code>, <a href="#parameter-object">Parameter Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>An object to hold reusable <a href="#parameter-object">Parameter Objects</a>.</td>
 </tr>
 <tr>
-<td><a id="componentsExamples" class="logo"></a> examples</td>
+<td><span id="componentsExamples"></span> examples</td>
 <td style="text-align:left">Map[<code>string</code>, <a href="#example-object">Example Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>An object to hold reusable <a href="#example-object">Example Objects</a>.</td>
 </tr>
 <tr>
-<td><a id="componentsRequestBodies" class="logo"></a> requestBodies</td>
+<td><span id="componentsRequestBodies"></span> requestBodies</td>
 <td style="text-align:left">Map[<code>string</code>, <a href="#request-body-object">Request Body Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>An object to hold reusable <a href="#request-body-object">Request Body Objects</a>.</td>
 </tr>
 <tr>
-<td><a id="componentsHeaders" class="logo"></a> headers</td>
+<td><span id="componentsHeaders"></span> headers</td>
 <td style="text-align:left">Map[<code>string</code>, <a href="#header-object">Header Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>An object to hold reusable <a href="#header-object">Header Objects</a>.</td>
 </tr>
 <tr>
-<td><a id="componentsSecuritySchemes" class="logo"></a> securitySchemes</td>
+<td><span id="componentsSecuritySchemes"></span> securitySchemes</td>
 <td style="text-align:left">Map[<code>string</code>, <a href="#security-scheme-object">Security Scheme Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>An object to hold reusable <a href="#security-scheme-object">Security Scheme Objects</a>.</td>
 </tr>
 <tr>
-<td><a id="componentsLinks" class="logo"></a> links</td>
+<td><span id="componentsLinks"></span> links</td>
 <td style="text-align:left">Map[<code>string</code>, <a href="#link-object">Link Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>An object to hold reusable <a href="#link-object">Link Objects</a>.</td>
 </tr>
 <tr>
-<td><a id="componentsCallbacks" class="logo"></a> callbacks</td>
+<td><span id="componentsCallbacks"></span> callbacks</td>
 <td style="text-align:left">Map[<code>string</code>, <a href="#callback-object">Callback Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>An object to hold reusable <a href="#callback-object">Callback Objects</a>.</td>
 </tr>
@@ -975,7 +975,7 @@ The path is appended to the URL from the <a href="#server-object"><code>Server O
 </thead>
 <tbody>
 <tr>
-<td><a id="pathsPath" class="logo"></a>/{path}</td>
+<td><span id="pathsPath"></span>/{path}</td>
 <td style="text-align:center"><a href="#path-item-object">Path Item Object</a></td>
 <td>A relative path to an individual endpoint. The field name <em class="rfc2119">MUST</em> begin with a slash. The path is <strong>appended</strong> (no relative URL resolution) to the expanded URL from the <a href="#server-object"><code>Server Object</code></a>’s <code>url</code> field in order to construct the full URL. <a href="#path-templating">Path templating</a> is allowed. When matching URLs, concrete (non-templated) paths would be matched before their templated counterparts. Templated paths with the same hierarchy but different templated names <em class="rfc2119">MUST NOT</em> exist as they are identical. In case of ambiguous matching, it’s up to the tooling to decide which one to use.</td>
 </tr>
@@ -1052,67 +1052,67 @@ The path itself is still exposed to the documentation viewer but they will not k
 </thead>
 <tbody>
 <tr>
-<td><a id="pathItemRef" class="logo"></a>$ref</td>
+<td><span id="pathItemRef"></span>$ref</td>
 <td style="text-align:center"><code>string</code></td>
 <td>Allows for an external definition of this path item. The referenced structure <em class="rfc2119">MUST</em> be in the format of a <a href="#path-item-object">Path Item Object</a>. If there are conflicts between the referenced definition and this Path Item’s definition, the behavior is <em>undefined</em>.</td>
 </tr>
 <tr>
-<td><a id="pathItemSummary" class="logo"></a>summary</td>
+<td><span id="pathItemSummary"></span>summary</td>
 <td style="text-align:center"><code>string</code></td>
 <td>An optional, string summary, intended to apply to all operations in this path.</td>
 </tr>
 <tr>
-<td><a id="pathItemDescription" class="logo"></a>description</td>
+<td><span id="pathItemDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>An optional, string description, intended to apply to all operations in this path. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="pathItemGet" class="logo"></a>get</td>
+<td><span id="pathItemGet"></span>get</td>
 <td style="text-align:center"><a href="#operation-object">Operation Object</a></td>
 <td>A definition of a GET operation on this path.</td>
 </tr>
 <tr>
-<td><a id="pathItemPut" class="logo"></a>put</td>
+<td><span id="pathItemPut"></span>put</td>
 <td style="text-align:center"><a href="#operation-object">Operation Object</a></td>
 <td>A definition of a PUT operation on this path.</td>
 </tr>
 <tr>
-<td><a id="pathItemPost" class="logo"></a>post</td>
+<td><span id="pathItemPost"></span>post</td>
 <td style="text-align:center"><a href="#operation-object">Operation Object</a></td>
 <td>A definition of a POST operation on this path.</td>
 </tr>
 <tr>
-<td><a id="pathItemDelete" class="logo"></a>delete</td>
+<td><span id="pathItemDelete"></span>delete</td>
 <td style="text-align:center"><a href="#operation-object">Operation Object</a></td>
 <td>A definition of a DELETE operation on this path.</td>
 </tr>
 <tr>
-<td><a id="pathItemOptions" class="logo"></a>options</td>
+<td><span id="pathItemOptions"></span>options</td>
 <td style="text-align:center"><a href="#operation-object">Operation Object</a></td>
 <td>A definition of a OPTIONS operation on this path.</td>
 </tr>
 <tr>
-<td><a id="pathItemHead" class="logo"></a>head</td>
+<td><span id="pathItemHead"></span>head</td>
 <td style="text-align:center"><a href="#operation-object">Operation Object</a></td>
 <td>A definition of a HEAD operation on this path.</td>
 </tr>
 <tr>
-<td><a id="pathItemPatch" class="logo"></a>patch</td>
+<td><span id="pathItemPatch"></span>patch</td>
 <td style="text-align:center"><a href="#operation-object">Operation Object</a></td>
 <td>A definition of a PATCH operation on this path.</td>
 </tr>
 <tr>
-<td><a id="pathItemTrace" class="logo"></a>trace</td>
+<td><span id="pathItemTrace"></span>trace</td>
 <td style="text-align:center"><a href="#operation-object">Operation Object</a></td>
 <td>A definition of a TRACE operation on this path.</td>
 </tr>
 <tr>
-<td><a id="pathItemServers" class="logo"></a>servers</td>
+<td><span id="pathItemServers"></span>servers</td>
 <td style="text-align:center">[<a href="#server-object">Server Object</a>]</td>
 <td>An alternative <code>server</code> array to service all operations in this path.</td>
 </tr>
 <tr>
-<td><a id="pathItemParameters" class="logo"></a>parameters</td>
+<td><span id="pathItemParameters"></span>parameters</td>
 <td style="text-align:center">[<a href="#parameter-object">Parameter Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>A list of parameters that are applicable for all the operations described under this path. These parameters can be overridden at the operation level, but cannot be removed there. The list <em class="rfc2119">MUST NOT</em> include duplicated parameters. A unique parameter is defined by a combination of a <a href="#parameterName">name</a> and <a href="#parameterIn">location</a>. The list can use the <a href="#reference-object">Reference Object</a> to link to parameters that are defined at the <a href="#componentsParameters">OpenAPI Object’s components/parameters</a>.</td>
 </tr>
@@ -1213,62 +1213,62 @@ The path itself is still exposed to the documentation viewer but they will not k
 </thead>
 <tbody>
 <tr>
-<td><a id="operationTags" class="logo"></a>tags</td>
+<td><span id="operationTags"></span>tags</td>
 <td style="text-align:center">[<code>string</code>]</td>
 <td>A list of tags for API documentation control. Tags can be used for logical grouping of operations by resources or any other qualifier.</td>
 </tr>
 <tr>
-<td><a id="operationSummary" class="logo"></a>summary</td>
+<td><span id="operationSummary"></span>summary</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A short summary of what the operation does.</td>
 </tr>
 <tr>
-<td><a id="operationDescription" class="logo"></a>description</td>
+<td><span id="operationDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A verbose explanation of the operation behavior. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="operationExternalDocs" class="logo"></a>externalDocs</td>
+<td><span id="operationExternalDocs"></span>externalDocs</td>
 <td style="text-align:center"><a href="#external-documentation-object">External Documentation Object</a></td>
 <td>Additional external documentation for this operation.</td>
 </tr>
 <tr>
-<td><a id="operationId" class="logo"></a>operationId</td>
+<td><span id="operationId"></span>operationId</td>
 <td style="text-align:center"><code>string</code></td>
 <td>Unique string used to identify the operation. The id <em class="rfc2119">MUST</em> be unique among all operations described in the API. Tools and libraries <em class="rfc2119">MAY</em> use the operationId to uniquely identify an operation, therefore, it is <em class="rfc2119">RECOMMENDED</em> to follow common programming naming conventions.</td>
 </tr>
 <tr>
-<td><a id="operationParameters" class="logo"></a>parameters</td>
+<td><span id="operationParameters"></span>parameters</td>
 <td style="text-align:center">[<a href="#parameter-object">Parameter Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>A list of parameters that are applicable for this operation. If a parameter is already defined at the <a href="#pathItemParameters">Path Item</a>, the new definition will override it but can never remove it. The list <em class="rfc2119">MUST NOT</em> include duplicated parameters. A unique parameter is defined by a combination of a <a href="#parameterName">name</a> and <a href="#parameterIn">location</a>. The list can use the <a href="#reference-object">Reference Object</a> to link to parameters that are defined at the <a href="#componentsParameters">OpenAPI Object’s components/parameters</a>.</td>
 </tr>
 <tr>
-<td><a id="operationRequestBody" class="logo"></a>requestBody</td>
+<td><span id="operationRequestBody"></span>requestBody</td>
 <td style="text-align:center"><a href="#request-body-object">Request Body Object</a> | <a href="#reference-object">Reference Object</a></td>
 <td>The request body applicable for this operation.  The <code>requestBody</code> is only supported in HTTP methods where the HTTP 1.1 specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">RFC7231</a></cite>] has explicitly defined semantics for request bodies.  In other cases where the HTTP spec is vague, <code>requestBody</code> <em class="rfc2119">SHALL</em> be ignored by consumers.</td>
 </tr>
 <tr>
-<td><a id="operationResponses" class="logo"></a>responses</td>
+<td><span id="operationResponses"></span>responses</td>
 <td style="text-align:center"><a href="#responses-object">Responses Object</a></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The list of possible responses as they are returned from executing this operation.</td>
 </tr>
 <tr>
-<td><a id="operationCallbacks" class="logo"></a>callbacks</td>
+<td><span id="operationCallbacks"></span>callbacks</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#callback-object">Callback Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>A map of possible out-of band callbacks related to the parent operation. The key is a unique identifier for the Callback Object. Each value in the map is a <a href="#callback-object">Callback Object</a> that describes a request that may be initiated by the API provider and the expected responses. The key value used to identify the callback object is an expression, evaluated at runtime, that identifies a URL to use for the callback operation.</td>
 </tr>
 <tr>
-<td><a id="operationDeprecated" class="logo"></a>deprecated</td>
+<td><span id="operationDeprecated"></span>deprecated</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Declares this operation to be deprecated. Consumers <em class="rfc2119">SHOULD</em> refrain from usage of the declared operation. Default value is <code>false</code>.</td>
 </tr>
 <tr>
-<td><a id="operationSecurity" class="logo"></a>security</td>
+<td><span id="operationSecurity"></span>security</td>
 <td style="text-align:center">[<a href="#security-requirement-object">Security Requirement Object</a>]</td>
 <td>A declaration of which security mechanisms can be used for this operation. The list of values includes alternative security requirement objects that can be used. Only one of the security requirement objects need to be satisfied to authorize a request. This definition overrides any declared top-level <a href="#oasSecurity"><code>security</code></a>. To remove a top-level security declaration, an empty array can be used.</td>
 </tr>
 <tr>
-<td><a id="operationServers" class="logo"></a>servers</td>
+<td><span id="operationServers"></span>servers</td>
 <td style="text-align:center">[<a href="#server-object">Server Object</a>]</td>
 <td>An alternative <code>server</code> array to service this operation. If an alternative <code>server</code> object is specified at the Path Item Object or Root level, it will be overridden by this value.</td>
 </tr>
@@ -1394,12 +1394,12 @@ The path itself is still exposed to the documentation viewer but they will not k
 </thead>
 <tbody>
 <tr>
-<td><a id="externalDocDescription" class="logo"></a>description</td>
+<td><span id="externalDocDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A short description of the target documentation. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="externalDocUrl" class="logo"></a>url</td>
+<td><span id="externalDocUrl"></span>url</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The URL for the target documentation. Value <em class="rfc2119">MUST</em> be in the format of a URL.</td>
 </tr>
@@ -1439,32 +1439,32 @@ The path itself is still exposed to the documentation viewer but they will not k
 </thead>
 <tbody>
 <tr>
-<td><a id="parameterName" class="logo"></a>name</td>
+<td><span id="parameterName"></span>name</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The name of the parameter. Parameter names are <em>case sensitive</em>. <ul><li>If <a href="#parameterIn"><code>in</code></a> is <code>"path"</code>, the <code>name</code> field <em class="rfc2119">MUST</em> correspond to the associated path segment from the <a href="#pathsPath">path</a> field in the <a href="#paths-object">Paths Object</a>. See <a href="#path-templating">Path Templating</a> for further information.</li><li>If <a href="#parameterIn"><code>in</code></a> is <code>"header"</code> and the <code>name</code> field is <code>"Accept"</code>, <code>"Content-Type"</code> or <code>"Authorization"</code>, the parameter definition <em class="rfc2119">SHALL</em> be ignored.</li><li>For all other cases, the <code>name</code> corresponds to the parameter name used by the <a href="#parameterIn"><code>in</code></a> property.</li></ul></td>
 </tr>
 <tr>
-<td><a id="parameterIn" class="logo"></a>in</td>
+<td><span id="parameterIn"></span>in</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The location of the parameter. Possible values are “query”, “header”, “path” or “cookie”.</td>
 </tr>
 <tr>
-<td><a id="parameterDescription" class="logo"></a>description</td>
+<td><span id="parameterDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A brief description of the parameter. This could contain examples of use.  <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="parameterRequired" class="logo"></a>required</td>
+<td><span id="parameterRequired"></span>required</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Determines whether this parameter is mandatory. If the <a href="#parameterIn">parameter location</a> is “path”, this property is <strong><em class="rfc2119">REQUIRED</em></strong> and its value <em class="rfc2119">MUST</em> be <code>true</code>. Otherwise, the property <em class="rfc2119">MAY</em> be included and its default value is <code>false</code>.</td>
 </tr>
 <tr>
-<td><a id="parameterDeprecated" class="logo"></a> deprecated</td>
+<td><span id="parameterDeprecated"></span> deprecated</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Specifies that a parameter is deprecated and <em class="rfc2119">SHOULD</em> be transitioned out of usage.</td>
 </tr>
 <tr>
-<td><a id="parameterAllowEmptyValue" class="logo"></a> allowEmptyValue</td>
+<td><span id="parameterAllowEmptyValue"></span> allowEmptyValue</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Sets the ability to pass empty-valued parameters. This is valid only for <code>query</code> parameters and allows sending a parameter with an empty value. Default value is <code>false</code>. If <a href="#parameterStyle"><code>style</code></a> is used, and if behavior is <code>n/a</code> (cannot be serialized), the value of <code>allowEmptyValue</code> <em class="rfc2119">SHALL</em> be ignored.</td>
 </tr>
@@ -1482,32 +1482,32 @@ For simpler scenarios, a <a href="#parameterSchema"><code>schema</code></a> and 
 </thead>
 <tbody>
 <tr>
-<td><a id="parameterStyle" class="logo"></a>style</td>
+<td><span id="parameterStyle"></span>style</td>
 <td style="text-align:center"><code>string</code></td>
 <td>Describes how the parameter value will be serialized depending on the type of the parameter value. Default values (based on value of <code>in</code>): for <code>query</code> - <code>form</code>; for <code>path</code> - <code>simple</code>; for <code>header</code> - <code>simple</code>; for <code>cookie</code> - <code>form</code>.</td>
 </tr>
 <tr>
-<td><a id="parameterExplode" class="logo"></a>explode</td>
+<td><span id="parameterExplode"></span>explode</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>When this is true, parameter values of type <code>array</code> or <code>object</code> generate separate parameters for each value of the array or key-value pair of the map.  For other types of parameters this property has no effect. When <a href="#parameterStyle"><code>style</code></a> is <code>form</code>, the default value is <code>true</code>. For all other styles, the default value is <code>false</code>.</td>
 </tr>
 <tr>
-<td><a id="parameterAllowReserved" class="logo"></a>allowReserved</td>
+<td><span id="parameterAllowReserved"></span>allowReserved</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Determines whether the parameter value <em class="rfc2119">SHOULD</em> allow reserved characters, as defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] <code>:/?#[]@!$&amp;'()*+,;=</code> to be included without percent-encoding. This property only applies to parameters with an <code>in</code> value of <code>query</code>. The default value is <code>false</code>.</td>
 </tr>
 <tr>
-<td><a id="parameterSchema" class="logo"></a>schema</td>
+<td><span id="parameterSchema"></span>schema</td>
 <td style="text-align:center"><a href="#schema-object">Schema Object</a> | <a href="#reference-object">Reference Object</a></td>
 <td>The schema defining the type used for the parameter.</td>
 </tr>
 <tr>
-<td><a id="parameterExample" class="logo"></a>example</td>
+<td><span id="parameterExample"></span>example</td>
 <td style="text-align:center">Any</td>
 <td>Example of the media type.  The example <em class="rfc2119">SHOULD</em> match the specified schema and encoding properties if present.  The <code>example</code> field is mutually exclusive of the <code>examples</code> field.  Furthermore, if referencing a <code>schema</code> which contains an example, the <code>example</code> value <em class="rfc2119">SHALL</em> <em>override</em> the example provided by the schema. To represent examples of media types that cannot naturally be represented in JSON or YAML, a string value can contain the example with escaping where necessary.</td>
 </tr>
 <tr>
-<td><a id="parameterExamples" class="logo"></a>examples</td>
+<td><span id="parameterExamples"></span>examples</td>
 <td style="text-align:center">Map[ <code>string</code>, <a href="#example-object">Example Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>Examples of the media type.  Each example <em class="rfc2119">SHOULD</em> contain a value in the correct format as specified in the parameter encoding.  The <code>examples</code> field is mutually exclusive of the <code>example</code> field.  Furthermore, if referencing a <code>schema</code> which contains an example, the <code>examples</code> value <em class="rfc2119">SHALL</em> <em>override</em> the example provided by the schema.</td>
 </tr>
@@ -1526,7 +1526,7 @@ When <code>example</code> or <code>examples</code> are provided in conjunction w
 </thead>
 <tbody>
 <tr>
-<td><a id="parameterContent" class="logo"></a>content</td>
+<td><span id="parameterContent"></span>content</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#media-type-object">Media Type Object</a>]</td>
 <td>A map containing the representations for the parameter. The key is the media type and the value describes it.  The map <em class="rfc2119">MUST</em> only contain one entry.</td>
 </tr>
@@ -1856,17 +1856,17 @@ When <code>example</code> or <code>examples</code> are provided in conjunction w
 </thead>
 <tbody>
 <tr>
-<td><a id="requestBodyDescription" class="logo"></a>description</td>
+<td><span id="requestBodyDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A brief description of the request body. This could contain examples of use.  <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="requestBodyContent" class="logo"></a>content</td>
+<td><span id="requestBodyContent"></span>content</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#media-type-object">Media Type Object</a>]</td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The content of the request body. The key is a media type or <a href="https://tools.ietf.org/html/rfc7231#appendix-D">media type range</a> and the value describes it.  For requests that match multiple keys, only the most specific key is applicable. e.g. text/plain overrides text/*</td>
 </tr>
 <tr>
-<td><a id="requestBodyRequired" class="logo"></a>required</td>
+<td><span id="requestBodyRequired"></span>required</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Determines if the request body is required in the request. Defaults to <code>false</code>.</td>
 </tr>
@@ -1987,22 +1987,22 @@ When <code>example</code> or <code>examples</code> are provided in conjunction w
 </thead>
 <tbody>
 <tr>
-<td><a id="mediaTypeSchema" class="logo"></a>schema</td>
+<td><span id="mediaTypeSchema"></span>schema</td>
 <td style="text-align:center"><a href="#schema-object">Schema Object</a> | <a href="#reference-object">Reference Object</a></td>
 <td>The schema defining the type used for the request body.</td>
 </tr>
 <tr>
-<td><a id="mediaTypeExample" class="logo"></a>example</td>
+<td><span id="mediaTypeExample"></span>example</td>
 <td style="text-align:center">Any</td>
 <td>Example of the media type.  The example object <em class="rfc2119">SHOULD</em> be in the correct format as specified by the media type.  The <code>example</code> field is mutually exclusive of the <code>examples</code> field.  Furthermore, if referencing a <code>schema</code> which contains an example, the <code>example</code> value <em class="rfc2119">SHALL</em> <em>override</em> the example provided by the schema.</td>
 </tr>
 <tr>
-<td><a id="mediaTypeExamples" class="logo"></a>examples</td>
+<td><span id="mediaTypeExamples"></span>examples</td>
 <td style="text-align:center">Map[ <code>string</code>, <a href="#example-object">Example Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>Examples of the media type.  Each example object <em class="rfc2119">SHOULD</em>  match the media type and specified schema if present.  The <code>examples</code> field is mutually exclusive of the <code>example</code> field.  Furthermore, if referencing a <code>schema</code> which contains an example, the <code>examples</code> value <em class="rfc2119">SHALL</em> <em>override</em> the example provided by the schema.</td>
 </tr>
 <tr>
-<td><a id="mediaTypeEncoding" class="logo"></a>encoding</td>
+<td><span id="mediaTypeEncoding"></span>encoding</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#encoding-object">Encoding Object</a>]</td>
 <td>A map between a property name and its encoding information. The key, being the property name, <em class="rfc2119">MUST</em> exist in the schema as a property. The encoding object <em class="rfc2119">SHALL</em> only apply to <code>requestBody</code> objects when the media type is <code>multipart</code> or <code>application/x-www-form-urlencoded</code>.</td>
 </tr>
@@ -2197,27 +2197,27 @@ definition may be used:</p>
 </thead>
 <tbody>
 <tr>
-<td><a id="encodingContentType" class="logo"></a>contentType</td>
+<td><span id="encodingContentType"></span>contentType</td>
 <td style="text-align:center"><code>string</code></td>
 <td>The Content-Type for encoding a specific property. Default value depends on the property type: for <code>string</code> with <code>format</code> being <code>binary</code> – <code>application/octet-stream</code>; for other primitive types – <code>text/plain</code>; for <code>object</code> - <code>application/json</code>; for <code>array</code> – the default is defined based on the inner type. The value can be a specific media type (e.g. <code>application/json</code>), a wildcard media type (e.g. <code>image/*</code>), or a comma-separated list of the two types.</td>
 </tr>
 <tr>
-<td><a id="encodingHeaders" class="logo"></a>headers</td>
+<td><span id="encodingHeaders"></span>headers</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#header-object">Header Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>A map allowing additional information to be provided as headers, for example <code>Content-Disposition</code>.  <code>Content-Type</code> is described separately and <em class="rfc2119">SHALL</em> be ignored in this section. This property <em class="rfc2119">SHALL</em> be ignored if the request body media type is not a <code>multipart</code>.</td>
 </tr>
 <tr>
-<td><a id="encodingStyle" class="logo"></a>style</td>
+<td><span id="encodingStyle"></span>style</td>
 <td style="text-align:center"><code>string</code></td>
 <td>Describes how a specific property value will be serialized depending on its type.  See <a href="#parameter-object">Parameter Object</a> for details on the <a href="#parameterStyle"><code>style</code></a> property. The behavior follows the same values as <code>query</code> parameters, including default values. This property <em class="rfc2119">SHALL</em> be ignored if the request body media type is not <code>application/x-www-form-urlencoded</code>.</td>
 </tr>
 <tr>
-<td><a id="encodingExplode" class="logo"></a>explode</td>
+<td><span id="encodingExplode"></span>explode</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>When this is true, property values of type <code>array</code> or <code>object</code> generate separate parameters for each value of the array, or key-value-pair of the map.  For other types of properties this property has no effect. When <a href="#encodingStyle"><code>style</code></a> is <code>form</code>, the default value is <code>true</code>. For all other styles, the default value is <code>false</code>. This property <em class="rfc2119">SHALL</em> be ignored if the request body media type is not <code>application/x-www-form-urlencoded</code>.</td>
 </tr>
 <tr>
-<td><a id="encodingAllowReserved" class="logo"></a>allowReserved</td>
+<td><span id="encodingAllowReserved"></span>allowReserved</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Determines whether the parameter value <em class="rfc2119">SHOULD</em> allow reserved characters, as defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] <code>:/?#[]@!$&amp;'()*+,;=</code> to be included without percent-encoding. The default value is <code>false</code>. This property <em class="rfc2119">SHALL</em> be ignored if the request body media type is not <code>application/x-www-form-urlencoded</code>.</td>
 </tr>
@@ -2282,7 +2282,7 @@ that are not covered individually by the specification.</p>
 </thead>
 <tbody>
 <tr>
-<td><a id="responsesDefault" class="logo"></a>default</td>
+<td><span id="responsesDefault"></span>default</td>
 <td style="text-align:center"><a href="#response-object">Response Object</a> | <a href="#reference-object">Reference Object</a></td>
 <td>The documentation of responses other than the ones declared for specific HTTP response codes. Use this field to cover undeclared responses. A <a href="#reference-object">Reference Object</a> can link to a response that the <a href="#componentsResponses">OpenAPI Object’s components/responses</a> section defines.</td>
 </tr>
@@ -2299,7 +2299,7 @@ that are not covered individually by the specification.</p>
 </thead>
 <tbody>
 <tr>
-<td><a id="responsesCode" class="logo"></a><a href="#http-status-codes">HTTP Status Code</a></td>
+<td><span id="responsesCode"></span><a href="#http-status-codes">HTTP Status Code</a></td>
 <td style="text-align:center"><a href="#response-object">Response Object</a> | <a href="#reference-object">Reference Object</a></td>
 <td>Any <a href="#http-status-codes">HTTP status code</a> can be used as the property name, but only one property per code, to describe the expected response for that HTTP status code.  A <a href="#reference-object">Reference Object</a> can link to a response that is defined in the <a href="#componentsResponses">OpenAPI Object’s components/responses</a> section. This field <em class="rfc2119">MUST</em> be enclosed in quotation marks (for example, “200”) for compatibility between JSON and YAML. To define a range of response codes, this field <em class="rfc2119">MAY</em> contain the uppercase wildcard character <code>X</code>. For example, <code>2XX</code> represents all response codes between <code>[200-299]</code>. The following range definitions are allowed: <code>1XX</code>, <code>2XX</code>, <code>3XX</code>, <code>4XX</code>, and <code>5XX</code>. If a response range is defined using an explicit code, the explicit code definition takes precedence over the range definition for that code.</td>
 </tr>
@@ -2360,22 +2360,22 @@ that are not covered individually by the specification.</p>
 </thead>
 <tbody>
 <tr>
-<td><a id="responseDescription" class="logo"></a>description</td>
+<td><span id="responseDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. A short description of the response. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="responseHeaders" class="logo"></a>headers</td>
+<td><span id="responseHeaders"></span>headers</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#header-object">Header Object</a>  | <a href="#reference-object">Reference Object</a>]</td>
 <td>Maps a header name to its definition. [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] states header names are case insensitive. If a response header is defined with the name <code>"Content-Type"</code>, it <em class="rfc2119">SHALL</em> be ignored.</td>
 </tr>
 <tr>
-<td><a id="responseContent" class="logo"></a>content</td>
+<td><span id="responseContent"></span>content</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#media-type-object">Media Type Object</a>]</td>
 <td>A map containing descriptions of potential response payloads. The key is a media type or <a href="https://tools.ietf.org/html/rfc7231#appendix-D">media type range</a> and the value describes it.  For responses that match multiple keys, only the most specific key is applicable. e.g. text/plain overrides text/*</td>
 </tr>
 <tr>
-<td><a id="responseLinks" class="logo"></a>links</td>
+<td><span id="responseLinks"></span>links</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#link-object">Link Object</a> | <a href="#reference-object">Reference Object</a>]</td>
 <td>A map of operations links that can be followed from the response. The key of the map is a short name for the link, following the naming constraints of the names for <a href="#components-object">Component Objects</a>.</td>
 </tr>
@@ -2507,7 +2507,7 @@ The key value used to identify the callback object is an expression, evaluated a
 </thead>
 <tbody>
 <tr>
-<td><a id="callbackExpression" class="logo"></a>{expression}</td>
+<td><span id="callbackExpression"></span>{expression}</td>
 <td style="text-align:center"><a href="#path-item-object">Path Item Object</a></td>
 <td>A Path Item Object used to define a callback request and expected responses.  A <a href="https://github.com/OAI/OpenAPI-Specification/tree/master/examples/v3.0/callback-example.yaml">complete example</a> is available.</td>
 </tr>
@@ -2609,22 +2609,22 @@ This includes accessing any part of a body that a JSON Pointer [<cite><a class="
 </thead>
 <tbody>
 <tr>
-<td><a id="exampleSummary" class="logo"></a>summary</td>
+<td><span id="exampleSummary"></span>summary</td>
 <td style="text-align:center"><code>string</code></td>
 <td>Short description for the example.</td>
 </tr>
 <tr>
-<td><a id="exampleDescription" class="logo"></a>description</td>
+<td><span id="exampleDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>Long description for the example. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="exampleValue" class="logo"></a>value</td>
+<td><span id="exampleValue"></span>value</td>
 <td style="text-align:center">Any</td>
 <td>Embedded literal example. The <code>value</code> field and <code>externalValue</code> field are mutually exclusive. To represent examples of media types that cannot naturally represented in JSON or YAML, use a string value to contain the example, escaping where necessary.</td>
 </tr>
 <tr>
-<td><a id="exampleExternalValue" class="logo"></a>externalValue</td>
+<td><span id="exampleExternalValue"></span>externalValue</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A URL that points to the literal example. This provides the capability to reference examples that cannot easily be included in JSON or YAML documents.  The <code>value</code> field and <code>externalValue</code> field are mutually exclusive.</td>
 </tr>
@@ -2709,32 +2709,32 @@ The presence of a link does not guarantee the caller’s ability to successfully
 </thead>
 <tbody>
 <tr>
-<td><a id="linkOperationRef" class="logo"></a>operationRef</td>
+<td><span id="linkOperationRef"></span>operationRef</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A relative or absolute reference to an OAS operation. This field is mutually exclusive of the <code>operationId</code> field, and <em class="rfc2119">MUST</em> point to an <a href="#operation-object">Operation Object</a>. Relative <code>operationRef</code> values <em class="rfc2119">MAY</em> be used to locate an existing <a href="#operation-object">Operation Object</a> in the OpenAPI definition.</td>
 </tr>
 <tr>
-<td><a id="linkOperationId" class="logo"></a>operationId</td>
+<td><span id="linkOperationId"></span>operationId</td>
 <td style="text-align:center"><code>string</code></td>
 <td>The name of an <em>existing</em>, resolvable OAS operation, as defined with a unique <code>operationId</code>.  This field is mutually exclusive of the <code>operationRef</code> field.</td>
 </tr>
 <tr>
-<td><a id="linkParameters" class="logo"></a>parameters</td>
+<td><span id="linkParameters"></span>parameters</td>
 <td style="text-align:center">Map[<code>string</code>, Any | <a href="#runtime-expressions">{expression}</a>]</td>
 <td>A map representing parameters to pass to an operation as specified with <code>operationId</code> or identified via <code>operationRef</code>. The key is the parameter name to be used, whereas the value can be a constant or an expression to be evaluated and passed to the linked operation.  The parameter name can be qualified using the <a href="#parameterIn">parameter location</a> <code>[{in}.]{name}</code> for operations that use the same parameter name in different locations (e.g. <a href="http://path.id">path.id</a>).</td>
 </tr>
 <tr>
-<td><a id="linkRequestBody" class="logo"></a>requestBody</td>
+<td><span id="linkRequestBody"></span>requestBody</td>
 <td style="text-align:center">Any | <a href="#runtime-expressions">{expression}</a></td>
 <td>A literal value or <a href="#runtime-expressions">{expression}</a> to use as a request body when calling the target operation.</td>
 </tr>
 <tr>
-<td><a id="linkDescription" class="logo"></a>description</td>
+<td><span id="linkDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A description of the link. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="linkServer" class="logo"></a>server</td>
+<td><span id="linkServer"></span>server</td>
 <td style="text-align:center"><a href="#server-object">Server Object</a></td>
 <td>A server object to be used by the target operation.</td>
 </tr>
@@ -2930,17 +2930,17 @@ It is not mandatory to have a Tag Object per tag defined in the Operation Object
 </thead>
 <tbody>
 <tr>
-<td><a id="tagName" class="logo"></a>name</td>
+<td><span id="tagName"></span>name</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The name of the tag.</td>
 </tr>
 <tr>
-<td><a id="tagDescription" class="logo"></a>description</td>
+<td><span id="tagDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>A short description for the tag. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="tagExternalDocs" class="logo"></a>externalDocs</td>
+<td><span id="tagExternalDocs"></span>externalDocs</td>
 <td style="text-align:center"><a href="#external-documentation-object">External Documentation Object</a></td>
 <td>Additional external documentation for this tag.</td>
 </tr>
@@ -2973,7 +2973,7 @@ It is not mandatory to have a Tag Object per tag defined in the Operation Object
 </thead>
 <tbody>
 <tr>
-<td><a id="referenceRef" class="logo"></a>$ref</td>
+<td><span id="referenceRef"></span>$ref</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The reference string.</td>
 </tr>
@@ -3061,42 +3061,42 @@ Unless stated otherwise, the property definitions follow the JSON Schema.</p>
 </thead>
 <tbody>
 <tr>
-<td><a id="schemaNullable" class="logo"></a>nullable</td>
+<td><span id="schemaNullable"></span>nullable</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Allows sending a <code>null</code> value for the defined schema. Default value is <code>false</code>.</td>
 </tr>
 <tr>
-<td><a id="schemaDiscriminator" class="logo"></a>discriminator</td>
+<td><span id="schemaDiscriminator"></span>discriminator</td>
 <td style="text-align:center"><a href="#discriminator-object">Discriminator Object</a></td>
 <td>Adds support for polymorphism. The discriminator is an object name that is used to differentiate between other schemas which may satisfy the payload description. See <a href="#composition-and-inheritance-polymorphism">Composition and Inheritance</a> for more details.</td>
 </tr>
 <tr>
-<td><a id="schemaReadOnly" class="logo"></a>readOnly</td>
+<td><span id="schemaReadOnly"></span>readOnly</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Relevant only for Schema <code>"properties"</code> definitions. Declares the property as “read only”. This means that it <em class="rfc2119">MAY</em> be sent as part of a response but <em class="rfc2119">SHOULD NOT</em> be sent as part of the request. If the property is marked as <code>readOnly</code> being <code>true</code> and is in the <code>required</code> list, the <code>required</code> will take effect on the response only. A property <em class="rfc2119">MUST NOT</em> be marked as both <code>readOnly</code> and <code>writeOnly</code> being <code>true</code>. Default value is <code>false</code>.</td>
 </tr>
 <tr>
-<td><a id="schemaWriteOnly" class="logo"></a>writeOnly</td>
+<td><span id="schemaWriteOnly"></span>writeOnly</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Relevant only for Schema <code>"properties"</code> definitions. Declares the property as “write only”. Therefore, it <em class="rfc2119">MAY</em> be sent as part of a request but <em class="rfc2119">SHOULD NOT</em> be sent as part of the response. If the property is marked as <code>writeOnly</code> being <code>true</code> and is in the <code>required</code> list, the <code>required</code> will take effect on the request only. A property <em class="rfc2119">MUST NOT</em> be marked as both <code>readOnly</code> and <code>writeOnly</code> being <code>true</code>. Default value is <code>false</code>.</td>
 </tr>
 <tr>
-<td><a id="schemaXml" class="logo"></a>xml</td>
+<td><span id="schemaXml"></span>xml</td>
 <td style="text-align:center"><a href="#xml-object">XML Object</a></td>
 <td>This <em class="rfc2119">MAY</em> be used only on properties schemas. It has no effect on root schemas. Adds additional metadata to describe the XML representation of this property.</td>
 </tr>
 <tr>
-<td><a id="schemaExternalDocs" class="logo"></a>externalDocs</td>
+<td><span id="schemaExternalDocs"></span>externalDocs</td>
 <td style="text-align:center"><a href="#external-documentation-object">External Documentation Object</a></td>
 <td>Additional external documentation for this schema.</td>
 </tr>
 <tr>
-<td><a id="schemaExample" class="logo"></a>example</td>
+<td><span id="schemaExample"></span>example</td>
 <td style="text-align:center">Any</td>
 <td>A free-form property to include an example of an instance for this schema. To represent examples that cannot be naturally represented in JSON or YAML, a string value can be used to contain the example with escaping where necessary.</td>
 </tr>
 <tr>
-<td><a id="schemaDeprecated" class="logo"></a> deprecated</td>
+<td><span id="schemaDeprecated"></span> deprecated</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Specifies that a schema is deprecated and <em class="rfc2119">SHOULD</em> be transitioned out of usage. Default value is <code>false</code>.</td>
 </tr>
@@ -3438,12 +3438,12 @@ The <a href="#xml-object">XML Object</a> contains additional information about t
 </thead>
 <tbody>
 <tr>
-<td><a id="propertyName" class="logo"></a>propertyName</td>
+<td><span id="propertyName"></span>propertyName</td>
 <td style="text-align:center"><code>string</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The name of the property in the payload that will hold the discriminator value.</td>
 </tr>
 <tr>
-<td><a id="discriminatorMapping" class="logo"></a> mapping</td>
+<td><span id="discriminatorMapping"></span> mapping</td>
 <td style="text-align:center">Map[<code>string</code>, <code>string</code>]</td>
 <td>An object to hold mappings between payload values and schema names or references.</td>
 </tr>
@@ -3563,27 +3563,27 @@ See examples for expected behavior.</p>
 </thead>
 <tbody>
 <tr>
-<td><a id="xmlName" class="logo"></a>name</td>
+<td><span id="xmlName"></span>name</td>
 <td style="text-align:center"><code>string</code></td>
 <td>Replaces the name of the element/attribute used for the described schema property. When defined within <code>items</code>, it will affect the name of the individual XML elements within the list. When defined alongside <code>type</code> being <code>array</code> (outside the <code>items</code>), it will affect the wrapping element and only if <code>wrapped</code> is <code>true</code>. If <code>wrapped</code> is <code>false</code>, it will be ignored.</td>
 </tr>
 <tr>
-<td><a id="xmlNamespace" class="logo"></a>namespace</td>
+<td><span id="xmlNamespace"></span>namespace</td>
 <td style="text-align:center"><code>string</code></td>
 <td>The URI of the namespace definition. Value <em class="rfc2119">MUST</em> be in the form of an absolute URI.</td>
 </tr>
 <tr>
-<td><a id="xmlPrefix" class="logo"></a>prefix</td>
+<td><span id="xmlPrefix"></span>prefix</td>
 <td style="text-align:center"><code>string</code></td>
 <td>The prefix to be used for the <a href="#xmlName">name</a>.</td>
 </tr>
 <tr>
-<td><a id="xmlAttribute" class="logo"></a>attribute</td>
+<td><span id="xmlAttribute"></span>attribute</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td>Declares whether the property definition translates to an attribute instead of an element. Default value is <code>false</code>.</td>
 </tr>
 <tr>
-<td><a id="xmlWrapped" class="logo"></a>wrapped</td>
+<td><span id="xmlWrapped"></span>wrapped</td>
 <td style="text-align:center"><code>boolean</code></td>
 <td><em class="rfc2119">MAY</em> be used only for an array definition. Signifies whether the array is wrapped (for example, <code>&lt;books&gt;&lt;book/&gt;&lt;book/&gt;&lt;/books&gt;</code>) or unwrapped (<code>&lt;book/&gt;&lt;book/&gt;</code>). Default value is <code>false</code>. The definition takes effect only when defined alongside <code>type</code> being <code>array</code> (outside the <code>items</code>).</td>
 </tr>
@@ -3894,49 +3894,49 @@ Supported schemes are HTTP authentication, an API key (either as a header or as 
 </thead>
 <tbody>
 <tr>
-<td><a id="securitySchemeType" class="logo"></a>type</td>
+<td><span id="securitySchemeType"></span>type</td>
 <td style="text-align:center"><code>string</code></td>
 <td>Any</td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The type of the security scheme. Valid values are <code>"apiKey"</code>, <code>"http"</code>, <code>"oauth2"</code>, <code>"openIdConnect"</code>.</td>
 </tr>
 <tr>
-<td><a id="securitySchemeDescription" class="logo"></a>description</td>
+<td><span id="securitySchemeDescription"></span>description</td>
 <td style="text-align:center"><code>string</code></td>
 <td>Any</td>
 <td>A short description for security scheme. <a href="http://spec.commonmark.org/">CommonMark syntax</a> <em class="rfc2119">MAY</em> be used for rich text representation.</td>
 </tr>
 <tr>
-<td><a id="securitySchemeName" class="logo"></a>name</td>
+<td><span id="securitySchemeName"></span>name</td>
 <td style="text-align:center"><code>string</code></td>
 <td><code>apiKey</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The name of the header, query or cookie parameter to be used.</td>
 </tr>
 <tr>
-<td><a id="securitySchemeIn" class="logo"></a>in</td>
+<td><span id="securitySchemeIn"></span>in</td>
 <td style="text-align:center"><code>string</code></td>
 <td><code>apiKey</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The location of the API key. Valid values are <code>"query"</code>, <code>"header"</code> or <code>"cookie"</code>.</td>
 </tr>
 <tr>
-<td><a id="securitySchemeScheme" class="logo"></a>scheme</td>
+<td><span id="securitySchemeScheme"></span>scheme</td>
 <td style="text-align:center"><code>string</code></td>
 <td><code>http</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The name of the HTTP Authorization scheme to be used in the Authorization header as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7235" title="Hypertext Transfer Protocol (HTTP/1.1): Authentication">RFC7235</a></cite>].</td>
 </tr>
 <tr>
-<td><a id="securitySchemeBearerFormat" class="logo"></a>bearerFormat</td>
+<td><span id="securitySchemeBearerFormat"></span>bearerFormat</td>
 <td style="text-align:center"><code>string</code></td>
 <td><code>http</code> (<code>"bearer"</code>)</td>
 <td>A hint to the client to identify how the bearer token is formatted.  Bearer tokens are usually generated by an authorization server, so this information is primarily for documentation purposes.</td>
 </tr>
 <tr>
-<td><a id="securitySchemeFlows" class="logo"></a>flows</td>
+<td><span id="securitySchemeFlows"></span>flows</td>
 <td style="text-align:center"><a href="#oauth-flows-object">OAuth Flows Object</a></td>
 <td><code>oauth2</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. An object containing configuration information for the flow types supported.</td>
 </tr>
 <tr>
-<td><a id="securitySchemeOpenIdConnectUrl" class="logo"></a>openIdConnectUrl</td>
+<td><span id="securitySchemeOpenIdConnectUrl"></span>openIdConnectUrl</td>
 <td style="text-align:center"><code>string</code></td>
 <td><code>openIdConnect</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. OpenId Connect URL to discover OAuth2 configuration values. This <em class="rfc2119">MUST</em> be in the form of a URL.</td>
@@ -4019,22 +4019,22 @@ Supported schemes are HTTP authentication, an API key (either as a header or as 
 </thead>
 <tbody>
 <tr>
-<td><a id="oauthFlowsImplicit" class="logo"></a>implicit</td>
+<td><span id="oauthFlowsImplicit"></span>implicit</td>
 <td style="text-align:center"><a href="#oauth-flow-object">OAuth Flow Object</a></td>
 <td>Configuration for the OAuth Implicit flow</td>
 </tr>
 <tr>
-<td><a id="oauthFlowsPassword" class="logo"></a>password</td>
+<td><span id="oauthFlowsPassword"></span>password</td>
 <td style="text-align:center"><a href="#oauth-flow-object">OAuth Flow Object</a></td>
 <td>Configuration for the OAuth Resource Owner Password flow</td>
 </tr>
 <tr>
-<td><a id="oauthFlowsClientCredentials" class="logo"></a>clientCredentials</td>
+<td><span id="oauthFlowsClientCredentials"></span>clientCredentials</td>
 <td style="text-align:center"><a href="#oauth-flow-object">OAuth Flow Object</a></td>
 <td>Configuration for the OAuth Client Credentials flow.  Previously called <code>application</code> in OpenAPI 2.0.</td>
 </tr>
 <tr>
-<td><a id="oauthFlowsAuthorizationCode" class="logo"></a>authorizationCode</td>
+<td><span id="oauthFlowsAuthorizationCode"></span>authorizationCode</td>
 <td style="text-align:center"><a href="#oauth-flow-object">OAuth Flow Object</a></td>
 <td>Configuration for the OAuth Authorization Code flow.  Previously called <code>accessCode</code> in OpenAPI 2.0.</td>
 </tr>
@@ -4055,25 +4055,25 @@ Supported schemes are HTTP authentication, an API key (either as a header or as 
 </thead>
 <tbody>
 <tr>
-<td><a id="oauthFlowAuthorizationUrl" class="logo"></a>authorizationUrl</td>
+<td><span id="oauthFlowAuthorizationUrl"></span>authorizationUrl</td>
 <td style="text-align:center"><code>string</code></td>
 <td><code>oauth2</code> (<code>"implicit"</code>, <code>"authorizationCode"</code>)</td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The authorization URL to be used for this flow. This <em class="rfc2119">MUST</em> be in the form of a URL.</td>
 </tr>
 <tr>
-<td><a id="oauthFlowTokenUrl" class="logo"></a>tokenUrl</td>
+<td><span id="oauthFlowTokenUrl"></span>tokenUrl</td>
 <td style="text-align:center"><code>string</code></td>
 <td><code>oauth2</code> (<code>"password"</code>, <code>"clientCredentials"</code>, <code>"authorizationCode"</code>)</td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The token URL to be used for this flow. This <em class="rfc2119">MUST</em> be in the form of a URL.</td>
 </tr>
 <tr>
-<td><a id="oauthFlowRefreshUrl" class="logo"></a>refreshUrl</td>
+<td><span id="oauthFlowRefreshUrl"></span>refreshUrl</td>
 <td style="text-align:center"><code>string</code></td>
 <td><code>oauth2</code></td>
 <td>The URL to be used for obtaining refresh tokens. This <em class="rfc2119">MUST</em> be in the form of a URL.</td>
 </tr>
 <tr>
-<td><a id="oauthFlowScopes" class="logo"></a>scopes</td>
+<td><span id="oauthFlowScopes"></span>scopes</td>
 <td style="text-align:center">Map[<code>string</code>, <code>string</code>]</td>
 <td><code>oauth2</code></td>
 <td><strong><em class="rfc2119">REQUIRED</em></strong>. The available scopes for the OAuth2 security scheme. A map between the scope name and a short description for it.</td>
@@ -4136,7 +4136,7 @@ This enables support for scenarios where multiple query parameters or HTTP heade
 </thead>
 <tbody>
 <tr>
-<td><a id="securityRequirementsName" class="logo"></a>{name}</td>
+<td><span id="securityRequirementsName"></span>{name}</td>
 <td style="text-align:center">[<code>string</code>]</td>
 <td>Each name <em class="rfc2119">MUST</em> correspond to a security scheme which is declared in the <a href="#componentsSecuritySchemes">Security Schemes</a> under the <a href="#components-object">Components Object</a>. If the security scheme is of type <code>"oauth2"</code> or <code>"openIdConnect"</code>, then the value is a list of scope names required for the execution. For other security scheme types, the array <em class="rfc2119">MUST</em> be empty.</td>
 </tr>
@@ -4179,7 +4179,7 @@ This enables support for scenarios where multiple query parameters or HTTP heade
 </thead>
 <tbody>
 <tr>
-<td><a id="infoExtensions" class="logo"></a>^x-</td>
+<td><span id="infoExtensions"></span>^x-</td>
 <td style="text-align:center">Any</td>
 <td>Allows extensions to the OpenAPI Schema. The field name <em class="rfc2119">MUST</em> begin with <code>x-</code>, for example, <code>x-internal-id</code>. The value can be <code>null</code>, a primitive, an array or an object. Can have any valid JSON format value.</td>
 </tr>
