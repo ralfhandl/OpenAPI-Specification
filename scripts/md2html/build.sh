@@ -32,6 +32,8 @@ git show 3140640:MAINTAINERS.md > history/MAINTAINERS_v3.0.2.md
 cp history/MAINTAINERS_v3.0.2.md history/MAINTAINERS_v3.0.3.md
 cp history/MAINTAINERS_v3.0.2.md history/MAINTAINERS_v3.1.0.md
 # add lines for 3.0.4, 3.1.1, ...
+git show 958bce2:MAINTAINERS.md > history/MAINTAINERS_v3.0.4.md
+git show 958bce2:MAINTAINERS.md > history/MAINTAINERS_v3.1.1.md
 
 cp -p ../../node_modules/respec/builds/respec-w3c.* ../../deploy/js/
 
