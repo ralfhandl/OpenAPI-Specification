@@ -175,14 +175,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       ]
     }
   ],
-  "publishISODate": "2024-07-23T00:00:00.000Z",
-  "generatedSubtitle": "23 July 2024"
+  "publishISODate": "2024-07-24T00:00:00.000Z",
+  "generatedSubtitle": "24 July 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head><body class="h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://openapis.org/"><img crossorigin="" alt="OpenAPI Initiative" height="48" src="https://raw.githubusercontent.com/OAI/OpenAPI-Style-Guide/master/graphics/bitmap/OpenAPI_Logo_Pantone.png">
   </a></p>
     <h1 id="title" class="title">OpenAPI Specification v3.0.4 </h1> <h2 id="subtitle" class="subtitle">Version 3.0.4</h2>
-    <p id="w3c-state"> <time class="dt-published" datetime="2024-07-23">23 July 2024</time></p>
+    <p id="w3c-state"> <time class="dt-published" datetime="2024-07-24">24 July 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -420,7 +420,7 @@ The OpenAPI Initiative also hosts a <a href="https://spec.openapis.org/registry/
 <tr>
 <td><code>string</code></td>
 <td><code>byte</code></td>
-<td>base64 encoded characters - <a href="https://www.rfc-editor.org/rfc/rfc4648#section-4">[RFC4648]</a></td>
+<td>base64 encoded characters - [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc4648" title="The Base16, Base32, and Base64 Data Encodings">RFC4648</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">Section 4</a></td>
 </tr>
 <tr>
 <td><code>string</code></td>
@@ -430,12 +430,12 @@ The OpenAPI Initiative also hosts a <a href="https://spec.openapis.org/registry/
 <tr>
 <td><code>string</code></td>
 <td><code>date</code></td>
-<td>As defined by <code>full-date</code> - <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">[RFC3339]</a></td>
+<td>As defined by <code>full-date</code> - [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3339" title="Date and Time on the Internet: Timestamps">RFC3339</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6">Section 5.6</a></td>
 </tr>
 <tr>
 <td><code>string</code></td>
 <td><code>date-time</code></td>
-<td>As defined by <code>date-time</code> - <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">[RFC3339]</a></td>
+<td>As defined by <code>date-time</code> - [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3339" title="Date and Time on the Internet: Timestamps">RFC3339</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6">Section 5.6</a></td>
 </tr>
 <tr>
 <td><code>string</code></td>
@@ -458,7 +458,7 @@ Where OpenAPI tooling renders rich text it <em class="rfc2119">MUST</em> support
 <p>While the framing of CommonMark 0.27 as a minimum requirement means that tooling <em class="rfc2119">MAY</em> choose to implement extensions on top of it, note that any such extensions are by definition implementation-defined and will not be interoperable.
 OpenAPI Description authors <em class="rfc2119">SHOULD</em> consider how text using such extensions will be rendered by tools that offer only the minimum support.</p>
 </section><section id="relative-references-in-urls"><div class="header-wrapper"><h3 id="x4-6-relative-references-in-urls"><bdi class="secno">4.6 </bdi><span id="relativeReferences"></span>Relative References in URLs</h3><a class="self-link" href="#relative-references-in-urls" aria-label="Permalink for Section 4.6"></a></div>
-<p>Unless specified otherwise, all properties that are URLs <em class="rfc2119">MAY</em> be relative references as defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] <a href="https://tools.ietf.org/html/rfc3986#section-4.2">Section 4.2</a>.
+<p>Unless specified otherwise, all properties that are URLs <em class="rfc2119">MAY</em> be relative references as defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc3986#section-4.2">Section 4.2</a>.
 Relative references are resolved using the URLs defined in the <a href="#serverObject">Server Object</a> as a Base URI.</p>
 <p>Relative references used in <code>$ref</code> are processed as per <a href="https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03">JSON Reference</a>, using the URL of the current document as the base URI. See also the <a href="#referenceObject">Reference Object</a>.</p>
 <p>Relative references in CommonMark hyperlinks are resolved in their rendered context, which might differ from the context of the API description.</p>
@@ -1349,7 +1349,7 @@ The path itself is still exposed to the documentation viewer but they will not k
 <tr>
 <td><span id="operationRequestBody"></span>requestBody</td>
 <td style="text-align:center"><a href="#requestBodyObject">Request Body Object</a> | <a href="#referenceObject">Reference Object</a></td>
-<td>The request body applicable for this operation.  The <code>requestBody</code> is only supported in HTTP methods where the HTTP 1.1 specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">RFC7231</a></cite>] <a href="https://tools.ietf.org/html/rfc7231#section-4.3.1">Section 4.3.1</a> has explicitly defined semantics for request bodies.  In other cases where the HTTP spec is vague (such as <a href="https://tools.ietf.org/html/rfc7231#section-4.3.1">GET</a>, <a href="https://tools.ietf.org/html/rfc7231#section-4.3.2">HEAD</a> and <a href="https://tools.ietf.org/html/rfc7231#section-4.3.5">DELETE</a>), <code>requestBody</code> <em class="rfc2119">SHALL</em> be ignored by consumers.</td>
+<td>The request body applicable for this operation.  The <code>requestBody</code> is only supported in HTTP methods where the HTTP 1.1 specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">RFC7231</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.1">Section 4.3.1</a> has explicitly defined semantics for request bodies.  In other cases where the HTTP spec is vague (such as <a href="https://tools.ietf.org/html/rfc7231#section-4.3.1">GET</a>, <a href="https://tools.ietf.org/html/rfc7231#section-4.3.2">HEAD</a> and <a href="https://tools.ietf.org/html/rfc7231#section-4.3.5">DELETE</a>), <code>requestBody</code> <em class="rfc2119">SHALL</em> be ignored by consumers.</td>
 </tr>
 <tr>
 <td><span id="operationResponses"></span>responses</td>
@@ -1531,7 +1531,7 @@ The path itself is still exposed to the documentation viewer but they will not k
 <ul>
 <li>path - Used together with <a href="#pathTemplating">Path Templating</a>, where the parameter value is actually part of the operation’s URL. This does not include the host or base path of the API. For example, in <code>/items/{itemId}</code>, the path parameter is <code>itemId</code>.</li>
 <li>query - Parameters that are appended to the URL. For example, in <code>/items?id=###</code>, the query parameter is <code>id</code>.</li>
-<li>header - Custom headers that are expected as part of the request. Note that [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] <a href="https://tools.ietf.org/html/rfc7230#page-22">Page 22</a> states header names are case insensitive.</li>
+<li>header - Custom headers that are expected as part of the request. Note that [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7230#page-22">Page 22</a> states header names are case insensitive.</li>
 <li>cookie - Used to pass a specific cookie value to the API.</li>
 </ul>
 </section><section id="fixed-fields-9"><div class="header-wrapper"><h5 id="x4-7-12-2-fixed-fields"><bdi class="secno">4.7.12.2 </bdi>Fixed Fields</h5><a class="self-link" href="#fixed-fields-9" aria-label="Permalink for Section 4.7.12.2"></a></div>
@@ -1610,7 +1610,7 @@ The <code>example</code> and <code>examples</code> fields are mutually exclusive
 <tr>
 <td><span id="parameterAllowReserved"></span>allowReserved</td>
 <td style="text-align:center"><code>boolean</code></td>
-<td>When this is true, parameter values are serialized  using reserved expansion, as defined by <a href="https://datatracker.ietf.org/doc/html/rfc6570#autoid-20">[RFC6570]</a>, which allows <a href="https://datatracker.ietf.org/doc/html/rfc3986#autoid-13">RFC3986’s reserved character set</a>, as well as percent-encoded triples, to pass through unchanged, while still percent-encoding all other disallowed characters (including <code>%</code> outside of percent-encoded triples). Applications are still responsible for percent-encoding reserved characters that are <a href="https://datatracker.ietf.org/doc/html/rfc3986#autoid-24">not allowed in the query string</a> (<code>[</code>, <code>]</code>, <code>#</code>), or have a special meaning in <code>application/x-www-form-urlencoded</code> (<code>-</code>, <code>&amp;</code>, <code>+</code>); see Appendices <a href="#usingRFC6570Implementations">C</a> and <a href="#percentEncodingAndFormMediaTypes">E</a> for details. This property only applies to parameters with an <code>in</code> value of <code>query</code>. The default value is <code>false</code>.</td>
+<td>When this is true, parameter values are serialized  using reserved expansion, as defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc6570#section-3.2.3">Section 3.2.3</a>, which allows <a href="https://tools.ietf.org/html/rfc3986#section-2.2">RFC3986’s reserved character set</a>, as well as percent-encoded triples, to pass through unchanged, while still percent-encoding all other disallowed characters (including <code>%</code> outside of percent-encoded triples). Applications are still responsible for percent-encoding reserved characters that are <a href="https://tools.ietf.org/html/rfc3986#section-3.4">not allowed in the query string</a> (<code>[</code>, <code>]</code>, <code>#</code>), or have a special meaning in <code>application/x-www-form-urlencoded</code> (<code>-</code>, <code>&amp;</code>, <code>+</code>); see Appendices <a href="#usingRFC6570Implementations">C</a> and <a href="#percentEncodingAndFormMediaTypes">E</a> for details. This property only applies to parameters with an <code>in</code> value of <code>query</code>. The default value is <code>false</code>.</td>
 </tr>
 <tr>
 <td><span id="parameterSchema"></span>schema</td>
@@ -1665,25 +1665,25 @@ Using <code>content</code> with a <code>text/plain</code> media type is <em clas
 <td>matrix</td>
 <td><code>primitive</code>, <code>array</code>, <code>object</code></td>
 <td><code>path</code></td>
-<td>Path-style parameters defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://tools.ietf.org/html/rfc6570#section-3.2.7">Section 3.2.7</a></td>
+<td>Path-style parameters defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc6570#section-3.2.7">Section 3.2.7</a></td>
 </tr>
 <tr>
 <td>label</td>
 <td><code>primitive</code>, <code>array</code>, <code>object</code></td>
 <td><code>path</code></td>
-<td>Label style parameters defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://tools.ietf.org/html/rfc6570#section-3.2.5">Section 3.2.5</a></td>
+<td>Label style parameters defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc6570#section-3.2.5">Section 3.2.5</a></td>
 </tr>
 <tr>
 <td>simple</td>
 <td><code>primitive</code>, <code>array</code>, <code>object</code></td>
 <td><code>path</code>, <code>header</code></td>
-<td>Simple style parameters defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://tools.ietf.org/html/rfc6570#section-3.2.2">Section 3.2.2</a>. This option replaces <code>collectionFormat</code> with a <code>csv</code> value from OpenAPI 2.0.</td>
+<td>Simple style parameters defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc6570#section-3.2.2">Section 3.2.2</a>. This option replaces <code>collectionFormat</code> with a <code>csv</code> value from OpenAPI 2.0.</td>
 </tr>
 <tr>
 <td>form</td>
 <td><code>primitive</code>, <code>array</code>, <code>object</code></td>
 <td><code>query</code>, <code>cookie</code></td>
-<td>Form style parameters defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://tools.ietf.org/html/rfc6570#section-3.2.8">Section 3.2.8</a>. This option replaces <code>collectionFormat</code> with a <code>csv</code> (when <code>explode</code> is false) or <code>multi</code> (when <code>explode</code> is true) value from OpenAPI 2.0.</td>
+<td>Form style parameters defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc6570#section-3.2.8">Section 3.2.8</a>. This option replaces <code>collectionFormat</code> with a <code>csv</code> (when <code>explode</code> is false) or <code>multi</code> (when <code>explode</code> is true) value from OpenAPI 2.0.</td>
 </tr>
 <tr>
 <td>spaceDelimited</td>
@@ -1717,7 +1717,7 @@ Using <code>content</code> with a <code>text/plain</code> media type is <em clas
 <ul>
 <li>The value <em>empty</em> denotes the empty string, and is unrelated to the <code>allowEmptyValue</code> field</li>
 <li>The behavior of combinations marked <em>n/a</em> is undefined</li>
-<li>The <code>undefined</code> replaces the <code>empty</code> column in previous versions of this specification in order to better align with <a href="https://www.rfc-editor.org/rfc/rfc6570.html#section-2.3">RFC6570 §2.3</a> terminology, which describes certain values including but not limited to <code>null</code> as “undefined” values with special handling; notably, the empty string is <em>not</em> undefined</li>
+<li>The <code>undefined</code> replaces the <code>empty</code> column in previous versions of this specification in order to better align with [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc6570#section-2.3">Section 2.3</a> terminology, which describes certain values including but not limited to <code>null</code> as “undefined” values with special handling; notably, the empty string is <em>not</em> undefined</li>
 <li>For <code>form</code> and the non-RFC6570 query string styles <code>spaceDelimited</code>, <code>pipeDelimited</code>, and <code>deepObject</code>, each example is shown prefixed with <code>?</code> as if it were the only query parameter; see <a href="#usingRFC6570Implementations">Appendix C</a> for more information on constructing query strings from multiple parameters, and <a href="#serializingHeadersAndCookies">Appendix D</a> for warnings regarding <code>form</code> and cookie parameters</li>
 <li>Note that the <code>?</code> prefix is not appropriate for serializing <code>application/x-www-form-urlencoded</code> HTTP message bodies, and <em class="rfc2119">MUST</em> be stripped or (if constructing the string manually) not added when used in that context; see the <a href="#encodingObject">Encoding Object</a> for more information</li>
 <li>The examples are percent-encoded as required by RFC6570 and RFC3986; see <a href="#percentEncodingAndFormMediaTypes">Appendix E</a> for a thorough discussion of percent-encoding concerns, including why unencoded <code>|</code> (<code>%7C</code>), <code>[</code> (<code>%5B</code>), and <code>]</code> (<code>%5D</code>) seem to work in some environments despite not being compliant.</li>
@@ -2327,7 +2327,7 @@ See <a href="#dataTypeConversion">Appendix B</a> for a discussion of data type c
 <tr>
 <td><span id="encodingAllowReserved"></span>allowReserved</td>
 <td style="text-align:center"><code>boolean</code></td>
-<td>When this is true, parameter values are serialized using reserved expansion, as defined by <a href="https://datatracker.ietf.org/doc/html/rfc6570#autoid-20">[RFC6570]</a>, which allows <a href="https://datatracker.ietf.org/doc/html/rfc3986#autoid-13">RFC3986’s reserved character set</a>, as well as percent-encoded triples, to pass through unchanged, while still percent-encoding all other disallowed characters (including <code>%</code> outside of percent-encoded triples). Applications are still responsible for percent-encoding reserved characters that are <a href="https://datatracker.ietf.org/doc/html/rfc3986#autoid-24">not allowed in the query string</a> (<code>[</code>, <code>]</code>, <code>#</code>), or have a special meaning in <code>application/x-www-form-urlencoded</code> (<code>-</code>, <code>&amp;</code>, <code>+</code>); see Appendices <a href="#usingRFC6570Implementations">C</a> and <a href="#percentEncodingAndFormMediaTypes">E</a> for details. The default value is <code>false</code>. This property <em class="rfc2119">SHALL</em> be ignored if the request body media type is not <code>application/x-www-form-urlencoded</code>.</td>
+<td>When this is true, parameter values are serialized using reserved expansion, as defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc6570#section-3.2.3">Section 3.2.3</a>, which allows <a href="https://tools.ietf.org/html/rfc3986#section-2.2">RFC3986’s reserved character set</a>, as well as percent-encoded triples, to pass through unchanged, while still percent-encoding all other disallowed characters (including <code>%</code> outside of percent-encoded triples). Applications are still responsible for percent-encoding reserved characters that are <a href="https://tools.ietf.org/html/rfc3986#section-3.4">not allowed in the query string</a> (<code>[</code>, <code>]</code>, <code>#</code>), or have a special meaning in <code>application/x-www-form-urlencoded</code> (<code>-</code>, <code>&amp;</code>, <code>+</code>); see Appendices <a href="#usingRFC6570Implementations">C</a> and <a href="#percentEncodingAndFormMediaTypes">E</a> for details. The default value is <code>false</code>. This property <em class="rfc2119">SHALL</em> be ignored if the request body media type is not <code>application/x-www-form-urlencoded</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -2411,17 +2411,17 @@ would produce a request body of:</p>
 name=example&amp;icon=iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAABGdBTUEAALGPC%2FxhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAqADAAQAAAABAAAAAgAAAADO0J6QAAAAEElEQVQIHWP8zwACTGCSAQANHQEDqtPptQAAAABJRU5ErkJggg%3D%3D
 </code></pre>
 <p>Note that this base64-encoded value had to be futher percent-encoded, replacing <code>/</code> with <code>%2F</code> and each of two final <code>=</code> padding characters with <code>%3D</code>.
-Some base64-decoding implementations may be able to use the string without the padding per <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-3.2">RFC4648 §3.2</a>.
+Some base64-decoding implementations may be able to use the string without the padding per [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc4648" title="The Base16, Base32, and Base64 Data Encodings">RFC4648</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-3.2">Section 3.2</a>.
 However, this is not guaranteed and the value would still need to be percent-decoded due to the <code>%2F</code>.</p>
 </section></section><section id="encoding-multipart-media-types"><div class="header-wrapper"><h5 id="x4-7-15-3-encoding-multipart-media-types"><bdi class="secno">4.7.15.3 </bdi>Encoding <code>multipart</code> Media Types</h5><a class="self-link" href="#encoding-multipart-media-types" aria-label="Permalink for Section 4.7.15.3"></a></div>
 <p>It is common to use <code>multipart/form-data</code> as a <code>Content-Type</code> when transferring forms as request bodies.  In contrast to 2.0, a <code>schema</code> is <em class="rfc2119">REQUIRED</em> to define the input parameters to the operation when using <code>multipart</code> content.  This supports complex structures as well as supporting mechanisms for multiple file uploads.</p>
-<p>The <code>form-data</code> disposition and its <code>name</code> parameter are mandatory for <code>multipart/form-data</code> (<a href="https://www.rfc-editor.org/rfc/rfc7578.html#section-4.2">RFC7578 §4.2</a>).
-Array properties are handled by applying the same <code>name</code> to multiple parts, as is recommended by <a href="https://www.rfc-editor.org/rfc/rfc7578.html#section-4.3">RFC7578 §4.3</a> for supplying multiple values per form field.
-See <a href="https://www.rfc-editor.org/rfc/rfc7578.html#section-5">RFC7578 §5</a> for guidance regarding non-ASCII part names.</p>
-<p>Various other <code>multipart</code> types, most notable <code>multipart/mixed</code> (<a href="https://www.rfc-editor.org/rfc/rfc2046.html#section-5.1.3">RFC2046 §5.1.3</a>) neither require nor forbid specific <code>Content-Disposition</code> values, which means care must be taken to ensure that any values used are supported by all relevant software.
+<p>The <code>form-data</code> disposition and its <code>name</code> parameter are mandatory for <code>multipart/form-data</code> ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7578" title="Returning Values from Forms: multipart/form-data">RFC7578</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7578#section-4.2">Section 4.2</a>).
+Array properties are handled by applying the same <code>name</code> to multiple parts, as is recommended by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7578" title="Returning Values from Forms: multipart/form-data">RFC7578</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7578#section-4.3">Section 4.3</a> for supplying multiple values per form field.
+See [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7578" title="Returning Values from Forms: multipart/form-data">RFC7578</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7578#section-5">Section 5</a> for guidance regarding non-ASCII part names.</p>
+<p>Various other <code>multipart</code> types, most notable <code>multipart/mixed</code> ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types">RFC2046</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc2046#section-5.1.3">Section 5.1.3</a>) neither require nor forbid specific <code>Content-Disposition</code> values, which means care must be taken to ensure that any values used are supported by all relevant software.
 It is not currently possible to correlate schema properties with unnamed, ordered parts in media types such as <code>multipart/mixed</code>, but implementations <em class="rfc2119">MAY</em> choose to support such types when <code>Content-Disposition: form-data</code> is used with a <code>name</code> parameter.</p>
-<p>Note that there are significant restrictions on what headers can be used with <code>multipart</code> media types in general (<a href="https://www.rfc-editor.org/rfc/rfc2046.html#section-5.1">RFC2046 §5.1</a>) and <code>multi-part/form-data</code> in particular (<a href="https://www.rfc-editor.org/rfc/rfc7578.html#section-4.8">RFC7578 §4.8</a>).</p>
-<p>Note also that <code>Content-Transfer-Encoding</code> is deprecated for <code>multipart/form-data</code> (<a href="https://www.rfc-editor.org/rfc/rfc7578.html#section-4.7">RFC7578 §4.7</a>) where binary data is supported, as it is in HTTP.</p>
+<p>Note that there are significant restrictions on what headers can be used with <code>multipart</code> media types in general ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types">RFC2046</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc2046#section-5.1">Section 5.1</a>) and <code>multi-part/form-data</code> in particular ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7578" title="Returning Values from Forms: multipart/form-data">RFC7578</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7578#section-4.8">Section 4.8</a>).</p>
+<p>Note also that <code>Content-Transfer-Encoding</code> is deprecated for <code>multipart/form-data</code> ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7578" title="Returning Values from Forms: multipart/form-data">RFC7578</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7578#section-4.7">Section 4.7</a>) where binary data is supported, as it is in HTTP.</p>
 <p>Using <code>format: byte</code> for a multipart field is equivalent to specifying an <a href="#encodingObject">Encoding Object</a> with a <code>headers</code> field containing <code>Content-Transfer-Encoding</code> with a schema that requires the value <code>base64</code>.
 If <code>format: byte</code> is used for a multipart field that has an Encoding Object with a <code>headers</code> field containing <code>Content-Transfer-Encoding</code> with a schema that disallows <code>base64</code>, the result is undefined for serialization and parsing.</p>
 <p>Per the JSON Schema specification, <code>contentMediaType</code> without <code>contentEncoding</code> present is treated as if <code>contentEncoding: identity</code> were present.  While useful for embedding text documents such as <code>text/html</code> into JSON strings, it is not useful for a <code>multipart/form-data</code> part, as it just causes the document to be treated as <code>text/plain</code> instead of its actual media type.  Use the Encoding Object without <code>contentMediaType</code> if no <code>contentEncoding</code> is required.</p>
@@ -2493,7 +2493,7 @@ We can also describe headers for each part:</p>
                 <span class="hljs-attr">type:</span> <span class="hljs-string">integer</span>
 </code></pre>
 </section><section id="example-multipart-form-with-multiple-files"><div class="header-wrapper"><h6 id="x4-7-15-3-3-example-multipart-form-with-multiple-files"><bdi class="secno">4.7.15.3.3 </bdi>Example: Multipart Form with Multiple Files</h6><a class="self-link" href="#example-multipart-form-with-multiple-files" aria-label="Permalink for Section 4.7.15.3.3"></a></div>
-<p>In accordance with <a href="https://www.rfc-editor.org/rfc/rfc7578.html#section-4.3">RFC7578 §4.3</a>, multiple files for a single form field are uploaded using the same name (<code>file</code> in this example) for each file’s part:</p>
+<p>In accordance with [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7578" title="Returning Values from Forms: multipart/form-data">RFC7578</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7578#section-4.3">Section 4.3</a>, multiple files for a single form field are uploaded using the same name (<code>file</code> in this example) for each file’s part:</p>
 <pre class="nohighlight"><code>
 <span class="hljs-attr">requestBody:</span>
   <span class="hljs-attr">content:</span>
@@ -2614,7 +2614,7 @@ call.</p>
 <tr>
 <td><span id="responseHeaders"></span>headers</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#headerObject">Header Object</a>  | <a href="#referenceObject">Reference Object</a>]</td>
-<td>Maps a header name to its definition. [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] <a href="https://tools.ietf.org/html/rfc7230#page-22">Page 22</a> states header names are case insensitive. If a response header is defined with the name <code>"Content-Type"</code>, it <em class="rfc2119">SHALL</em> be ignored.</td>
+<td>Maps a header name to its definition. [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7230#page-22">Page 22</a> states header names are case insensitive. If a response header is defined with the name <code>"Content-Type"</code>, it <em class="rfc2119">SHALL</em> be ignored.</td>
 </tr>
 <tr>
 <td><span id="responseContent"></span>content</td>
@@ -3185,7 +3185,7 @@ This mechanism is used by <a href="#linkObject">Link Objects</a> and <a href="#c
     tchar <span class="hljs-operator">=</span> <span class="hljs-string">"!"</span> / <span class="hljs-string">"#"</span> / <span class="hljs-string">"$"</span> / <span class="hljs-string">"%"</span> / <span class="hljs-string">"&amp;"</span> / <span class="hljs-string">"'"</span> / <span class="hljs-string">"*"</span> / <span class="hljs-string">"+"</span> / <span class="hljs-string">"-"</span> / <span class="hljs-string">"."</span> /
       <span class="hljs-string">"^"</span> / <span class="hljs-string">"_"</span> / <span class="hljs-string">"`"</span> / <span class="hljs-string">"|"</span> / <span class="hljs-string">"~"</span> / <span class="hljs-keyword">DIGIT</span> / <span class="hljs-keyword">ALPHA</span>
 </code></pre>
-<p>Here, <code>json-pointer</code> is taken from [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6901" title="JavaScript Object Notation (JSON) Pointer">RFC6901</a></cite>], <code>char</code> from [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7159" title="The JavaScript Object Notation (JSON) Data Interchange Format">RFC7159</a></cite>] <a href="https://tools.ietf.org/html/rfc7159#section-7">Section 7</a> and <code>token</code> from [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.2.6</a>.</p>
+<p>Here, <code>json-pointer</code> is taken from [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6901" title="JavaScript Object Notation (JSON) Pointer">RFC6901</a></cite>], <code>char</code> from [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7159" title="The JavaScript Object Notation (JSON) Data Interchange Format">RFC7159</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7159#section-7">Section 7</a> and <code>token</code> from [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.2.6</a>.</p>
 <p>The <code>name</code> identifier is case-sensitive, whereas <code>token</code> is not.</p>
 <p>The table below provides examples of runtime expressions and examples of their use in a value:</p>
 </section><section id="examples-0"><div class="header-wrapper"><h5 id="x4-7-21-5-examples"><bdi class="secno">4.7.21.5 </bdi><span id="runtimeExpressionExamples"></span>Examples</h5><a class="self-link" href="#examples-0" aria-label="Permalink for Section 4.7.21.5"></a></div>
@@ -4072,7 +4072,7 @@ See examples for expected behavior.</p>
 <ul>
 <li>Version 3.0.3 and earlier of this specification erroneously used the term “absolute URI” instead of “non-relative URI”, so authors using namespaces that include a fragment should check tooling support carefully.</li>
 <li>XML allows but discourages relative URI-references, while this specification outright forbids them.</li>
-<li>XML 1.1 allows IRIs (<a href="https://datatracker.ietf.org/doc/html/rfc3987">[RFC3987]</a>) as namespaces, and specifies that namespaces are compared without any encoding or decoding, which means that IRIs encoded to meet this specification’s URI syntax requirement cannot be compared to IRIs as-is.</li>
+<li>XML 1.1 allows IRIs ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3987" title="Internationalized Resource Identifiers (IRIs)">RFC3987</a></cite>]) as namespaces, and specifies that namespaces are compared without any encoding or decoding, which means that IRIs encoded to meet this specification’s URI syntax requirement cannot be compared to IRIs as-is.</li>
 </ul>
 </section><section id="xml-object-examples"><div class="header-wrapper"><h5 id="x4-7-27-2-xml-object-examples"><bdi class="secno">4.7.27.2 </bdi>XML Object Examples</h5><a class="self-link" href="#xml-object-examples" aria-label="Permalink for Section 4.7.27.2"></a></div>
 <p>Each of the following examples represent the value of the <code>properties</code> keyword in a <a href="#schemaObject">Schema Object</a> that is omitted for brevity.
@@ -4407,7 +4407,7 @@ Please note that as of 2020, the implicit flow is about to be deprecated by <a h
 <td><span id="securitySchemeScheme"></span>scheme</td>
 <td style="text-align:center"><code>string</code></td>
 <td><code>http</code></td>
-<td><strong><em class="rfc2119">REQUIRED</em></strong>. The name of the HTTP Authentication scheme to be used in the Authorization header as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7235" title="Hypertext Transfer Protocol (HTTP/1.1): Authentication">RFC7235</a></cite>] <a href="https://tools.ietf.org/html/rfc7235#section-5.1">Section 5.1</a>.  The values used <em class="rfc2119">SHOULD</em> be registered in the <a href="https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml">IANA Authentication Scheme registry</a>.  The value is case-insensitive, as defined in <a href="https://datatracker.ietf.org/doc/html/rfc7235#section-2.1">[RFC7235]</a>.</td>
+<td><strong><em class="rfc2119">REQUIRED</em></strong>. The name of the HTTP Authentication scheme to be used in the Authorization header as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7235" title="Hypertext Transfer Protocol (HTTP/1.1): Authentication">RFC7235</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7235#section-5.1">Section 5.1</a>.  The values used <em class="rfc2119">SHOULD</em> be registered in the <a href="https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml">IANA Authentication Scheme registry</a>.  The value is case-insensitive, as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7235" title="Hypertext Transfer Protocol (HTTP/1.1): Authentication">RFC7235</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7235#section-2.1">Section 2.1</a>.</td>
 </tr>
 <tr>
 <td><span id="securitySchemeBearerFormat"></span>bearerFormat</td>
@@ -4885,15 +4885,15 @@ While not part of the specification itself, certain libraries <em class="rfc2119
 </table>
 </section><section class="appendix" id="appendix-b-data-type-conversion"><div class="header-wrapper"><h2 id="b-appendix-b-data-type-conversion"><bdi class="secno">B. </bdi><span id="dataTypeConversion"></span>Appendix B: Data Type Conversion</h2><a class="self-link" href="#appendix-b-data-type-conversion" aria-label="Permalink for Appendix B."></a></div>
 <p>Serializing typed data to plain text, which can occur in <code>text/plain</code> message bodies or <code>multipart</code> parts, as well as in the <code>application/x-www-form-urlencoded</code> format in either URL query strings or message bodies, involves significant implementation- or application-defined behavior.</p>
-<p>Schema Objects validate data based on the <a href="https://datatracker.ietf.org/doc/html/draft-wright-json-schema-00#section-4.2">JSON Schema data model</a>, which only recognizes four primitive data types: strings (which are <a href="https://datatracker.ietf.org/doc/html/rfc7159#section-8.1">only broadly interoperable as UTF-8</a>), numbers, booleans, and <code>null</code>.
+<p>Schema Objects validate data based on the <a href="https://datatracker.ietf.org/doc/html/draft-wright-json-schema-00#section-4.2">JSON Schema data model</a>, which only recognizes four primitive data types: strings (which are <a href="https://tools.ietf.org/html/rfc7159#section-8.1">only broadly interoperable as UTF-8</a>), numbers, booleans, and <code>null</code>.
 Notably, integers are not a distinct type from other numbers, with <code>type: integer</code> being a convenience defined mathematically, rather than based on the presence or absence of a decimal point in any string representation.</p>
 <p>The <a href="#parameterObject">Parameter Object</a>, <a href="#headerObject">Header Object</a> and <a href="#encodingObject">Encoding Object</a> offer features to control how to arrange values from array or object types.
 They can also be used to control how strings are further encoded to avoid reserved or illegal characters.
 However, there is no general-purpose specification for converting schema-validated non-UTF-8 primitive data types (or entire arrays or objects) to strings.</p>
 <p>Two cases do offer standards-based guidance:</p>
 <ul>
-<li><a href="https://datatracker.ietf.org/doc/html/rfc3987#section-3.1">RFC3987 §3.1</a> provides guidance for converting non-Unicode strings to UTF-8, particularly in the context of URIs (and by extension, the form media types which use the same encoding rules)</li>
-<li><a href="https://www.rfc-editor.org/rfc/rfc6570#section-2.3">RFC6570 §2.3</a> specifies which values, including but not limited to <code>null</code>, are considered <em>undefined</em> and therefore treated specially in the expansion process when serializing based on that specification</li>
+<li>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3987" title="Internationalized Resource Identifiers (IRIs)">RFC3987</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc3987#section-3.1">Section 3.1</a> provides guidance for converting non-Unicode strings to UTF-8, particularly in the context of URIs (and by extension, the form media types which use the same encoding rules)</li>
+<li>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6570" title="URI Template">RFC6570</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc6570#section-2.3">Section 2.3</a> specifies which values, including but not limited to <code>null</code>, are considered <em>undefined</em> and therefore treated specially in the expansion process when serializing based on that specification</li>
 </ul>
 <p>Implementations of RFC6570 often have their own conventions for converting non-string values, but these are implementation-specific and not defined by the RFC itself.
 This is one reason for the OpenAPI Specification to leave these conversions as implementation-defined:  It allows using RFC6570 implementations regardless of how they choose to perform the conversions.</p>
@@ -4980,7 +4980,7 @@ Using an implementation with a lower level of support will require additional ma
 </tr>
 </tbody>
 </table>
-<p>Multiple <code>style: form</code> parameters are equivalent to a single RFC6570 <a href="https://www.rfc-editor.org/rfc/rfc6570#section-2.2">variable list</a> using the <code>?</code> prefix operator:</p>
+<p>Multiple <code>style: form</code> parameters are equivalent to a single RFC6570 <a href="https://tools.ietf.org/html/rfc6570#section-2.2">variable list</a> using the <code>?</code> prefix operator:</p>
 <pre class="nohighlight"><code>
 <span class="hljs-attr">parameters:</span>
 <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">foo</span>
@@ -5005,7 +5005,7 @@ Implementations <em class="rfc2119">MAY</em> create a properly delimited URI Tem
 <li>the combination of the style <code>form</code> with <code>allowReserved: true</code>, which is not allowed because only one prefix operator can be used at a time</li>
 <li>any parameter name that is not a legal RFC6570 variable name</li>
 </ul>
-<p>The Parameter Object’s <code>name</code> field has a much more permissive syntax than <a href="https://www.rfc-editor.org/rfc/rfc6570#section-2.3">RFC6570 variable name syntax</a>.
+<p>The Parameter Object’s <code>name</code> field has a much more permissive syntax than <a href="https://tools.ietf.org/html/rfc6570#section-2.3">RFC6570 variable name syntax</a>.
 A parameter name that includes characters outside of the allowed RFC6570 variable character set <em class="rfc2119">MUST</em> be percent-encoded before it can be used in a URI Template.</p>
 </section><section id="examples-2"><div class="header-wrapper"><h3 id="c-3-examples"><bdi class="secno">C.3 </bdi>Examples</h3><a class="self-link" href="#examples-2" aria-label="Permalink for Appendix C.3"></a></div>
 <p>Let’s say we want to use the following data in a form query string, where <code>formulas</code> is exploded, and <code>words</code> is not:</p>
@@ -5072,9 +5072,9 @@ So we need to restructure the data to fit a manually constructed URI Template th
 <pre class="highlight urlencoded"><code aria-busy="false" class="hljs">
 ?a={+a}&amp;b={+b}&amp;c={+c}&amp;words={words.0} {words.1} {words.2}
 </code></pre>
-<p>RFC6570 <a href="https://www.rfc-editor.org/rfc/rfc6570.html#section-2.4.2">mentions</a> the use of <code>.</code> “to indicate name hierarchy in substructures,” but does not define any specific naming convention or behavior for it.
+<p>RFC6570 <a href="https://tools.ietf.org/html/rfc6570#section-2.4.2">mentions</a> the use of <code>.</code> “to indicate name hierarchy in substructures,” but does not define any specific naming convention or behavior for it.
 Since the <code>.</code> usage is not automatic, we’ll need to construct an appropriate input structure for this new template.</p>
-<p>We’ll also need to pre-process the values for <code>formulas</code> because while <code>/</code> and most other reserved characters are allowed in the query string by RFC3986, <code>[</code>, <code>]</code>, and <code>#</code> <a href="https://datatracker.ietf.org/doc/html/rfc3986#appendix-A">are not</a>, and <code>&amp;</code>, <code>=</code>, and <code>+</code> all have <a href="https://www.rfc-editor.org/rfc/rfc1866#section-8.2.1">special behavior</a> in the <code>application/x-www-form-urlencoded</code> format, which is what we are using in the query string.</p>
+<p>We’ll also need to pre-process the values for <code>formulas</code> because while <code>/</code> and most other reserved characters are allowed in the query string by RFC3986, <code>[</code>, <code>]</code>, and <code>#</code> <a href="https://tools.ietf.org/html/rfc3986#appendix-A">are not</a>, and <code>&amp;</code>, <code>=</code>, and <code>+</code> all have <a href="https://tools.ietf.org/html/rfc1866#section-8.2.1">special behavior</a> in the <code>application/x-www-form-urlencoded</code> format, which is what we are using in the query string.</p>
 <p>Setting <code>allowReserved: true</code> does <em>not</em> make reserved characters that are not allowed in URIs allowed, it just allows them to be <em>passed through expansion unchanged.</em>
 Therefore, any tooling still needs to percent-encode those characters because reserved expansion will not do it, but it <em>will</em> leave the percent-encoded triples unchanged.
 See also <a href="#percentEncodingAndFormMediaTypes">Appendix E</a> for further guidance on percent-encoding and form media types, including guidance on handling the delimiter characters for <code>spaceDelimited</code>, <code>pipeDelimited</code>, and <code>deepObject</code> in parameter names and values.</p>
@@ -5093,7 +5093,7 @@ See also <a href="#percentEncodingAndFormMediaTypes">Appendix E</a> for further 
 </code></pre>
 <p>The <code>/</code> and the pre-percent-encoded <code>%2B</code> have been left alone, but the disallowed <code>^</code> character (inside a value) and space characters (in the template but outside of the expanded variables) were percent-encoded.</p>
 </section><section id="undefined-values-and-manual-uri-template-construction"><div class="header-wrapper"><h4 id="c-3-3-undefined-values-and-manual-uri-template-construction"><bdi class="secno">C.3.3 </bdi>Undefined Values and Manual URI Template Construction</h4><a class="self-link" href="#undefined-values-and-manual-uri-template-construction" aria-label="Permalink for Appendix C.3.3"></a></div>
-<p>Care must be taken when manually constructing templates to handle the values that <a href="https://datatracker.ietf.org/doc/html/rfc6570#section-2.3">RFC6570 considers to be <em>undefined</em></a> correctly:</p>
+<p>Care must be taken when manually constructing templates to handle the values that <a href="https://tools.ietf.org/html/rfc6570#section-2.3">RFC6570 considers to be <em>undefined</em></a> correctly:</p>
 <pre class="nohighlight"><code>
 <span class="hljs-attr">formulas:</span> {}
 <span class="hljs-attr">words:</span>
@@ -5142,10 +5142,10 @@ Instead, we have to pre-percent-encode the name (which is a six-octet UTF-8 sequ
 </section></section></section><section class="appendix" id="appendix-d-serializing-headers-and-cookies"><div class="header-wrapper"><h2 id="d-appendix-d-serializing-headers-and-cookies"><bdi class="secno">D. </bdi><span id="serializingHeadersAndCookies"></span>Appendix D: Serializing Headers and Cookies</h2><a class="self-link" href="#appendix-d-serializing-headers-and-cookies" aria-label="Permalink for Appendix D."></a></div>
 <p>RFC6570’s percent-encoding behavior is not always appropriate for <code>in: header</code> and <code>in: cookie</code> parameters.
 In many cases, it is more appropriate to use <code>content</code> with a media type such as <code>text/plain</code> and require the application to assemble the correct string.</p>
-<p>For both cookies (<a href="https://www.rfc-editor.org/rfc/rfc6265">[RFC6265]</a>) and HTTP headers using the structured fields (<a href="https://www.rfc-editor.org/rfc/rfc8941">[RFC8941]</a>) syntax, non-ASCII content is handled using base64 encoding (<code>format: byte</code>).
+<p>For both cookies ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6265" title="HTTP State Management Mechanism">RFC6265</a></cite>]) and HTTP headers using the structured fields ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8941" title="Structured Field Values for HTTP">RFC8941</a></cite>]) syntax, non-ASCII content is handled using base64 encoding (<code>format: byte</code>).
 Note that the standard base64 encoding alphabet includes non-URL-safe characters that are percent-encoded by RFC6570 expansion; serializing values through both encodings is <em class="rfc2119">NOT RECOMMENDED</em>.</p>
 <p>Most HTTP headers predate the structured field syntax, and a comprehensive assessment of their syntax and encoding rules is well beyond the scope of this specification.
-While <a href="https://www.rfc-editor.org/rfc/rfc8187">[RFC8187]</a> recommends percent-encoding HTTP field (header or trailer) parameters, these parameters appear after a <code>;</code> character.
+While [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8187" title="Indicating Character Encoding and Language for HTTP Header Field Parameters">RFC8187</a></cite>] recommends percent-encoding HTTP field (header or trailer) parameters, these parameters appear after a <code>;</code> character.
 With <code>style: simple</code>, that delimiter would itself be percent-encoded, violating the general HTTP field syntax.</p>
 <p>Using <code>style: form</code> with <code>in: cookie</code> is ambiguous for a single value, and incorrect for multiple values.
 This is true whether the multiple values are the result of using <code>explode: true</code> or not.</p>
@@ -5158,11 +5158,11 @@ Because implementations that rely on an RFC6570 implementation and those that pe
 <p>Percent-encoding is used in URIs and media types that derive their syntax from URIs.
 This process is concerned with three sets of characters, the names of which vary among specifications but are defined as follows for the purposes of this section:</p>
 <ul>
-<li><em>unreserved</em> characters do not need to be percent-encoded; while it is safe to percent-encode them, doing so produces a URI that is <a href="https://datatracker.ietf.org/doc/html/rfc3986#section-6.2.2.2">not normalized</a></li>
+<li><em>unreserved</em> characters do not need to be percent-encoded; while it is safe to percent-encode them, doing so produces a URI that is <a href="https://tools.ietf.org/html/rfc3986#section-6.2.2.2">not normalized</a></li>
 <li><em>reserved</em> characters either have special behavior in the URI syntax (such as delimiting components) or are reserved for other specifications that need to define special behavior (e.g. <code>form-urlencoded</code> defines special behavior for <code>=</code>, <code>&amp;</code>, and <code>+</code>)</li>
 <li><em>unsafe</em> characters are known to cause problems when parsing URIs in certain environments</li>
 </ul>
-<p>Unless otherwise specified, this section uses RFC3986’s definition of <a href="https://datatracker.ietf.org/doc/html/rfc3986#section-2.2">reserved</a> and <a href="https://datatracker.ietf.org/doc/html/rfc3986#section-2.3">unreserved</a>, and defines the unsafe set as all characters not included in either of those sets.</p>
+<p>Unless otherwise specified, this section uses RFC3986’s definition of <a href="https://tools.ietf.org/html/rfc3986#section-2.2">reserved</a> and <a href="https://tools.ietf.org/html/rfc3986#section-2.3">unreserved</a>, and defines the unsafe set as all characters not included in either of those sets.</p>
 <section id="percent-encoding-and-form-urlencoded"><div class="header-wrapper"><h3 id="e-1-percent-encoding-and-form-urlencoded"><bdi class="secno">E.1 </bdi>Percent-Encoding and <code>form-urlencoded</code></h3><a class="self-link" href="#percent-encoding-and-form-urlencoded" aria-label="Permalink for Appendix E.1"></a></div>
 <p>Each URI component (such as the query string) considers some of the reserved characters to be unsafe, either because they serve as delimiters between the components (e.g. <code>#</code>), or (in the case of <code>[</code> and <code>]</code>) were historically considered globally unsafe but were later given reserved status for limited purposes.</p>
 <p>Reserved characters with no special meaning defined within a component can be left un-percent encoded.
@@ -5170,7 +5170,7 @@ However, other specifications can define special meanings, requiring percent-enc
 <p>The <code>form-urlencoded</code> media type defines special meanings for <code>=</code> and <code>&amp;</code> as delimiters, and <code>+</code> as the replacement for the space character (instead of its percent-encoded form of <code>%20</code>).
 This means that while these three characters are reserved-but-allowed in query strings by RFC3986, they must be percent-encoded in <code>form-urlencoded</code> query strings except when used for their <code>form-urlencoded</code> purposes; see <a href="#usingRFC6570Implementations">Appendix C</a> for an example of handling <code>+</code> in form values.</p>
 </section><section id="percent-encoding-and-form-data"><div class="header-wrapper"><h3 id="e-2-percent-encoding-and-form-data"><bdi class="secno">E.2 </bdi>Percent-Encoding and <code>form-data</code></h3><a class="self-link" href="#percent-encoding-and-form-data" aria-label="Permalink for Appendix E.2"></a></div>
-<p><a href="https://datatracker.ietf.org/doc/html/rfc7578#section-2">RFC7578 §2</a> suggests RFC3986-based percent-encoding as a mechanism to keep text-based per-part header data such as file names within the ASCII character set.
+<p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7578" title="Returning Values from Forms: multipart/form-data">RFC7578</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7578#section-2">Section 2</a> suggests RFC3986-based percent-encoding as a mechanism to keep text-based per-part header data such as file names within the ASCII character set.
 This suggestion was not part of older (pre-2015) specifications for <code>form-data</code>, so care must be taken to ensure interoperability.</p>
 <p>The <code>form-data</code> media type allows arbitrary text or binary data in its parts, so percent-encoding is not needed and is likely to cause interoperability problems unless the <code>Content-Type</code> of the part is defined to require it.</p>
 </section><section id="generating-and-validating-uris-and-form-urlencoded-strings"><div class="header-wrapper"><h3 id="e-3-generating-and-validating-uris-and-form-urlencoded-strings"><bdi class="secno">E.3 </bdi>Generating and Validating URIs and <code>form-urlencoded</code> Strings</h3><a class="self-link" href="#generating-and-validating-uris-and-form-urlencoded-strings" aria-label="Permalink for Appendix E.3"></a></div>
@@ -5190,21 +5190,21 @@ Unfortunately, these specifications each define slightly different percent-encod
 </thead>
 <tbody>
 <tr>
-<td><a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC3986 URI&nbsp;Generic&nbsp;Syntax</a></td>
+<td><a href="https://tools.ietf.org/html/rfc3986">RFC3986 URI&nbsp;Generic&nbsp;Syntax</a></td>
 <td>01/2005</td>
 <td>URI/URL syntax</td>
 <td>RFC3986</td>
 <td>obsoletes RFC1738, RFC2396</td>
 </tr>
 <tr>
-<td><a href="https://datatracker.ietf.org/doc/html/rfc6570">RFC6570 URI&nbsp;Template</a></td>
+<td><a href="https://tools.ietf.org/html/rfc6570">RFC6570 URI&nbsp;Template</a></td>
 <td>03/2012</td>
 <td>style-based serialization</td>
 <td>RFC3986</td>
 <td>does not use <code>+</code> for <code>form‑urlencoded</code></td>
 </tr>
 <tr>
-<td><a href="https://datatracker.ietf.org/doc/html/rfc1866#section-8.2.1">RFC1866&nbsp;§8.2.1 form‑urlencoded</a></td>
+<td><a href="https://tools.ietf.org/html/rfc1866#section-8.2.1">RFC1866&nbsp;§8.2.1 form‑urlencoded</a></td>
 <td>11/1995</td>
 <td>content-based serialization</td>
 <td>RFC1738</td>
@@ -5244,10 +5244,20 @@ This keeps it outside of the processes governed by this specification.</p>
     
     <dl class="bibliography"><dt id="bib-rfc1866">[RFC1866]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc1866"><cite>Hypertext Markup Language - 2.0</cite></a>. T. Berners-Lee; D. Connolly.  IETF. November 1995. Historic. URL: <a href="https://www.rfc-editor.org/rfc/rfc1866">https://www.rfc-editor.org/rfc/rfc1866</a>
+    </dd><dt id="bib-rfc2046">[RFC2046]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc2046"><cite>Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types</cite></a>. N. Freed; N. Borenstein.  IETF. November 1996. Draft Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc2046">https://www.rfc-editor.org/rfc/rfc2046</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
+    </dd><dt id="bib-rfc3339">[RFC3339]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc3339"><cite>Date and Time on the Internet: Timestamps</cite></a>. G. Klyne; C. Newman.  IETF. July 2002. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc3339">https://www.rfc-editor.org/rfc/rfc3339</a>
     </dd><dt id="bib-rfc3986">[RFC3986]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter.  IETF. January 2005. Internet Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc3986">https://www.rfc-editor.org/rfc/rfc3986</a>
+    </dd><dt id="bib-rfc3987">[RFC3987]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc3987"><cite>Internationalized Resource Identifiers (IRIs)</cite></a>. M. Duerst; M. Suignard.  IETF. January 2005. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc3987">https://www.rfc-editor.org/rfc/rfc3987</a>
+    </dd><dt id="bib-rfc4648">[RFC4648]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc4648"><cite>The Base16, Base32, and Base64 Data Encodings</cite></a>. S. Josefsson.  IETF. October 2006. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc4648">https://www.rfc-editor.org/rfc/rfc4648</a>
+    </dd><dt id="bib-rfc6265">[RFC6265]</dt><dd>
+      <a href="https://httpwg.org/specs/rfc6265.html"><cite>HTTP State Management Mechanism</cite></a>. A. Barth.  IETF. April 2011. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc6265.html">https://httpwg.org/specs/rfc6265.html</a>
     </dd><dt id="bib-rfc6570">[RFC6570]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc6570"><cite>URI Template</cite></a>. J. Gregorio; R. Fielding; M. Hadley; M. Nottingham; D. Orchard.  IETF. March 2012. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc6570">https://www.rfc-editor.org/rfc/rfc6570</a>
     </dd><dt id="bib-rfc6749">[RFC6749]</dt><dd>
@@ -5264,8 +5274,14 @@ This keeps it outside of the processes governed by this specification.</p>
       <a href="https://httpwg.org/specs/rfc7231.html"><cite>Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</cite></a>. R. Fielding, Ed.; J. Reschke, Ed..  IETF. June 2014. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc7231.html">https://httpwg.org/specs/rfc7231.html</a>
     </dd><dt id="bib-rfc7235">[RFC7235]</dt><dd>
       <a href="https://httpwg.org/specs/rfc7235.html"><cite>Hypertext Transfer Protocol (HTTP/1.1): Authentication</cite></a>. R. Fielding, Ed.; J. Reschke, Ed..  IETF. June 2014. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc7235.html">https://httpwg.org/specs/rfc7235.html</a>
+    </dd><dt id="bib-rfc7578">[RFC7578]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc7578"><cite>Returning Values from Forms: multipart/form-data</cite></a>. L. Masinter.  IETF. July 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7578">https://www.rfc-editor.org/rfc/rfc7578</a>
     </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
+    </dd><dt id="bib-rfc8187">[RFC8187]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8187"><cite>Indicating Character Encoding and Language for HTTP Header Field Parameters</cite></a>. J. Reschke.  IETF. September 2017. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8187">https://www.rfc-editor.org/rfc/rfc8187</a>
+    </dd><dt id="bib-rfc8941">[RFC8941]</dt><dd>
+      <a href="https://httpwg.org/specs/rfc8941.html"><cite>Structured Field Values for HTTP</cite></a>. M. Nottingham; P-H. Kamp.  IETF. February 2021. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc8941.html">https://httpwg.org/specs/rfc8941.html</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
