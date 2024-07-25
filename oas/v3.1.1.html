@@ -175,14 +175,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       ]
     }
   ],
-  "publishISODate": "2024-07-24T00:00:00.000Z",
-  "generatedSubtitle": "24 July 2024"
+  "publishISODate": "2024-07-25T00:00:00.000Z",
+  "generatedSubtitle": "25 July 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head><body class="h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://openapis.org/"><img crossorigin="" alt="OpenAPI Initiative" height="48" src="https://raw.githubusercontent.com/OAI/OpenAPI-Style-Guide/master/graphics/bitmap/OpenAPI_Logo_Pantone.png">
   </a></p>
     <h1 id="title" class="title">OpenAPI Specification v3.1.1 </h1> <h2 id="subtitle" class="subtitle">Version 3.1.1</h2>
-    <p id="w3c-state"> <time class="dt-published" datetime="2024-07-24">24 July 2024</time></p>
+    <p id="w3c-state"> <time class="dt-published" datetime="2024-07-25">25 July 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -1625,7 +1625,7 @@ The path itself is still exposed to the documentation viewer but they will not k
 <ul>
 <li>path - Used together with <a href="#pathTemplating">Path Templating</a>, where the parameter value is actually part of the operation’s URL. This does not include the host or base path of the API. For example, in <code>/items/{itemId}</code>, the path parameter is <code>itemId</code>.</li>
 <li>query - Parameters that are appended to the URL. For example, in <code>/items?id=###</code>, the query parameter is <code>id</code>.</li>
-<li>header - Custom headers that are expected as part of the request. Note that [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7230#page-22">Page 22</a> states header names are case insensitive.</li>
+<li>header - Custom headers that are expected as part of the request. Note that [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2">Section 3.2</a> states header names are case insensitive.</li>
 <li>cookie - Used to pass a specific cookie value to the API.</li>
 </ul>
 </section><section id="fixed-fields-9"><div class="header-wrapper"><h5 id="x4-8-12-2-fixed-fields"><bdi class="secno">4.8.12.2 </bdi>Fixed Fields</h5><a class="self-link" href="#fixed-fields-9" aria-label="Permalink for Section 4.8.12.2"></a></div>
@@ -2698,7 +2698,7 @@ call.</p>
 <tr>
 <td><span id="responseHeaders"></span>headers</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#headerObject">Header Object</a>  | <a href="#referenceObject">Reference Object</a>]</td>
-<td>Maps a header name to its definition. [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7230#page-22">Page 22</a> states header names are case insensitive. If a response header is defined with the name <code>"Content-Type"</code>, it <em class="rfc2119">SHALL</em> be ignored.</td>
+<td>Maps a header name to its definition. [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">RFC7230</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2">Section 3.2</a> states header names are case insensitive. If a response header is defined with the name <code>"Content-Type"</code>, it <em class="rfc2119">SHALL</em> be ignored.</td>
 </tr>
 <tr>
 <td><span id="responseContent"></span>content</td>
