@@ -309,6 +309,14 @@ for (let l in lines) {
                 return ']]';
             }
         });
+
+        // informative references
+        line = line.replace('[ABNF](https://tools.ietf.org/html/rfc5234)','[[?ABNF]]');
+        // line = line.replace('[CommonMark 0.27](https://spec.commonmark.org/0.27/)','[[?CommonMark-0.2.7]] syntax');
+        // line = line.replace('[CommonMark syntax](https://spec.commonmark.org/)','[[?CommonMark]] syntax');
+        // line = line.replace('consult http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)','consult [[?html401]] [Section 17.13.4](http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)');
+        //TODO
+        line = line.replace('YAML version [1.2](https://yaml.org/spec/1.2/spec.html)','[[?YAML]] version 1.2');
     }
 
     if (!inCodeBlock && line.indexOf('](../') >= 0) {
