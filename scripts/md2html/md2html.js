@@ -311,7 +311,7 @@ for (let l in lines) {
         line = line.replace(/https:\/\/www.rfc-editor.org\/rfc\/rfc([0-9]{1,5})(\.html)?/g,'https://tools.ietf.org/html/rfc$1');
         line = line.replaceAll('https://datatracker.ietf.org/doc/html/rfc','https://tools.ietf.org/html/rfc');
 
-        // handle url fragments in RFC links and construct section titles links as well as RFC links
+        // handle url fragments in RFC links and construct section links as well as RFC links
         line = line.replace(/\]\]\(https:\/\/tools.ietf.org\/html\/rfc([0-9]{1,5})\/?(\#[^)]*)?\)/g, function(match, rfcNumber, fragment) {
             if (fragment) {
                 // Extract section title from the fragment
