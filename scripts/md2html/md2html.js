@@ -306,10 +306,10 @@ for (let l in lines) {
 
         // harmonize RFC URLs
         //TODO: harmonize to https://www.rfc-editor.org/rfc/rfc*
-        line = line.replace('http://www.ietf.org/rfc/rfc2119.txt','https://tools.ietf.org/html/rfc2119'); // only in 2.0.md
+        line = line.replaceAll('](http://','](https://');
+        line = line.replace('https://www.ietf.org/rfc/rfc2119.txt','https://tools.ietf.org/html/rfc2119'); // only in 2.0.md
         line = line.replace(/https:\/\/www.rfc-editor.org\/rfc\/rfc([0-9]{1,5})(\.html)?/g,'https://tools.ietf.org/html/rfc$1');
         line = line.replaceAll('https://datatracker.ietf.org/doc/html/rfc','https://tools.ietf.org/html/rfc');
-        line = line.replaceAll('http://tools.ietf.org','https://tools.ietf.org');
 
         // handle url fragments in RFC links and construct section titles links as well as RFC links
         line = line.replace(/\]\]\(https:\/\/tools.ietf.org\/html\/rfc([0-9]{1,5})\/?(\#[^)]*)?\)/g, function(match, rfcNumber, fragment) {
@@ -326,12 +326,12 @@ for (let l in lines) {
 
         // non-RFC references
         line = line.replace('[ABNF](https://tools.ietf.org/html/rfc5234)','[[ABNF]]');
-        line = line.replace('[CommonMark 0.27](https://spec.commonmark.org/0.27/)','[[CommonMark-0.27]] syntax');
+        line = line.replace('[CommonMark 0.27](https://spec.commonmark.org/0.27/)','[[CommonMark-0.27]]');
         line = line.replace('[CommonMark syntax](https://spec.commonmark.org/)','[[CommonMark]] syntax');
         line = line.replace('CommonMark markdown formatting','[[CommonMark]] markdown formatting');
         line = line.replace('consult http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)','consult [[html401]] [Section 17.13.4](http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)');
         //TODO
-        line = line.replace('YAML version [1.2](https://yaml.org/spec/1.2/spec.html)','[[YAML]] version 1.2');
+        line = line.replace(/YAML version \[1\.2\]\(https:\/\/(www\.)?yaml\.org\/spec\/1\.2\/spec\.html\)/,'[[YAML]] version 1.2');
     }
 
     if (!inCodeBlock && line.indexOf('](../') >= 0) {
