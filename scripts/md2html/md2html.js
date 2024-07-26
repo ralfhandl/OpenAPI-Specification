@@ -308,7 +308,7 @@ for (let l in lines) {
         line = line.replaceAll('](http://','](https://');
         line = line.replace('https://www.ietf.org/rfc/rfc2119.txt','https://tools.ietf.org/html/rfc2119'); // only in 2.0.md
         line = line.replace(/https:\/\/www.rfc-editor.org\/rfc\/rfc([0-9]{1,5})(\.html)?/g,'https://tools.ietf.org/html/rfc$1');
-        line = line.replaceAll('https://datatracker.ietf.org/doc/html/rfc','https://tools.ietf.org/html/rfc');
+        line = line.replaceAll('https://datatracker.ietf.org/doc/html/','https://tools.ietf.org/html/');
 
         // handle url fragments in RFC links and construct section links as well as RFC links
         line = line.replace(/\]\]\(https:\/\/tools.ietf.org\/html\/rfc([0-9]{1,5})\/?(\#[^)]*)?\)/g, function(match, rfcNumber, fragment) {
