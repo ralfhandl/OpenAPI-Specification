@@ -86,7 +86,7 @@ function preface(title,options) {
                 ],
             },
         ],
-        //TODO: remove localBiblio once Specref PRs https://github.com/tobie/specref/pulls/ralfhandl are merged
+        //TODO: remove localBiblio once Specref PR https://github.com/tobie/specref/pulls/ralfhandl is merged
         localBiblio: {
           CommonMark: {
             title: "CommonMark Spec",
@@ -302,7 +302,6 @@ for (let l in lines) {
 
         //TODO: TDC decision: fix non-link mentions of RFCs etc. in 3.0.4 and 3.1.1, for example
         // RFC3986's definition of [reserved](https://datatracker.ietf.org/doc/html/rfc3986#section-2.2)
-        // CommonMark hyperlinks
 
         // harmonize RFC URLs
         //TODO: harmonize to https://www.rfc-editor.org/rfc/rfc*
