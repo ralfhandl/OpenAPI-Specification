@@ -330,6 +330,7 @@ for (let l in lines) {
         line = line.replace('CommonMark markdown formatting','[[CommonMark]] markdown formatting');
         line = line.replace('consult http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)','consult [[html401]] [Section 17.13.4](http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)');
         //TODO
+        line = line.replace('[XML namespaces](https://www.w3.org/TR/xml-names11/)','[[xml-names11|XML namespaces]]');
         line = line.replace(/YAML version \[1\.2\]\(https:\/\/(www\.)?yaml\.org\/spec\/1\.2\/spec\.html\)/,'[[YAML]] version 1.2');
     }
 
