@@ -96,7 +96,15 @@ function preface(title,options) {
             title: "CommonMark Spec Version 0.27",
             href: "https://spec.commonmark.org/0.27/",
             date: "2016-11-18",
-            authors: ["John MacFarlane"]
+            authors: [ "John MacFarlane" ]
+          },
+          "JSON-Schema-05": {
+            authors: [ "Austin Wright" ],
+            href: "https://datatracker.ietf.org/doc/html/draft-wright-json-schema-00",
+            publisher: "Internet Engineering Task Force (IETF)",
+            status: "Internet-Draft",
+            title: "JSON Schema: A Media Type for Describing JSON Documents. Draft 5",
+            date: "13 October 2016"
           }
         }
     };
@@ -128,6 +136,7 @@ function preface(title,options) {
         preface += 'table tr:nth-child(2n) { background-color: #f6f8fa; }';
         preface += 'pre { background-color: #f6f8fa !important; }';
         preface += 'code { color: #c83500 } th code { color: inherit }';
+        preface += 'cite { font-weight: normal; text-decoration: underline;}';
         preface += fs.readFileSync(path.resolve(__dirname,'gist.css'),'utf8').split('\n').join(' ');
         preface += '</style>';
         preface += `<h1 id="title">${title.split('|')[0]}</h1>`;
@@ -331,7 +340,7 @@ for (let l in lines) {
         line = line.replace('consult http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)','consult [[HTML401]] [Section 17.13.4](http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)');
         //TODO: IANA http status codes
         line = line.replace('[JSON Schema Specification Draft 4](https://json-schema.org/)','[[JSON-Schema-04|JSON Schema Specification Draft 4]]');
-        //TODO: draft 5 / wright
+        line = line.replace('[JSON Schema Specification Wright Draft 00](https://json-schema.org/)','[[JSON-Schema-05|JSON Schema Specification Wright Draft 00]]');
         line = line.replace('[JSON Schema Specification Draft 2020-12](https://tools.ietf.org/html/draft-bhutton-json-schema-00)','[[JSON-Schema-2020-12|JSON Schema Specification Draft 2020-12]]');
         //TODO: JSON Schema Validation 4, 5, 2020-12
         //TODO: OpenID Connect Core, Discovery
