@@ -136,7 +136,7 @@ function preface(title,options) {
         preface += 'table tr:nth-child(2n) { background-color: #f6f8fa; }';
         preface += 'pre { background-color: #f6f8fa !important; }';
         preface += 'code { color: #c83500 } th code { color: inherit }';
-        preface += 'cite { font-weight: normal; text-decoration: underline;}';
+        preface += 'a.bibref { text-decoration: underline;}';
         preface += fs.readFileSync(path.resolve(__dirname,'gist.css'),'utf8').split('\n').join(' ');
         preface += '</style>';
         preface += `<h1 id="title">${title.split('|')[0]}</h1>`;
