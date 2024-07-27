@@ -98,11 +98,6 @@ function preface(title,options) {
             date: "2016-11-18",
             authors: [ "John MacFarlane" ]
           },
-          "IANA-HTTP-STATUS-CODES": {
-            href: "https://www.iana.org/assignments/http-status-codes/",
-            title: "HTTP Status Codes",
-            publisher: "IANA"
-          },
           "JSON-Schema-05": {
             authors: [ "Austin Wright" ],
             href: "https://datatracker.ietf.org/doc/html/draft-wright-json-schema-00",
@@ -343,8 +338,6 @@ for (let l in lines) {
         line = line.replace('[CommonMark syntax](https://spec.commonmark.org/)','[[CommonMark]] syntax');
         line = line.replace('CommonMark markdown formatting','[[CommonMark]] markdown formatting');
         line = line.replace('consult http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)','consult [[HTML401]] [Section 17.13.4](http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)');
-        line = line.replace('[IANA Status Code Registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)','[[IANA-HTTP-STATUS-CODES|IANA Status Code Registry]]');
-        //TODO: IANA Authentication Scheme registry
         line = line.replace('[JSON Schema Specification Draft 4](https://json-schema.org/)','[[JSON-Schema-04|JSON Schema Specification Draft 4]]');
         line = line.replace('[JSON Schema Specification Wright Draft 00](https://json-schema.org/)','[[JSON-Schema-05|JSON Schema Specification Wright Draft 00]]');
         line = line.replace('[JSON Schema Specification Draft 2020-12](https://tools.ietf.org/html/draft-bhutton-json-schema-00)','[[JSON-Schema-2020-12|JSON Schema Specification Draft 2020-12]]');
