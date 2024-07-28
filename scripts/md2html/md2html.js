@@ -358,24 +358,9 @@ for (let l in lines) {
         line = line.replace('[JSON Pointer]','JSON Pointer [RFC6901]'); // only in 2.0.md
         line = line.replace('[media type range](https://tools.ietf.org/html/rfc7231#appendix-D) ','media type range, see [RFC7231](https://tools.ietf.org/html/rfc7231#appendix-D), ');
 
-        if (line.indexOf('[RFC')>=0) {
-            // also detect [RFC4648 §3.2] etc. in 3.0.4.md and 3.1.1.md
-            //TODO: TDC decision: fix in source markdown
-            line = line.replace(/\[RFC ?([0-9]{1,5})( §[0-9 .-]+)?\]/g,function(match,group1){
-                //TODO: use string pattern with $1 instead of function
-                return '[[RFC'+group1+']]';
-            });
-        }
+        line = line.replace(/\[RFC ?([0-9]{1,5})\]\(/g,'[[RFC$1]](');
 
-        //TODO: TDC decision: fix unconventional references to RFCs in 3.0.4 and 3.1.1, for example
-        // [RFC3986 §5.1.2 – 5.1.4](https://tools.ietf.org/html/rfc3986#section-5.1.2)
-        // RFC6570 [mentions](https://www.rfc-editor.org/rfc/rfc6570.html#section-2.4.2)
-        // [are not](https://datatracker.ietf.org/doc/html/rfc3986#appendix-A)
-        // [special behavior](https://www.rfc-editor.org/rfc/rfc1866#section-8.2.1)
-        // [RFC6570 considers to be _undefined_](https://datatracker.ietf.org/doc/html/rfc6570#section-2.3)
-
-        //TODO: TDC decision: fix non-link mentions of RFCs etc. in 3.0.4 and 3.1.1, for example
-        // RFC3986's definition of [reserved](https://datatracker.ietf.org/doc/html/rfc3986#section-2.2)
+        //TODO: check that all RFCs mentioned are in Normative References
 
         // harmonize RFC URLs
         //TODO: harmonize to https://www.rfc-editor.org/rfc/rfc*
