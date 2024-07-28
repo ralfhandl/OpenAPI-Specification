@@ -115,6 +115,11 @@ function preface(title,options) {
             status: "Internet-Draft",
             title: "JSON Schema: A Media Type for Describing JSON Documents. Draft 5",
             date: "13 October 2016"
+          },
+          "SPDX": {
+            href: "https://spdx.org/licenses/",
+            title: "SPDX License List",
+            publisher: "Linux Foundation"
           }
         }
     };
@@ -354,7 +359,7 @@ for (let l in lines) {
         line = line.replace('[JSON Schema Specification Wright Draft 00](https://json-schema.org/)','[[JSON-Schema-05|JSON Schema Specification Wright Draft 00]]');
         line = line.replace('[JSON Schema Specification Draft 2020-12](https://tools.ietf.org/html/draft-bhutton-json-schema-00)','[[JSON-Schema-2020-12|JSON Schema Specification Draft 2020-12]]');
         //TODO: JSON Schema Validation 4, 5, 2020-12
-        //TODO: OpenID Connect Core, Discovery
+        line = line.replace('[SPDX](https://spdx.org/licenses/)','[[SPDX]]');
         line = line.replace('[XML namespaces](https://www.w3.org/TR/xml-names11/)','[[xml-names11|XML namespaces]]');
         line = line.replace('JSON standards. YAML,','[[RFC7159|JSON]] standards. [[YAML|YAML]],'); // 2.0.md only
         line = line.replace('JSON or YAML format.','[[RFC7159|JSON]] or [[YAML|YAML]] format.');
