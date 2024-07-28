@@ -158,6 +158,14 @@ function preface(title,options) {
                 status: "Final",
                 date: "15 December 2023"
             },
+            "OpenID Connect Discovery": {
+                authors: ["N. Sakimura", "J. Bradley", "M. Jones", "E. Jay"],
+                title: "OpenID Connect Discovery 1.0 incorporating errata set 2",
+                href: "https://openid.net/specs/openid-connect-discovery-1_0.html",
+                publisher: "OpenID Foundation",
+                status: "Final",
+                date: "15 December 2023"
+            },
             "SPDX": {
                 href: "https://spdx.org/licenses/",
                 title: "SPDX License List",
