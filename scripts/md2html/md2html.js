@@ -110,7 +110,7 @@ function preface(title,options) {
           },
           "JSON-Schema-Validation-04": {
             authors: [ "Kris Zyp", "Francis Galiegue", "Gary Court" ],
-            href: "https://tools.ietf.org/html/draft-fge-json-schema-validation-00",
+            href: "https://datatracker.ietf.org/doc/html/draft-fge-json-schema-validation-00",
             publisher: "Internet Engineering Task Force (IETF)",
             status: "Internet-Draft",
             title: "JSON Schema: interactive and non interactive validation. Draft 4",
@@ -126,11 +126,19 @@ function preface(title,options) {
           },
           "JSON-Schema-Validation-05": {
             authors: [ "Austin Wright", "G. Luff" ],
-            href: "https://tools.ietf.org/html/draft-wright-json-schema-validation-00",
+            href: "https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00",
             publisher: "Internet Engineering Task Force (IETF)",
             status: "Internet-Draft",
             title: "JSON Schema Validation: A Vocabulary for Structural Validation of JSON. Draft 5",
             date: "13 October 2016"
+          },
+          "JSON-Schema-Validation-2020-12": {
+            authors: [ "Austin Wright", "Henry Andrews", "Ben Hutton" ],
+            href: "https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00",
+            publisher: "Internet Engineering Task Force (IETF)",
+            status: "Internet-Draft",
+            title: "JSON Schema Validation: A Vocabulary for Structural Validation of JSON. Draft 2020-12",
+            date: "8 December 2020"
           },
           "SPDX": {
             href: "https://spdx.org/licenses/",
@@ -378,7 +386,8 @@ for (let l in lines) {
         line = line.replace('[JSON Schema Core](https://tools.ietf.org/html/draft-wright-json-schema-00)','[[JSON-Schema-05|JSON Schema Core]]');
         line = line.replace('[JSON Schema Validation](https://tools.ietf.org/html/draft-wright-json-schema-validation-00)','[[JSON-Schema-Validation-05|JSON Schema Validation]]');
         line = line.replace('[JSON Schema Specification Draft 2020-12](https://tools.ietf.org/html/draft-bhutton-json-schema-00)','[[JSON-Schema-2020-12|JSON Schema Specification Draft 2020-12]]');
-        //TODO: JSON Schema Validation 2020-12
+        line = line.replace('[JSON Schema Core](https://tools.ietf.org/html/draft-bhutton-json-schema-00)','[[JSON-Schema-2020-12|JSON Schema Core]]');
+        line = line.replace('[JSON Schema Validation](https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00)','[[JSON-Schema-Validation-2020-12|JSON Schema Validation]]');
         line = line.replace('[SPDX](https://spdx.org/licenses/)','[[SPDX]]');
         line = line.replace('[XML namespaces](https://www.w3.org/TR/xml-names11/)','[[xml-names11|XML namespaces]]');
         line = line.replace('JSON standards. YAML,','[[RFC7159|JSON]] standards. [[YAML|YAML]],'); // 2.0.md only
