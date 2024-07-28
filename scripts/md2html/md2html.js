@@ -98,11 +98,16 @@ function preface(title,options) {
             date: "2016-11-18",
             authors: [ "John MacFarlane" ]
           },
-        //   "IANA-HTTP-STATUS-CODES": {
-        //     href: "https://www.iana.org/assignments/http-status-codes/",
-        //     title: "HTTP Status Codes",
-        //     publisher: "IANA"
-        //   },
+          "IANA-HTTP-AUTHSCHEMES": {
+            href: "https://www.iana.org/assignments/http-authschemes/",
+            title: "Hypertext Transfer Protocol (HTTP) Authentication Scheme Registry",
+            publisher: "IANA"
+          },
+          "IANA-HTTP-STATUS-CODES": {
+            href: "https://www.iana.org/assignments/http-status-codes/",
+            title: "Hypertext Transfer Protocol (HTTP) Status Code Registry",
+            publisher: "IANA"
+          },
           "JSON-Schema-05": {
             authors: [ "Austin Wright" ],
             href: "https://datatracker.ietf.org/doc/html/draft-wright-json-schema-00",
@@ -343,8 +348,8 @@ for (let l in lines) {
         line = line.replace('[CommonMark syntax](https://spec.commonmark.org/)','[[CommonMark]] syntax');
         line = line.replace('CommonMark markdown formatting','[[CommonMark]] markdown formatting');
         line = line.replace('consult http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)','consult [[HTML401]] [Section 17.13.4](http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)');
-        // line = line.replace('[IANA Status Code Registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)','[[IANA-HTTP-STATUS-CODES|IANA Status Code Registry]]');
-        //TODO: IANA Authentication Scheme registry - link is in markdown table, which conflicts with ReSpec alias syntax
+        line = line.replace('[IANA Status Code Registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)','[[IANA-HTTP-STATUS-CODES|IANA Status Code Registry]]');
+        line = line.replace('[IANA Authentication Scheme registry](https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml)','[[IANA-HTTP-AUTHSCHEMES]]');
         line = line.replace('[JSON Schema Specification Draft 4](https://json-schema.org/)','[[JSON-Schema-04|JSON Schema Specification Draft 4]]');
         line = line.replace('[JSON Schema Specification Wright Draft 00](https://json-schema.org/)','[[JSON-Schema-05|JSON Schema Specification Wright Draft 00]]');
         line = line.replace('[JSON Schema Specification Draft 2020-12](https://tools.ietf.org/html/draft-bhutton-json-schema-00)','[[JSON-Schema-2020-12|JSON Schema Specification Draft 2020-12]]');
@@ -401,8 +406,6 @@ for (let l in lines) {
 
 s = preface(`OpenAPI Specification v${argv.subtitle} | Introduction, Definitions, & More`,argv)+'\n\n'+lines.join('\n');
 let out = md.render(s);
-out = out.replace(/\[([RGB])\]/g,function(match,group1){
-    console.warn('Fixing',match,group1);
-    return '&#91;'+group1+'&#93;';
-});
+out = out.replace(/\[([RGB])\]/g,'&#91;$1&#93;');
+out = out.replace('[[IANA-HTTP-AUTHSCHEMES]]','[[IANA-HTTP-AUTHSCHEMES|IANA Authentication Scheme registry]]');
 console.log(out);
