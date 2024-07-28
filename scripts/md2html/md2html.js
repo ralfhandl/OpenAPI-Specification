@@ -86,65 +86,75 @@ function preface(title,options) {
                 ],
             },
         ],
-        //TODO: remove localBiblio once Specref PR https://github.com/tobie/specref/pulls/ralfhandl is merged
         localBiblio: {
-          CommonMark: {
-            title: "CommonMark Spec",
-            href: "https://spec.commonmark.org/",
-          },
-          "CommonMark-0.27": {
-            title: "CommonMark Spec Version 0.27",
-            href: "https://spec.commonmark.org/0.27/",
-            date: "2016-11-18",
-            authors: [ "John MacFarlane" ]
-          },
-          "IANA-HTTP-AUTHSCHEMES": {
-            href: "https://www.iana.org/assignments/http-authschemes/",
-            title: "Hypertext Transfer Protocol (HTTP) Authentication Scheme Registry",
-            publisher: "IANA"
-          },
-          "IANA-HTTP-STATUS-CODES": {
-            href: "https://www.iana.org/assignments/http-status-codes/",
-            title: "Hypertext Transfer Protocol (HTTP) Status Code Registry",
-            publisher: "IANA"
-          },
-          "JSON-Schema-Validation-04": {
-            authors: [ "Kris Zyp", "Francis Galiegue", "Gary Court" ],
-            href: "https://datatracker.ietf.org/doc/html/draft-fge-json-schema-validation-00",
-            publisher: "Internet Engineering Task Force (IETF)",
-            status: "Internet-Draft",
-            title: "JSON Schema: interactive and non interactive validation. Draft 4",
-            date: "1 February 2013"
-          },
-          "JSON-Schema-05": {
-            authors: [ "Austin Wright" ],
-            href: "https://datatracker.ietf.org/doc/html/draft-wright-json-schema-00",
-            publisher: "Internet Engineering Task Force (IETF)",
-            status: "Internet-Draft",
-            title: "JSON Schema: A Media Type for Describing JSON Documents. Draft 5",
-            date: "13 October 2016"
-          },
-          "JSON-Schema-Validation-05": {
-            authors: [ "Austin Wright", "G. Luff" ],
-            href: "https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00",
-            publisher: "Internet Engineering Task Force (IETF)",
-            status: "Internet-Draft",
-            title: "JSON Schema Validation: A Vocabulary for Structural Validation of JSON. Draft 5",
-            date: "13 October 2016"
-          },
-          "JSON-Schema-Validation-2020-12": {
-            authors: [ "Austin Wright", "Henry Andrews", "Ben Hutton" ],
-            href: "https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00",
-            publisher: "Internet Engineering Task Force (IETF)",
-            status: "Internet-Draft",
-            title: "JSON Schema Validation: A Vocabulary for Structural Validation of JSON. Draft 2020-12",
-            date: "8 December 2020"
-          },
-          "SPDX": {
-            href: "https://spdx.org/licenses/",
-            title: "SPDX License List",
-            publisher: "Linux Foundation"
-          }
+            "OpenAPI-Learn": {
+                title: "OpenAPI - Getting started, and the specification explained",
+                href: "https://learn.openapis.org/",
+                publisher: "OpenAPI Initiative"
+            },
+            "OpenAPI-Registry": {
+                title: "OpenAPI Initiative Registry",
+                href: "https://spec.openapis.org/registry/index.html",
+                publisher: "OpenAPI Initiative"
+            },
+            //TODO: remove localBiblio once Specref PR https://github.com/tobie/specref/pulls/ralfhandl is merged
+            CommonMark: {
+                title: "CommonMark Spec",
+                href: "https://spec.commonmark.org/",
+            },
+            "CommonMark-0.27": {
+                title: "CommonMark Spec Version 0.27",
+                href: "https://spec.commonmark.org/0.27/",
+                date: "2016-11-18",
+                authors: [ "John MacFarlane" ]
+            },
+            "IANA-HTTP-AUTHSCHEMES": {
+                href: "https://www.iana.org/assignments/http-authschemes/",
+                title: "Hypertext Transfer Protocol (HTTP) Authentication Scheme Registry",
+                publisher: "IANA"
+            },
+            "IANA-HTTP-STATUS-CODES": {
+                href: "https://www.iana.org/assignments/http-status-codes/",
+                title: "Hypertext Transfer Protocol (HTTP) Status Code Registry",
+                publisher: "IANA"
+            },
+            "JSON-Schema-Validation-04": {
+                authors: [ "Kris Zyp", "Francis Galiegue", "Gary Court" ],
+                href: "https://datatracker.ietf.org/doc/html/draft-fge-json-schema-validation-00",
+                publisher: "Internet Engineering Task Force (IETF)",
+                status: "Internet-Draft",
+                title: "JSON Schema: interactive and non interactive validation. Draft 4",
+                date: "1 February 2013"
+            },
+            "JSON-Schema-05": {
+                authors: [ "Austin Wright" ],
+                href: "https://datatracker.ietf.org/doc/html/draft-wright-json-schema-00",
+                publisher: "Internet Engineering Task Force (IETF)",
+                status: "Internet-Draft",
+                title: "JSON Schema: A Media Type for Describing JSON Documents. Draft 5",
+                date: "13 October 2016"
+            },
+            "JSON-Schema-Validation-05": {
+                authors: [ "Austin Wright", "G. Luff" ],
+                href: "https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00",
+                publisher: "Internet Engineering Task Force (IETF)",
+                status: "Internet-Draft",
+                title: "JSON Schema Validation: A Vocabulary for Structural Validation of JSON. Draft 5",
+                date: "13 October 2016"
+            },
+            "JSON-Schema-Validation-2020-12": {
+                authors: [ "Austin Wright", "Henry Andrews", "Ben Hutton" ],
+                href: "https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00",
+                publisher: "Internet Engineering Task Force (IETF)",
+                status: "Internet-Draft",
+                title: "JSON Schema Validation: A Vocabulary for Structural Validation of JSON. Draft 2020-12",
+                date: "8 December 2020"
+            },
+            "SPDX": {
+                href: "https://spdx.org/licenses/",
+                title: "SPDX License List",
+                publisher: "Linux Foundation"
+            }
         }
     };
 
