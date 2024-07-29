@@ -234,35 +234,6 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "date": "8 December 2020",
       "id": "json-schema-validation-2020-12"
     },
-    "OpenID Connect Core": {
-      "authors": [
-        "N. Sakimura",
-        "J. Bradley",
-        "M. Jones",
-        "B. de Medeiros",
-        "C. Mortimore"
-      ],
-      "title": "OpenID Connect Core 1.0 incorporating errata set 2",
-      "href": "https://openid.net/specs/openid-connect-core-1_0.html",
-      "publisher": "OpenID Foundation",
-      "status": "Final",
-      "date": "15 December 2023",
-      "id": "openid connect core"
-    },
-    "OpenID Connect Discovery": {
-      "authors": [
-        "N. Sakimura",
-        "J. Bradley",
-        "M. Jones",
-        "E. Jay"
-      ],
-      "title": "OpenID Connect Discovery 1.0 incorporating errata set 2",
-      "href": "https://openid.net/specs/openid-connect-discovery-1_0.html",
-      "publisher": "OpenID Foundation",
-      "status": "Final",
-      "date": "15 December 2023",
-      "id": "openid connect discovery"
-    },
     "SPDX": {
       "href": "https://spdx.org/licenses/",
       "title": "SPDX License List",
@@ -4636,7 +4607,7 @@ The JSON and YAML representations of the <code>properties</code> value are follo
 </code></pre>
 </section></section></section><section id="security-scheme-object"><div class="header-wrapper"><h4 id="x4-8-28-security-scheme-object"><bdi class="secno">4.8.28 </bdi><span id="securitySchemeObject"></span>Security Scheme Object</h4><a class="self-link" href="#security-scheme-object" aria-label="Permalink for Section 4.8.28"></a></div>
 <p>Defines a security scheme that can be used by the operations.</p>
-<p>Supported schemes are HTTP authentication, an API key (either as a header, a cookie parameter or as a query parameter), mutual TLS (use of a client certificate), OAuth2’s common flows (implicit, password, client credentials and authorization code) as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">RFC6749</a></cite>], and [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid connect core" title="OpenID Connect Core 1.0 incorporating errata set 2">OpenID Connect Core</a></cite>].
+<p>Supported schemes are HTTP authentication, an API key (either as a header, a cookie parameter or as a query parameter), mutual TLS (use of a client certificate), OAuth2’s common flows (implicit, password, client credentials and authorization code) as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">RFC6749</a></cite>], and [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid-connect-core" title="OpenID Connect Core 1.0 incorporating errata set 2">OpenID-Connect-Core</a></cite>].
 Please note that as of 2020, the implicit flow is about to be deprecated by <a href="https://tools.ietf.org/html/draft-ietf-oauth-security-topics">OAuth 2.0 Security Best Current Practice</a>. Recommended for most use cases is Authorization Code Grant flow with PKCE.</p>
 <section id="fixed-fields-23"><div class="header-wrapper"><h5 id="x4-8-28-1-fixed-fields"><bdi class="secno">4.8.28.1 </bdi>Fixed Fields</h5><a class="self-link" href="#fixed-fields-23" aria-label="Permalink for Section 4.8.28.1"></a></div>
 <table>
@@ -4695,7 +4666,7 @@ Please note that as of 2020, the implicit flow is about to be deprecated by <a h
 <td><span id="securitySchemeOpenIdConnectUrl"></span>openIdConnectUrl</td>
 <td style="text-align:center"><code>string</code></td>
 <td><code>openIdConnect</code></td>
-<td><strong><em class="rfc2119">REQUIRED</em></strong>. <a href="https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig">Well-known URL</a> to discover the [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid connect discovery" title="OpenID Connect Discovery 1.0 incorporating errata set 2">OpenID Connect Discovery</a></cite>] <a href="https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata">provider metadata</a>.</td>
+<td><strong><em class="rfc2119">REQUIRED</em></strong>. <a href="https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig">Well-known URL</a> to discover the [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid-connect-discovery" title="OpenID Connect Discovery 1.0 incorporating errata set 2">OpenID-Connect-Discovery</a></cite>] <a href="https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata">provider metadata</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -5560,9 +5531,9 @@ This keeps it outside of the processes governed by this specification.</p>
       <a href="https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00"><cite>JSON Schema Validation: A Vocabulary for Structural Validation of JSON. Draft 2020-12</cite></a>. Austin Wright; Henry Andrews; Ben Hutton.  Internet Engineering Task Force (IETF). 8 December 2020. Internet-Draft. URL: <a href="https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00">https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00</a>
     </dd><dt id="bib-openapi-registry">[OpenAPI-Registry]</dt><dd>
       <a href="https://spec.openapis.org/registry/index.html"><cite>OpenAPI Initiative Registry</cite></a>.  OpenAPI Initiative. URL: <a href="https://spec.openapis.org/registry/index.html">https://spec.openapis.org/registry/index.html</a>
-    </dd><dt id="bib-openid connect core">[OpenID Connect Core]</dt><dd>
+    </dd><dt id="bib-openid-connect-core">[OpenID-Connect-Core]</dt><dd>
       <a href="https://openid.net/specs/openid-connect-core-1_0.html"><cite>OpenID Connect Core 1.0 incorporating errata set 2</cite></a>. N. Sakimura; J. Bradley; M. Jones; B. de Medeiros; C. Mortimore.  OpenID Foundation. 15 December 2023. Final. URL: <a href="https://openid.net/specs/openid-connect-core-1_0.html">https://openid.net/specs/openid-connect-core-1_0.html</a>
-    </dd><dt id="bib-openid connect discovery">[OpenID Connect Discovery]</dt><dd>
+    </dd><dt id="bib-openid-connect-discovery">[OpenID-Connect-Discovery]</dt><dd>
       <a href="https://openid.net/specs/openid-connect-discovery-1_0.html"><cite>OpenID Connect Discovery 1.0 incorporating errata set 2</cite></a>. N. Sakimura; J. Bradley; M. Jones; E. Jay.  OpenID Foundation. 15 December 2023. Final. URL: <a href="https://openid.net/specs/openid-connect-discovery-1_0.html">https://openid.net/specs/openid-connect-discovery-1_0.html</a>
     </dd><dt id="bib-rfc1738">[RFC1738]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc1738"><cite>Uniform Resource Locators (URL)</cite></a>. T. Berners-Lee; L. Masinter; M. McCahill.  IETF. December 1994. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc1738">https://www.rfc-editor.org/rfc/rfc1738</a>
