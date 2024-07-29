@@ -97,7 +97,7 @@ function preface(title,options) {
                 href: "https://spec.openapis.org/registry/index.html",
                 publisher: "OpenAPI Initiative"
             },
-            //TODO: remove localBiblio once Specref PR https://github.com/tobie/specref/pulls/ralfhandl is merged
+            //TODO: remove localBiblio once Specref PRs https://github.com/tobie/specref/pulls/ralfhandl are merged
             "JSON-Schema-Validation-04": {
                 authors: [ "Kris Zyp", "Francis Galiegue", "Gary Court" ],
                 href: "https://datatracker.ietf.org/doc/html/draft-fge-json-schema-validation-00",
@@ -339,8 +339,6 @@ for (let l in lines) {
         line = line.replace('[media type range](https://tools.ietf.org/html/rfc7231#appendix-D) ','media type range, see [RFC7231](https://tools.ietf.org/html/rfc7231#appendix-D), ');
 
         line = line.replace(/\[RFC ?([0-9]{1,5})\]\(/g,'[[RFC$1]](');
-
-        //TODO: check that all RFCs mentioned are in Normative References
 
         // harmonize RFC URLs
         //TODO: harmonize to https://www.rfc-editor.org/rfc/rfc*
