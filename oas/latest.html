@@ -186,32 +186,6 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "href": "https://spec.openapis.org/registry/index.html",
       "publisher": "OpenAPI Initiative"
     },
-    "CommonMark": {
-      "title": "CommonMark Spec",
-      "href": "https://spec.commonmark.org/",
-      "id": "commonmark"
-    },
-    "CommonMark-0.27": {
-      "title": "CommonMark Spec Version 0.27",
-      "href": "https://spec.commonmark.org/0.27/",
-      "date": "2016-11-18",
-      "authors": [
-        "John MacFarlane"
-      ],
-      "id": "commonmark-0.27"
-    },
-    "IANA-HTTP-AUTHSCHEMES": {
-      "href": "https://www.iana.org/assignments/http-authschemes/",
-      "title": "Hypertext Transfer Protocol (HTTP) Authentication Scheme Registry",
-      "publisher": "IANA",
-      "id": "iana-http-authschemes"
-    },
-    "IANA-HTTP-STATUS-CODES": {
-      "href": "https://www.iana.org/assignments/http-status-codes/",
-      "title": "Hypertext Transfer Protocol (HTTP) Status Code Registry",
-      "publisher": "IANA",
-      "id": "iana-http-status-codes"
-    },
     "JSON-Schema-Validation-04": {
       "authors": [
         "Kris Zyp",
@@ -460,7 +434,7 @@ OAS defines additional formats to provide fine detail for primitive data types.<
 </table>
 </section><section id="rich-text-formatting"><div class="header-wrapper"><h3 id="x4-5-rich-text-formatting"><bdi class="secno">4.5 </bdi>Rich Text Formatting</h3><a class="self-link" href="#rich-text-formatting" aria-label="Permalink for Section 4.5"></a></div>
 <p>Throughout the specification <code>description</code> fields are noted as supporting [<cite><a class="bibref" data-link-type="biblio" href="#bib-commonmark" title="CommonMark Spec">CommonMark</a></cite>] markdown formatting.
-Where OpenAPI tooling renders rich text it <em class="rfc2119">MUST</em> support, at a minimum, markdown syntax as described by [<cite><a class="bibref" data-link-type="biblio" href="#bib-commonmark-0.27" title="CommonMark Spec Version 0.27">CommonMark-0.27</a></cite>]. Tooling <em class="rfc2119">MAY</em> choose to ignore some CommonMark features to address security concerns.</p>
+Where OpenAPI tooling renders rich text it <em class="rfc2119">MUST</em> support, at a minimum, markdown syntax as described by [<cite><a class="bibref" data-link-type="biblio" href="#bib-commonmark-0.27" title="CommonMark Spec, Version 0.27">CommonMark-0.27</a></cite>]. Tooling <em class="rfc2119">MAY</em> choose to ignore some CommonMark features to address security concerns.</p>
 </section><section id="relative-references-in-uris"><div class="header-wrapper"><h3 id="x4-6-relative-references-in-uris"><bdi class="secno">4.6 </bdi>Relative References in URIs</h3><a class="self-link" href="#relative-references-in-uris" aria-label="Permalink for Section 4.6"></a></div>
 <p>Unless specified otherwise, all properties that are URIs <em class="rfc2119">MAY</em> be relative references as defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc3986#section-4.2">Section 4.2</a>.</p>
 <p>Relative references, including those in <a href="#reference-object"><code>Reference Objects</code></a>, <a href="#path-item-object"><code>PathItem Object</code></a> <code>$ref</code> fields, <a href="#link-object"><code>Link Object</code></a> <code>operationRef</code> fields and <a href="#example-object"><code>Example Object</code></a> <code>externalValue</code> fields, are resolved using the referring document as the Base URI according to [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] <a href="https://datatracker.ietf.org/doc/html/rfc3986#section-5.2">Section 5.2</a>.</p>
@@ -4436,7 +4410,7 @@ While not part of the specification itself, certain libraries <em class="rfc2119
     </dd><dt id="bib-commonmark">[CommonMark]</dt><dd>
       <a href="https://spec.commonmark.org/"><cite>CommonMark Spec</cite></a>. URL: <a href="https://spec.commonmark.org/">https://spec.commonmark.org/</a>
     </dd><dt id="bib-commonmark-0.27">[CommonMark-0.27]</dt><dd>
-      <a href="https://spec.commonmark.org/0.27/"><cite>CommonMark Spec Version 0.27</cite></a>. John MacFarlane. 2016-11-18. URL: <a href="https://spec.commonmark.org/0.27/">https://spec.commonmark.org/0.27/</a>
+      <a href="https://spec.commonmark.org/0.27/"><cite>CommonMark Spec, Version 0.27</cite></a>. John MacFarlane. 18 November 2016. URL: <a href="https://spec.commonmark.org/0.27/">https://spec.commonmark.org/0.27/</a>
     </dd><dt id="bib-iana-http-authschemes">[IANA-HTTP-AUTHSCHEMES]</dt><dd>
       <a href="https://www.iana.org/assignments/http-authschemes/"><cite>Hypertext Transfer Protocol (HTTP) Authentication Scheme Registry</cite></a>.  IANA. URL: <a href="https://www.iana.org/assignments/http-authschemes/">https://www.iana.org/assignments/http-authschemes/</a>
     </dd><dt id="bib-iana-http-status-codes">[IANA-HTTP-STATUS-CODES]</dt><dd>

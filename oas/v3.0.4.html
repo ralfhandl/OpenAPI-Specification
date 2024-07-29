@@ -188,32 +188,6 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "publisher": "OpenAPI Initiative",
       "id": "openapi-registry"
     },
-    "CommonMark": {
-      "title": "CommonMark Spec",
-      "href": "https://spec.commonmark.org/",
-      "id": "commonmark"
-    },
-    "CommonMark-0.27": {
-      "title": "CommonMark Spec Version 0.27",
-      "href": "https://spec.commonmark.org/0.27/",
-      "date": "2016-11-18",
-      "authors": [
-        "John MacFarlane"
-      ],
-      "id": "commonmark-0.27"
-    },
-    "IANA-HTTP-AUTHSCHEMES": {
-      "href": "https://www.iana.org/assignments/http-authschemes/",
-      "title": "Hypertext Transfer Protocol (HTTP) Authentication Scheme Registry",
-      "publisher": "IANA",
-      "id": "iana-http-authschemes"
-    },
-    "IANA-HTTP-STATUS-CODES": {
-      "href": "https://www.iana.org/assignments/http-status-codes/",
-      "title": "Hypertext Transfer Protocol (HTTP) Status Code Registry",
-      "publisher": "IANA",
-      "id": "iana-http-status-codes"
-    },
     "JSON-Schema-Validation-04": {
       "authors": [
         "Kris Zyp",
@@ -575,7 +549,7 @@ The OpenAPI Initiative also hosts a <a href="https://spec.openapis.org/registry/
 <p>Note that the encoding indicated by <code>byte</code>, which inflates the size of data in order to represent it as 7-bit ASCII text, is unrelated to HTTP’s <code>Content-Encoding</code> header, which indicates whether and how a message body has been compressed.</p>
 </section></section><section id="rich-text-formatting"><div class="header-wrapper"><h3 id="x4-5-rich-text-formatting"><bdi class="secno">4.5 </bdi><span id="richText"></span>Rich Text Formatting</h3><a class="self-link" href="#rich-text-formatting" aria-label="Permalink for Section 4.5"></a></div>
 <p>Throughout the specification <code>description</code> fields are noted as supporting [<cite><a class="bibref" data-link-type="biblio" href="#bib-commonmark" title="CommonMark Spec">CommonMark</a></cite>] markdown formatting.
-Where OpenAPI tooling renders rich text it <em class="rfc2119">MUST</em> support, at a minimum, markdown syntax as described by [<cite><a class="bibref" data-link-type="biblio" href="#bib-commonmark-0.27" title="CommonMark Spec Version 0.27">CommonMark-0.27</a></cite>]. Tooling <em class="rfc2119">MAY</em> choose to ignore some CommonMark or extension features to address security concerns.</p>
+Where OpenAPI tooling renders rich text it <em class="rfc2119">MUST</em> support, at a minimum, markdown syntax as described by [<cite><a class="bibref" data-link-type="biblio" href="#bib-commonmark-0.27" title="CommonMark Spec, Version 0.27">CommonMark-0.27</a></cite>]. Tooling <em class="rfc2119">MAY</em> choose to ignore some CommonMark or extension features to address security concerns.</p>
 <p>While the framing of CommonMark 0.27 as a minimum requirement means that tooling <em class="rfc2119">MAY</em> choose to implement extensions on top of it, note that any such extensions are by definition implementation-defined and will not be interoperable.
 OpenAPI Description authors <em class="rfc2119">SHOULD</em> consider how text using such extensions will be rendered by tools that offer only the minimum support.</p>
 </section><section id="relative-references-in-urls"><div class="header-wrapper"><h3 id="x4-6-relative-references-in-urls"><bdi class="secno">4.6 </bdi><span id="relativeReferences"></span>Relative References in URLs</h3><a class="self-link" href="#relative-references-in-urls" aria-label="Permalink for Section 4.6"></a></div>
@@ -5368,7 +5342,7 @@ This keeps it outside of the processes governed by this specification.</p>
     </dd><dt id="bib-commonmark">[CommonMark]</dt><dd>
       <a href="https://spec.commonmark.org/"><cite>CommonMark Spec</cite></a>. URL: <a href="https://spec.commonmark.org/">https://spec.commonmark.org/</a>
     </dd><dt id="bib-commonmark-0.27">[CommonMark-0.27]</dt><dd>
-      <a href="https://spec.commonmark.org/0.27/"><cite>CommonMark Spec Version 0.27</cite></a>. John MacFarlane. 2016-11-18. URL: <a href="https://spec.commonmark.org/0.27/">https://spec.commonmark.org/0.27/</a>
+      <a href="https://spec.commonmark.org/0.27/"><cite>CommonMark Spec, Version 0.27</cite></a>. John MacFarlane. 18 November 2016. URL: <a href="https://spec.commonmark.org/0.27/">https://spec.commonmark.org/0.27/</a>
     </dd><dt id="bib-html401">[HTML401]</dt><dd>
       <a href="https://www.w3.org/TR/html401/"><cite>HTML 4.01 Specification</cite></a>. Dave Raggett; Arnaud Le Hors; Ian Jacobs.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html401/">https://www.w3.org/TR/html401/</a>
     </dd><dt id="bib-iana-http-authschemes">[IANA-HTTP-AUTHSCHEMES]</dt><dd>
