@@ -345,7 +345,6 @@ for (let l in lines) {
             line = '#' + m[0];
             delta = 1;
             heading = 2;
-            console.warn(delta,heading,line);
         }
         if (line.includes('Appendix')) {
             newSection = '<section class="appendix">';
