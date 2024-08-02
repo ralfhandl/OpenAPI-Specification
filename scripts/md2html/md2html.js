@@ -86,19 +86,9 @@ function preface(title,options) {
                 ],
             },
         ],
-        localBiblio: {
-            //TODO: remove localBiblio once Specref PRs https://github.com/tobie/specref/pulls/ralfhandl are merged
-            "OpenAPI-Learn": {
-                title: "OpenAPI - Getting started, and the specification explained",
-                href: "https://learn.openapis.org/",
-                publisher: "OpenAPI Initiative"
-            },
-            "OpenAPI-Registry": {
-                title: "OpenAPI Initiative Registry",
-                href: "https://spec.openapis.org/registry/index.html",
-                publisher: "OpenAPI Initiative"
-            }
-        }
+        // localBiblio: {
+        //     // add local bibliography entries here, add them to https://www.specref.org/, and remove them here once published
+        // }
     };
 
     let preface = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${md.utils.escapeHtml(title)}</title>`;
