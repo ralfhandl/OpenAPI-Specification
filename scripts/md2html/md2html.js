@@ -341,10 +341,11 @@ for (let l in lines) {
         if (m) {
             // our conformance section is headlined with 'Version x.y.z'
             newSection = '<section class="override" id="conformance">';
-            // adjust the heading to be a level 2 heading
-            line = '##' + m[0];
+            // adjust the heading to be at level 2
+            line = '#' + m[0];
             delta = 1;
             heading = 2;
+            console.warn(delta,heading,line);
         }
         if (line.includes('Appendix')) {
             newSection = '<section class="appendix">';
