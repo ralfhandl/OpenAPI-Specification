@@ -2844,20 +2844,22 @@ This includes accessing any part of a body that a JSON Pointer [<cite><a class="
 <span class="hljs-keyword">POST</span> <span class="hljs-string">/subscribe/myevent?queryUrl=https://clientdomain.com/stillrunning</span> <span class="hljs-meta">HTTP/1.1</span>
 <span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>example.org
 <span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/json
-<span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>187
+<span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>188
 
-<span class="language-avrasm">{
-  <span class="hljs-string">"failedUrl"</span> : <span class="hljs-string">"https://clientdomain.com/failed"</span>,
-  <span class="hljs-string">"successUrls"</span> : [
+<span class="language-prolog">{
+  <span class="hljs-string">"failedUrl"</span>: <span class="hljs-string">"https://clientdomain.com/failed"</span>,
+  <span class="hljs-string">"successUrls"</span>: [
     <span class="hljs-string">"https://clientdomain.com/fast"</span>,
     <span class="hljs-string">"https://clientdomain.com/medium"</span>,
     <span class="hljs-string">"https://clientdomain.com/slow"</span>
   ]
 }
-
-<span class="hljs-number">201</span> Created
-<span class="hljs-symbol">Location:</span> https://example<span class="hljs-meta">.org</span>/subscription/<span class="hljs-number">1</span>
 </span></code></pre>
+<p>resulting in:</p>
+<pre class="nohighlight"><code>
+201 Created
+<span class="hljs-attribute">Location</span><span class="hljs-punctuation">: </span>https://example.org/subscription/1
+</code></pre>
 <p>The following examples show how the various expressions evaluate, assuming the callback operation has a path parameter named <code>eventType</code> and a query parameter named <code>queryUrl</code>.</p>
 <table>
 <thead>
@@ -3985,7 +3987,7 @@ However, for maximum interoperability, it is <em class="rfc2119">RECOMMENDED</em
       <span class="hljs-string">$id:</span> <span class="hljs-string">fully_generic_array</span>
       <span class="hljs-attr">type:</span> <span class="hljs-string">array</span>
       <span class="hljs-attr">items:</span>
-        <span class="hljs-string">$dynamicRef:</span> <span class="hljs-string">"#generic-array"</span>
+        <span class="hljs-string">$dynamicRef:</span> <span class="hljs-string">'#generic-array'</span>
       <span class="hljs-string">$defs:</span>
         <span class="hljs-attr">allowAll:</span>
           <span class="hljs-string">$dynamicAnchor:</span> <span class="hljs-string">generic-array</span>
