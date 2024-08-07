@@ -175,14 +175,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       ]
     }
   ],
-  "publishISODate": "2024-08-02T00:00:00.000Z",
-  "generatedSubtitle": "02 August 2024"
+  "publishISODate": "2024-08-07T00:00:00.000Z",
+  "generatedSubtitle": "07 August 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head><body class="h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://openapis.org/"><img crossorigin="" alt="OpenAPI Initiative" height="48" src="https://raw.githubusercontent.com/OAI/OpenAPI-Style-Guide/master/graphics/bitmap/OpenAPI_Logo_Pantone.png">
   </a></p>
     <h1 id="title" class="title">OpenAPI Specification v3.0.4 </h1> <h2 id="subtitle" class="subtitle">Version 3.0.4</h2>
-    <p id="w3c-state"> <time class="dt-published" datetime="2024-08-02">02 August 2024</time></p>
+    <p id="w3c-state"> <time class="dt-published" datetime="2024-08-07">07 August 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -2758,20 +2758,22 @@ This includes accessing any part of a body that a JSON Pointer [<cite><a class="
 <span class="hljs-keyword">POST</span> <span class="hljs-string">/subscribe/myevent?queryUrl=https://clientdomain.com/stillrunning</span> <span class="hljs-meta">HTTP/1.1</span>
 <span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>example.org
 <span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/json
-<span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>187
+<span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>188
 
-<span class="language-avrasm">{
-  <span class="hljs-string">"failedUrl"</span> : <span class="hljs-string">"https://clientdomain.com/failed"</span>,
-  <span class="hljs-string">"successUrls"</span> : [
+<span class="language-prolog">{
+  <span class="hljs-string">"failedUrl"</span>: <span class="hljs-string">"https://clientdomain.com/failed"</span>,
+  <span class="hljs-string">"successUrls"</span>: [
     <span class="hljs-string">"https://clientdomain.com/fast"</span>,
     <span class="hljs-string">"https://clientdomain.com/medium"</span>,
     <span class="hljs-string">"https://clientdomain.com/slow"</span>
   ]
 }
-
-<span class="hljs-number">201</span> Created
-<span class="hljs-symbol">Location:</span> https://example<span class="hljs-meta">.org</span>/subscription/<span class="hljs-number">1</span>
 </span></code></pre>
+<p>resulting in:</p>
+<pre class="nohighlight"><code>
+201 Created
+<span class="hljs-attribute">Location</span><span class="hljs-punctuation">: </span>https://example.org/subscription/1
+</code></pre>
 <p>The following examples show how the various expressions evaluate, assuming the callback operation has a path parameter named <code>eventType</code> and a query parameter named <code>queryUrl</code>.</p>
 <table>
 <thead>
