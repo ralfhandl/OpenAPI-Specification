@@ -224,9 +224,8 @@ for (let l in lines) {
             // fix syntax error in 2.0.md
             line = line.replace('<a name="parameterAllowEmptyValue"/>','<span id="parameterAllowEmptyValue"></span>');
         else {
-            // replace deprecated <a name= with <span id= and close tag correctly
-            line = line.replace('<a name=','<span id=');
-            line = line.replace('</a>','</span>');
+            // replace deprecated <a name="..."></a> with <span id="..."></span>
+            line = line.replace(/<a name="([^"]+)"><\/a>/g,'<span id="$1"></span>');
         }
     }
 
