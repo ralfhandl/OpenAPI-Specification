@@ -107,9 +107,10 @@ function preface(title,options) {
         preface += '</head><body>';
         preface += '<style>';
         preface += '#respec-ui { visibility: hidden; }';
-        preface += 'h1,h2,h3 { color: #629b34; }';
-        preface += '.dt-published { color: #629b34; } .dt-published::before { content: "Published "; }';
-        preface += 'a[href] { color: #45512c; }'; // third OAI colour is #8ad000
+        preface += '#title { color: #578000; } #subtitle { color: #578000; }';
+        preface += '.dt-published { color: #578000; } .dt-published::before { content: "Published "; }';
+        preface += 'h1,h2,h3,h4,h5,h6 { color: #578000; font-weight: normal; font-style: normal; }';
+        preface += 'a[href] { color: #45512c; }';
         preface += 'body:not(.toc-inline) #toc h2 { color: #45512c; }';
         preface += 'table { display: block; width: 100%; overflow: auto; }';
         preface += 'table th { font-weight: 600; }';
