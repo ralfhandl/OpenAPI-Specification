@@ -12,6 +12,8 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 
 * Proceed to [Registry](./registry/index.html)
 
+## OpenAPI Initiative Specifications
+
 ### Arazzo Specification Versions
 
 {% for file in site.static_files %}
