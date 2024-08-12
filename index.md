@@ -12,12 +12,15 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 
 * Proceed to [Registry](./registry/index.html)
 
-## OpenAPI Initiative Specifications
+### Arazzo Specification Versions
 
-| Specification  | Markdown Repository | HTML Version  |
-| :--------------| :------------------ | :------- |
-| `OpenAPI Specification` | [View](https://github.com/OAI/OpenAPI-Specification)|[View](oas/latest.html)|
-| `Arazzo Specification` | [View](https://github.com/OAI/Arazzo-Specification) | [View](arazzo/latest.html)|
+{% for file in site.static_files %}
+{% assign segments = file.path | split: "/" %}
+{% assign firstchar = file.basename | slice: 0 %}
+{% if segments[1] == "arazzo" and file.extname == ".html" and firstchar == "v" %}
+* [{{ file.basename }}]({% link {{ file.path }} %})
+{% endif %}
+{% endfor %}
 
 ### OpenAPI Specification Versions
 
@@ -25,6 +28,6 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 {% assign segments = file.path | split: "/" %}
 {% assign firstchar = file.basename | slice: 0 %}
 {% if segments[1] == "oas" and file.extname == ".html" and firstchar == "v" %}
-* [{{ file.basename }}]({{ site.baseurl }}{{ file.path }})
+* [{{ file.basename }}]({% link {{ file.path }} %})
 {% endif %}
 {% endfor %}
