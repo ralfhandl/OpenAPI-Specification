@@ -18,7 +18,7 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 {% assign segments = file.path | split: "/" %}
 {% assign firstchar = file.basename | slice: 0 %}
 {% if segments[1] == "arazzo" and file.extname == ".html" and firstchar == "v" %}
-* [{{ file.basename }}]({% link {{ file.path }} %})
+* [{{ file.basename }}]({{ site.baseurl }}{{ file.path }})
 {% endif %}
 {% endfor %}
 
@@ -28,6 +28,6 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 {% assign segments = file.path | split: "/" %}
 {% assign firstchar = file.basename | slice: 0 %}
 {% if segments[1] == "oas" and file.extname == ".html" and firstchar == "v" %}
-* [{{ file.basename }}]({% link {{ file.path }} %})
+* [{{ file.basename }}]({{ site.baseurl }}{{ file.path }})
 {% endif %}
 {% endfor %}
