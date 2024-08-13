@@ -15,7 +15,7 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 
 ## Development
 
-1. Install [jekyll](https://jekyllrb.com/docs/installation/) for your platform, install the site
+Install [jekyll](https://jekyllrb.com/docs/installation/) for your platform, install the site
 ~~~sh
 bundle install
 ~~~
