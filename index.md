@@ -12,9 +12,9 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 
 * Proceed to [Registry](./registry/index.html)
 
-## OpenAPI Initiative Specifications
+## Arazzo Specification
 
-### Arazzo Specification Versions
+### Versions
 
 {% assign html_files = site.static_files | where: "extname", ".html" | sort: "basename" | reverse %}
 {% for file in html_files %}
@@ -25,7 +25,9 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 {% endif %}
 {% endfor %}
 
-### OpenAPI Specification Versions
+## OpenAPI Specification
+
+### Versions
 
 {% assign html_files = site.static_files | where: "extname", ".html" | sort: "basename" | reverse %}
 {% for file in html_files %}
@@ -36,7 +38,7 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 {% endif %}
 {% endfor %}
 
-### Latest JSON Schemas for OpenAPI Specification Versions
+### Non-Normative JSON Schemas
 
 {% assign schema_files = site.static_files | where: "extname", "" | sort: "path" | reverse %}
 {% assign last_version = "" %}
