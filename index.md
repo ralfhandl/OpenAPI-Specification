@@ -35,3 +35,18 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 * [{{ file.basename }}]({{ site.baseurl }}{{ file.path }})
 {% endif %}
 {% endfor %}
+
+### Latest JSON Schemas for OpenAPI Specification Versions
+
+{% assign schema_files = site.static_files | where: "extname", "" | sort: "path" | reverse %}
+{% assign last_version = "" %}
+{% for file in schema_files %}
+{% assign segments = file.path | split: "/" %}
+{% if segments[1] == "oas" and file.basename contains "lat" %}
+{% if segments[2] != last_version %}
+{% assign last_version = segments[2] %}
+* v{{ last_version }}
+{% endif %}
+  * [{{ segments[3] }}]({{ file.path }})
+{% endif %}
+{% endfor %}
