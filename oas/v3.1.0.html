@@ -180,7 +180,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "publishISODate": "2021-02-15T00:00:00.000Z",
   "generatedSubtitle": "15 February 2021"
 }</script>
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head><body class="h-entry"><div class="head">
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head><body class="h-entry toc-inline"><div class="head">
     <p class="logos"><a class="logo" href="https://openapis.org/"><img crossorigin="" alt="OpenAPI Initiative" height="48" src="https://raw.githubusercontent.com/OAI/OpenAPI-Style-Guide/master/graphics/bitmap/OpenAPI_Logo_Pantone.png">
   </a></p>
     <h1 id="title" class="title">OpenAPI Specification v3.1.0 </h1> <h2 id="subtitle" class="subtitle">Version 3.1.0</h2>
@@ -396,7 +396,7 @@ Unless specified otherwise, relative references are resolved using the URLs defi
 <tr>
 <td><span id="oasWebhooks"></span>webhooks</td>
 <td style="text-align:center">Map[<code>string</code>, <a href="#path-item-object">Path Item Object</a> | <a href="#reference-object">Reference Object</a>] ]</td>
-<td>The incoming webhooks that <em class="rfc2119">MAY</em> be received as part of this API and that the API consumer <em class="rfc2119">MAY</em> choose to implement. Closely related to the <code>callbacks</code> feature, this section describes requests initiated other than by an API call, for example by an out of band registration. The key name is a unique string to refer to each webhook, while the (optionally referenced) Path Item Object describes a request that may be initiated by the API provider and the expected responses. An <a href="https://ralfhandl.github.io/learn.openapis.org/examples/v3.1/webhook-example.html">example</a> is available.</td>
+<td>The incoming webhooks that <em class="rfc2119">MAY</em> be received as part of this API and that the API consumer <em class="rfc2119">MAY</em> choose to implement. Closely related to the <code>callbacks</code> feature, this section describes requests initiated other than by an API call, for example by an out of band registration. The key name is a unique string to refer to each webhook, while the (optionally referenced) Path Item Object describes a request that may be initiated by the API provider and the expected responses. An <a href="https://learn.openapis.org/examples/v3.1/webhook-example.yaml">example</a> is available.</td>
 </tr>
 <tr>
 <td><span id="oasComponents"></span>components</td>
@@ -2471,7 +2471,7 @@ The key value used to identify the path item object is an expression, evaluated 
 <tr>
 <td><span id="callbackExpression"></span>{expression}</td>
 <td style="text-align:center"><a href="#path-item-object">Path Item Object</a> | <a href="#reference-object">Reference Object</a></td>
-<td>A Path Item Object, or a reference to one, used to define a callback request and expected responses.  A <a href="https://ralfhandl.github.io/learn.openapis.org/examples/v3.0/callback-example.html">complete example</a> is available.</td>
+<td>A Path Item Object, or a reference to one, used to define a callback request and expected responses.  A <a href="https://learn.openapis.org/examples/v3.0/callback-example.yaml">complete example</a> is available.</td>
 </tr>
 </tbody>
 </table>
