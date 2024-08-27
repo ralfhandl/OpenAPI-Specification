@@ -291,7 +291,7 @@ Unless specified otherwise, relative references are resolved using the URL of th
 <tr>
 <td><span id="overlayExtends"></span> extends</td>
 <td style="text-align:center"><code>string</code></td>
-<td>URL to the target document (such as an OpenAPI document) this overlay applies to. This <em class="rfc2119">MUST</em> be in the form of a URL.</td>
+<td>URL to the target document (such as an [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapi" title="OpenAPI Specification">OpenAPI</a></cite>] document) this overlay applies to. This <em class="rfc2119">MUST</em> be in the form of a URL.</td>
 </tr>
 <tr>
 <td><span id="overlayActions"></span>actions</td>
@@ -302,7 +302,7 @@ Unless specified otherwise, relative references are resolved using the URL of th
 </table>
 <p>This object <em class="rfc2119">MAY</em> be extended with <a href="#specificationExtensions">Specification Extensions</a>.</p>
 <p>The list of actions <em class="rfc2119">MUST</em> be applied in sequential order to ensure a consistent outcome. Actions are applied to the result of the previous updates. This enables objects to be deleted in one update and then re-created in a subsequent update, for example.</p>
-<p>The <code>extends</code> property can be used to indicate that the Overlay was designed to update a specific OpenAPI document. Where no <code>extends</code> is provided it is the responsibility of tooling to apply the Overlay documents to the appropriate OpenAPI document(s).</p>
+<p>The <code>extends</code> property can be used to indicate that the Overlay was designed to update a specific [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapi" title="OpenAPI Specification">OpenAPI</a></cite>] document. Where no <code>extends</code> is provided it is the responsibility of tooling to apply the Overlay documents to the appropriate OpenAPI document(s).</p>
 </section></section><section id="info-object"><div class="header-wrapper"><h4 id="x4-6-2-info-object"><bdi class="secno">4.6.2 </bdi><span id="infoObject"></span>Info Object</h4><a class="self-link" href="#info-object" aria-label="Permalink for Section 4.6.2"></a></div>
 <p>The object provides metadata about the Overlay.
 The metadata <em class="rfc2119">MAY</em> be used by the clients if needed.</p>
@@ -446,7 +446,7 @@ The metadata <em class="rfc2119">MAY</em> be used by the clients if needed.</p>
   <span class="hljs-attr">remove:</span> <span class="hljs-literal">true</span>
 </code></pre>
 </section><section id="traits-examples"><div class="header-wrapper"><h4 id="x4-7-5-traits-examples"><bdi class="secno">4.7.5 </bdi>Traits Examples</h4><a class="self-link" href="#traits-examples" aria-label="Permalink for Section 4.7.5"></a></div>
-<p>By annotating a target document (such as an OpenAPI document) using specification extensions such as <code>x-oai-traits</code>, the author of the target document <em class="rfc2119">MAY</em> identify where overlay updates should be applied.</p>
+<p>By annotating a target document (such as an [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapi" title="OpenAPI Specification">OpenAPI</a></cite>] document) using specification extensions such as <code>x-oai-traits</code>, the author of the target document <em class="rfc2119">MAY</em> identify where overlay updates should be applied.</p>
 <pre class="nohighlight" tabindex="0"><code><span class="hljs-attr">openapi:</span> <span class="hljs-number">3.1</span><span class="hljs-number">.0</span>
 <span class="hljs-attr">info:</span>
   <span class="hljs-attr">title:</span> <span class="hljs-string">API</span> <span class="hljs-string">with</span> <span class="hljs-string">a</span> <span class="hljs-string">paged</span> <span class="hljs-string">collection</span>
@@ -459,7 +459,7 @@ The metadata <em class="rfc2119">MAY</em> be used by the clients if needed.</p>
         <span class="hljs-attr">200:</span>
           <span class="hljs-attr">description:</span> <span class="hljs-string">OK</span>
 </code></pre>
-<p>With the above OpenAPI document, the following Overlay document will apply the necessary updates to describe how paging is implemented, where that trait has been applied.</p>
+<p>With the above [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapi" title="OpenAPI Specification">OpenAPI</a></cite>] document, the following Overlay document will apply the necessary updates to describe how paging is implemented, where that trait has been applied.</p>
 <pre class="nohighlight" tabindex="0"><code><span class="hljs-attr">overlay:</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>
 <span class="hljs-attr">info:</span>
   <span class="hljs-attr">title:</span> <span class="hljs-string">Apply</span> <span class="hljs-string">Traits</span>
@@ -518,6 +518,8 @@ The metadata <em class="rfc2119">MAY</em> be used by the clients if needed.</p>
     
     <dl class="bibliography"><dt id="bib-commonmark">[CommonMark]</dt><dd>
       <a href="https://spec.commonmark.org/"><cite>CommonMark Spec</cite></a>. URL: <a href="https://spec.commonmark.org/">https://spec.commonmark.org/</a>
+    </dd><dt id="bib-openapi">[OpenAPI]</dt><dd>
+      <a href="https://www.openapis.org/"><cite>OpenAPI Specification</cite></a>. Darrell Miller; Jason Harmon; Jeremy Whitlock; Marsh Gardiner; Mike Ralphson; Ron Ratovsky; Tony Tam; Uri Sarid.  OpenAPI Initiative. URL: <a href="https://www.openapis.org/">https://www.openapis.org/</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc3986">[RFC3986]</dt><dd>
