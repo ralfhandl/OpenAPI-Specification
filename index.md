@@ -39,4 +39,10 @@ This site contains the OpenAPI Initiative Registry and content for the HTML vers
 {{ separator }}[{{ segments[3] }}]({{ site.baseurl }}{{ file.path }}.json) ([download]({{ site.baseurl }}{{ file.path }}))
 {%- assign separator = ", " -%}
 {%- endif -%}
-{%- endfor -%}
+{%- endfor%}
+
+## Overlay Specification
+
+### Versions
+
+{% include specification-version-list.md specification="overlay" %}
