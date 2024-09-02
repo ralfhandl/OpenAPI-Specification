@@ -192,14 +192,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       ]
     }
   ],
-  "publishISODate": "2024-08-28T00:00:00.000Z",
-  "generatedSubtitle": "28 August 2024"
+  "publishISODate": "2024-09-02T00:00:00.000Z",
+  "generatedSubtitle": "02 September 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head><body class="h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://openapis.org/"><img crossorigin="" alt="OpenAPI Initiative" height="48" src="https://raw.githubusercontent.com/OAI/OpenAPI-Style-Guide/master/graphics/bitmap/OpenAPI_Logo_Pantone.png">
   </a></p>
     <h1 id="title" class="title">OpenAPI Specification v3.0.4 </h1> <h2 id="subtitle" class="subtitle">Version 3.0.4</h2>
-    <p id="w3c-state"> <time class="dt-published" datetime="2024-08-28">28 August 2024</time></p>
+    <p id="w3c-state"> <time class="dt-published" datetime="2024-09-02">02 September 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -409,8 +409,8 @@ The behavior for Discrimator Object non-URI mappings and for the Operation Objec
 “boolean”, “object”, “array”, “number”, “string”, or “integer”.
 See <a href="#schema-nullable"><code>nullable</code></a> for an alternative solution to “null” as a type.
 Models are defined using the <a href="#schema-object">Schema Object</a>, which is an extended subset of JSON Schema Specification Draft Wright-00.</p>
-<p>JSON Schema keywords and <code>format</code> values operate on JSON “instances” which may be one of the six JSON data types, “null”, “boolean”, “object”, “array”, “number”, or “string”, with certain keywords and formats <a href="https://tools.ietf.org/html/draft-wright-json-schema-validation-00#section-4.1">only applying to a specific type</a>.  For example, the <code>pattern</code> keyword and the <code>date-time</code> format only apply to strings, and treat any instance of the other five types as <em>automatically valid.</em>  This means JSON Schema keywords and formats do <strong>NOT</strong> implicitly require the expected type.  Use the <code>type</code> keyword to explicitly constrain the type.</p>
-<p>Note that the <code>type</code> keyword allows <code>"integer"</code> as a value for convenience, but keyword and format applicability does not recognize integers as being of a distinct JSON type from other numbers because <cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7159" title="The JavaScript Object Notation (JSON) Data Interchange Format">JSON</a></cite> itself does not make that distinction.  Since there is no distinct JSON integer type, JSON Schema defines integers mathematically.  This means that both <code>1</code> and <code>1.0</code> are <a href="https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-4.2.2">equivalent</a>, and are both considered to be integers.</p>
+<p>JSON Schema keywords and <code>format</code> values operate on JSON “instances” which may be one of the six JSON data types, “null”, “boolean”, “object”, “array”, “number”, or “string”, with certain keywords and formats <a href="https://tools.ietf.org/html/draft-wright-json-schema-validation-00#section-4.1">only applying to a specific type</a>. For example, the <code>pattern</code> keyword and the <code>date-time</code> format only apply to strings, and treat any instance of the other five types as <em>automatically valid.</em> This means JSON Schema keywords and formats do <strong>NOT</strong> implicitly require the expected type. Use the <code>type</code> keyword to explicitly constrain the type.</p>
+<p>Note that the <code>type</code> keyword allows <code>"integer"</code> as a value for convenience, but keyword and format applicability does not recognize integers as being of a distinct JSON type from other numbers because <cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7159" title="The JavaScript Object Notation (JSON) Data Interchange Format">JSON</a></cite> itself does not make that distinction. Since there is no distinct JSON integer type, JSON Schema defines integers mathematically. This means that both <code>1</code> and <code>1.0</code> are <a href="https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-4.2.2">equivalent</a>, and are both considered to be integers.</p>
 <section id="data-type-format"><div class="header-wrapper"><h4 id="x4-4-1-data-type-format"><bdi class="secno">4.4.1 </bdi>Data Type Format</h4><a class="self-link" href="#data-type-format" aria-label="Permalink for Section 4.4.1"></a></div>
 <p>As defined by the <a href="https://tools.ietf.org/html/draft-wright-json-schema-validation-00#section-7.3">JSON Schema Validation specification</a>, data types can have an optional modifier keyword: <code>format</code>. As described in that specification, <code>format</code> is treated as a non-validating annotation by default; the ability to validate <code>format</code> varies across implementations.</p>
 <p>The OpenAPI Initiative also hosts a <a href="https://spec.openapis.org/registry/format/">Format Registry</a> for formats defined by OAS users and other specifications. Support for any registered format is strictly <em class="rfc2119">OPTIONAL</em>, and support for one registered format does not imply support for any others.</p>
@@ -537,7 +537,7 @@ If the JSON Schema differs from this section, then this section <em class="rfc21
 <tr>
 <td><span id="oas-security"></span>security</td>
 <td style="text-align:center">[<a href="#security-requirement-object">Security Requirement Object</a>]</td>
-<td>A declaration of which security mechanisms can be used across the API. The list of values includes alternative Security Requirement Objects that can be used. Only one of the Security Requirement Objects need to be satisfied to authorize a request. Individual operations can override this definition. To make security optional, an empty security requirement (<code>{}</code>) can be included in the array.</td>
+<td>A declaration of which security mechanisms can be used across the API. The list of values includes alternative Security Requirement Objects that can be used. Only one of the Security Requirement Objects need to be satisfied to authorize a request. Individual operations can override this definition. The list can be incomplete, up to being empty or absent. To make security explicitly optional, an empty security requirement (<code>{}</code>) can be included in the array.</td>
 </tr>
 <tr>
 <td><span id="oas-tags"></span>tags</td>
@@ -3400,7 +3400,7 @@ It is not mandatory to have a Tag Object per tag defined in the Operation Object
 </section></section><section id="schema-object"><div class="header-wrapper"><h4 id="x4-7-24-schema-object"><bdi class="secno">4.7.24 </bdi>Schema Object</h4><a class="self-link" href="#schema-object" aria-label="Permalink for Section 4.7.24"></a></div>
 <p>The Schema Object allows the definition of input and output data types.
 These types can be objects, but also primitives and arrays.
-This object is an extended subset of the <cite><a class="bibref" data-link-type="biblio" href="#bib-json-schema-05" title="JSON Schema: A Media Type for Describing JSON Documents. Draft 5">JSON Schema Specification Wright Draft 00</a></cite>.</p>
+This object is an extended subset of the <cite><a class="bibref" data-link-type="biblio" href="#bib-json-schema-05" title="JSON Schema: A Media Type for Describing JSON Documents. Draft 5">JSON Schema Specification Draft Wright-00</a></cite>.</p>
 <p>For more information about the keywords, see <cite><a class="bibref" data-link-type="biblio" href="#bib-json-schema-05" title="JSON Schema: A Media Type for Describing JSON Documents. Draft 5">JSON Schema Core</a></cite> and <cite><a class="bibref" data-link-type="biblio" href="#bib-json-schema-validation-05" title="JSON Schema Validation: A Vocabulary for Structural Validation of JSON. Draft 5">JSON Schema Validation</a></cite>.
 Unless stated otherwise, the keyword definitions follow those of JSON Schema and do not add any additional semantics.</p>
 <section id="json-schema-keywords"><div class="header-wrapper"><h5 id="x4-7-24-1-json-schema-keywords"><bdi class="secno">4.7.24.1 </bdi>JSON Schema Keywords</h5><a class="self-link" href="#json-schema-keywords" aria-label="Permalink for Section 4.7.24.1"></a></div>
@@ -3453,7 +3453,7 @@ Unless stated otherwise, the keyword definitions follow those of JSON Schema and
 <tr>
 <td><span id="schema-nullable"></span>nullable</td>
 <td style="text-align:center"><code>boolean</code></td>
-<td>This keyword only takes effect if <code>type</code> is explicitly defined within the same Schema Object.  A <code>true</code> value indicates that both <code>null</code> values and values of the type specified by <code>type</code> are allowed.  Other Schema Object constraints retain their defined behavior, and therefore may disallow the use of <code>null</code> as a value. A <code>false</code> value leaves the specified or default <code>type</code> unmodified. The default value is <code>false</code>.</td>
+<td>This keyword only takes effect if <code>type</code> is explicitly defined within the same Schema Object. A <code>true</code> value indicates that both <code>null</code> values and values of the type specified by <code>type</code> are allowed. Other Schema Object constraints retain their defined behavior, and therefore may disallow the use of <code>null</code> as a value. A <code>false</code> value leaves the specified or default <code>type</code> unmodified. The default value is <code>false</code>.</td>
 </tr>
 <tr>
 <td><span id="schema-discriminator"></span>discriminator</td>

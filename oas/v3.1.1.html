@@ -192,14 +192,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       ]
     }
   ],
-  "publishISODate": "2024-08-28T00:00:00.000Z",
-  "generatedSubtitle": "28 August 2024"
+  "publishISODate": "2024-09-02T00:00:00.000Z",
+  "generatedSubtitle": "02 September 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head><body class="h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://openapis.org/"><img crossorigin="" alt="OpenAPI Initiative" height="48" src="https://raw.githubusercontent.com/OAI/OpenAPI-Style-Guide/master/graphics/bitmap/OpenAPI_Logo_Pantone.png">
   </a></p>
     <h1 id="title" class="title">OpenAPI Specification v3.1.1 </h1> <h2 id="subtitle" class="subtitle">Version 3.1.1</h2>
-    <p id="w3c-state"> <time class="dt-published" datetime="2024-08-28">28 August 2024</time></p>
+    <p id="w3c-state"> <time class="dt-published" datetime="2024-09-02">02 September 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -428,8 +428,8 @@ The behavior for Discrimator Object non-URI mappings and for the Operation Objec
 <p>Data types in the OAS are based on the types defined by the <a href="https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00#section-6.1.1">JSON Schema Validation Specification Draft 2020-12</a>:
 “null”, “boolean”, “object”, “array”, “number”, “string”, or “integer”.
 Models are defined using the <a href="#schema-object">Schema Object</a>, which is a superset of the JSON Schema Specification Draft 2020-12.</p>
-<p>JSON Schema keywords and <code>format</code> values operate on JSON “instances” which may be one of the six JSON data types, “null”, “boolean”, “object”, “array”, “number”, or “string”, with certain keywords and formats only applying to a specific type.  For example, the <code>pattern</code> keyword and the <code>date-time</code> format only apply to strings, and treat any instance of the other five types as <em>automatically valid.</em>  This means JSON Schema keywords and formats do <strong>NOT</strong> implicitly require the expected type.  Use the <code>type</code> keyword to explicitly constrain the type.</p>
-<p>Note that the <code>type</code> keyword allows <code>"integer"</code> as a value for convenience, but keyword and format applicability does not recognize integers as being of a distinct JSON type from other numbers because <cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7159" title="The JavaScript Object Notation (JSON) Data Interchange Format">JSON</a></cite> itself does not make that distinction.  Since there is no distinct JSON integer type, JSON Schema defines integers mathematically.  This means that both <code>1</code> and <code>1.0</code> are <a href="https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-4.2.2">equivalent</a>, and are both considered to be integers.</p>
+<p>JSON Schema keywords and <code>format</code> values operate on JSON “instances” which may be one of the six JSON data types, “null”, “boolean”, “object”, “array”, “number”, or “string”, with certain keywords and formats only applying to a specific type. For example, the <code>pattern</code> keyword and the <code>date-time</code> format only apply to strings, and treat any instance of the other five types as <em>automatically valid.</em> This means JSON Schema keywords and formats do <strong>NOT</strong> implicitly require the expected type. Use the <code>type</code> keyword to explicitly constrain the type.</p>
+<p>Note that the <code>type</code> keyword allows <code>"integer"</code> as a value for convenience, but keyword and format applicability does not recognize integers as being of a distinct JSON type from other numbers because <cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7159" title="The JavaScript Object Notation (JSON) Data Interchange Format">JSON</a></cite> itself does not make that distinction. Since there is no distinct JSON integer type, JSON Schema defines integers mathematically. This means that both <code>1</code> and <code>1.0</code> are <a href="https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-4.2.2">equivalent</a>, and are both considered to be integers.</p>
 <section id="data-type-format"><div class="header-wrapper"><h4 id="x4-4-1-data-type-format"><bdi class="secno">4.4.1 </bdi>Data Type Format</h4><a class="self-link" href="#data-type-format" aria-label="Permalink for Section 4.4.1"></a></div>
 <p>As defined by the <a href="https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00#section-7.3">JSON Schema Validation specification</a>, data types can have an optional modifier keyword: <code>format</code>. As described in that specification, <code>format</code> is treated as a non-validating annotation by default; the ability to validate <code>format</code> varies across implementations.</p>
 <p>The OpenAPI Initiative also hosts a <a href="https://spec.openapis.org/registry/format/">Format Registry</a> for formats defined by OAS users and other specifications. Support for any registered format is strictly <em class="rfc2119">OPTIONAL</em>, and support for one registered format does not imply support for any others.</p>
@@ -531,13 +531,13 @@ For the purpose of <a href="https://tools.ietf.org/html/draft-bhutton-json-schem
 </thead>
 <tbody>
 <tr>
-<td><code>type: string</code><br><code>format: binary</code></td>
-<td><code>contentMediaType: image/png</code></td>
+<td><code style="white-space:nowrap">type: string</code><br><code style="white-space:nowrap">format: binary</code></td>
+<td><code style="white-space:nowrap">contentMediaType: image/png</code></td>
 <td>if redundant, can be omitted, often resulting in an empty <a href="#schema-object">Schema Object</a></td>
 </tr>
 <tr>
-<td><code>type: string</code><br><code>format: byte</code></td>
-<td><code>type: string</code><br><code>contentMediaType: image/png</code><br><code>contentEncoding: base64</code></td>
+<td><code style="white-space:nowrap">type: string</code><br><code style="white-space:nowrap">format: byte</code></td>
+<td><code style="white-space:nowrap">type: string</code><br><code style="white-space:nowrap">contentMediaType: image/png</code><br><code style="white-space:nowrap">contentEncoding: base64</code></td>
 <td>note that <code>base64url</code> can be used to avoid re-encoding the base64 string to be URL-safe</td>
 </tr>
 </tbody>
@@ -2270,8 +2270,8 @@ See <a href="#working-with-examples">Working With Examples</a> for further guida
       <span class="hljs-string">$ref:</span> <span class="hljs-string">'#/components/examples/frog-example'</span>
 </code></pre>
 </section><section id="considerations-for-file-uploads"><div class="header-wrapper"><h5 id="x4-8-14-3-considerations-for-file-uploads"><bdi class="secno">4.8.14.3 </bdi>Considerations for File Uploads</h5><a class="self-link" href="#considerations-for-file-uploads" aria-label="Permalink for Section 4.8.14.3"></a></div>
-<p>In contrast to OpenAPI 2.0, <code>file</code> input/output content in OpenAPI 3 is described with the same semantics as any other schema type.</p>
-<p>In contrast to OpenAPI 2.0, the <code>format</code> keyword has no effect on the content-encoding of the schema. Instead, JSON Schema’s <code>contentEncoding</code> and <code>contentMediaType</code> keywords are used. See <a href="#working-with-binary-data">Working With Binary Data</a> for how to model various scenarios with these keywords, and how to migrate from the previous <code>format</code> usage.</p>
+<p>In contrast to OpenAPI 2.0, <code>file</code> input/output content in OAS 3.x is described with the same semantics as any other schema type.</p>
+<p>In contrast to OAS 3.0, the <code>format</code> keyword has no effect on the content-encoding of the schema in OAS 3.1. Instead, JSON Schema’s <code>contentEncoding</code> and <code>contentMediaType</code> keywords are used. See <a href="#working-with-binary-data">Working With Binary Data</a> for how to model various scenarios with these keywords, and how to migrate from the previous <code>format</code> usage.</p>
 <p>Examples:</p>
 <p>Content transferred in binary (octet-stream) <em class="rfc2119">MAY</em> omit <code>schema</code>:</p>
 <pre class="nohighlight" tabindex="0"><code><span class="hljs-comment"># a PNG image as a binary file:</span>
@@ -2281,6 +2281,10 @@ See <a href="#working-with-examples">Working With Examples</a> for further guida
 <pre class="nohighlight" tabindex="0"><code><span class="hljs-comment"># an arbitrary binary file:</span>
 <span class="hljs-attr">content:</span>
   <span class="hljs-attr">application/octet-stream:</span> {}
+</code></pre>
+<pre class="nohighlight" tabindex="0"><code><span class="hljs-comment"># arbitrary JSON without constraints beyond being syntactically valid:</span>
+<span class="hljs-attr">content:</span>
+  <span class="hljs-attr">application/json:</span> {}
 </code></pre>
 <p>These examples apply to either input payloads of file uploads or response payloads.</p>
 <p>A <code>requestBody</code> for submitting a file in a <code>POST</code> operation may look like the following example:</p>
