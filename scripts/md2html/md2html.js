@@ -13,18 +13,37 @@ const path = require('path');
 const url = require('url');
 
 const hljs = require('highlight.js');
-hljs.registerLanguage('urlencoded', function() {
+hljs.registerLanguage('uritemplate', function() {
     return {
       case_insensitive: true,
       contains: [
-          hljs.HASH_COMMENT_MODE,
           {
-              className: "attr", 
-              begin: /(?<=[?&])[^=?&\n\r]+/,
+              scope: "attr", 
+              match: /(?<=[{,])[^,}\n\r]+/,
+          }
+      ],
+    }
+  });
+hljs.registerLanguage('uri', function() {
+    return {
+      case_insensitive: true,
+      classNameAliases: {
+          pathsegment: "attr",
+          option: "attr",
+          value: "literal"
+      },
+      contains: [
+          {
+              scope: "pathsegment", 
+              match: /(?<=[/])[^/?#\n\r]+/,
           },
           {
-              className: "literal",
-              begin: /(?<=\=)[^?&\n\r]+/,
+              scope: "option", 
+              match: /(?<=[?&#])[^=?&#\n\r]+/,
+          },
+          {
+              scope: "value",
+              match: /(?<=\=)[^?&#\n\r]+/,
           }
       ],
     }
