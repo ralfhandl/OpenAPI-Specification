@@ -23,8 +23,6 @@ dfn{cursor:pointer}
 .dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
 </style>
 <title>Overlay Specification v1.0.0</title>
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-JR4K3ZJLPH&amp;l=dataLayer&amp;cx=c"></script>
 <style id="respec-mainstyle">
 @keyframes pop{
 0%{transform:scale(1,1)}
@@ -70,6 +68,8 @@ dd{margin-left:0}
 }
 </style>
 
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-JR4K3ZJLPH&amp;l=dataLayer&amp;cx=c"></script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-831873-42"></script>
 
 <script>
@@ -287,6 +287,21 @@ Unless specified otherwise, relative references are resolved using the URL of th
 <p>This object <em class="rfc2119">MAY</em> be extended with <a href="#specification-extensions">Specification Extensions</a>.</p>
 <p>The list of actions <em class="rfc2119">MUST</em> be applied in sequential order to ensure a consistent outcome. Actions are applied to the result of the previous action. This enables objects to be deleted in one action and then re-created in a subsequent action, for example.</p>
 <p>The <code>extends</code> property can be used to indicate that the Overlay was designed to update a specific [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapi" title="OpenAPI Specification">OpenAPI</a></cite>] document. Where no <code>extends</code> is provided it is the responsibility of tooling to apply the Overlay document to the appropriate OpenAPI document(s).</p>
+<p>In the following example the <code>extends</code> property specifies that the overlay is designed to update the OpenAPI Tic Tac Toe example document using an absolute URL.</p>
+<pre class="nohighlight" tabindex="0"><code><span class="hljs-attr">overlay:</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>
+<span class="hljs-attr">info:</span>
+  <span class="hljs-attr">title:</span> <span class="hljs-string">Overlay</span> <span class="hljs-string">for</span> <span class="hljs-string">the</span> <span class="hljs-string">Tic</span> <span class="hljs-string">Tac</span> <span class="hljs-string">Toe</span> <span class="hljs-string">API</span> <span class="hljs-string">document</span>
+  <span class="hljs-attr">version:</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>
+<span class="hljs-attr">extends:</span> <span class="hljs-string">'https://raw.githubusercontent.com/OAI/learn.openapis.org/refs/heads/main/examples/v3.1/tictactoe.yaml'</span>
+<span class="hljs-string">...</span>
+</code></pre>
+<p>The <code>extends</code> property can also specify a relative URL. In this case, the URL is resolved relative to the location of the Overlay document.</p>
+<pre class="nohighlight" tabindex="0"><code><span class="hljs-attr">overlay:</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>
+<span class="hljs-attr">info:</span>
+  <span class="hljs-attr">title:</span> <span class="hljs-string">Overlay</span> <span class="hljs-string">for</span> <span class="hljs-string">the</span> <span class="hljs-string">Tic</span> <span class="hljs-string">Tac</span> <span class="hljs-string">Toe</span> <span class="hljs-string">API</span> <span class="hljs-string">document</span>
+  <span class="hljs-attr">version:</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>
+<span class="hljs-attr">extends:</span> <span class="hljs-string">'./tictactoe.yaml'</span>
+</code></pre>
 </section></section><section id="info-object"><div class="header-wrapper"><h4 id="x4-4-2-info-object"><bdi class="secno">4.4.2 </bdi>Info Object</h4><a class="self-link" href="#info-object" aria-label="Permalink for Section 4.4.2"></a></div>
 <p>The object provides metadata about the Overlay.
 The metadata <em class="rfc2119">MAY</em> be used by the clients if needed.</p>
@@ -350,7 +365,7 @@ The metadata <em class="rfc2119">MAY</em> be used by the clients if needed.</p>
 <p>The result of the <code>target</code> JSONPath expression must be zero or more objects or arrays (not primitive types or <code>null</code> values).</p>
 <p>To update a primitive property value such as a string, the <code>target</code> expression should select the <em>containing</em> object in the target document and <code>update</code> should contain an object with the property and its new primitive value.</p>
 <p>Primitive-valued items of an array cannot be replaced or removed individually, only the complete array can be replaced.</p>
-<p>The properties of the <code>update</code> object <em class="rfc2119">MUST</em> be compatible with the target object referenced by the JSONPath key. When the Overlay document is applied, the properties in the <code>update</code> object replace properties in the target object with the same name and new properties are appended to the target object.</p>
+<p>The properties of the <code>update</code> object <em class="rfc2119">MUST</em> be compatible with the target object referenced by the JSONPath key. When the Overlay document is applied, the properties in the <code>update</code> object are recursively merged with the properties in the target object with the same names; new properties are added to the target object.</p>
 <p>This object <em class="rfc2119">MAY</em> be extended with <a href="#specification-extensions">Specification Extensions</a>.</p>
 </section></section></section><section id="examples"><div class="header-wrapper"><h3 id="x4-5-examples"><bdi class="secno">4.5 </bdi>Examples</h3><a class="self-link" href="#examples" aria-label="Permalink for Section 4.5"></a></div>
 <section id="structured-overlays-example"><div class="header-wrapper"><h4 id="x4-5-1-structured-overlays-example"><bdi class="secno">4.5.1 </bdi>Structured Overlays Example</h4><a class="self-link" href="#structured-overlays-example" aria-label="Permalink for Section 4.5.1"></a></div>
