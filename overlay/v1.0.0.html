@@ -23,6 +23,8 @@ dfn{cursor:pointer}
 .dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
 </style>
 <title>Overlay Specification v1.0.0</title>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-JR4K3ZJLPH&amp;l=dataLayer&amp;cx=c"></script>
 <style id="respec-mainstyle">
 @keyframes pop{
 0%{transform:scale(1,1)}
@@ -68,8 +70,6 @@ dd{margin-left:0}
 }
 </style>
 
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-JR4K3ZJLPH&amp;l=dataLayer&amp;cx=c"></script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-831873-42"></script>
 
 <script>
@@ -155,14 +155,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       ]
     }
   ],
-  "publishISODate": "2024-10-08T00:00:00.000Z",
-  "generatedSubtitle": "08 October 2024"
+  "publishISODate": "2024-10-14T00:00:00.000Z",
+  "generatedSubtitle": "14 October 2024"
 }</script>
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head><body class="h-entry toc-inline"><div class="head">
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head><body class="h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://openapis.org/"><img crossorigin="" alt="OpenAPI Initiative" height="48" src="https://raw.githubusercontent.com/OAI/OpenAPI-Style-Guide/master/graphics/bitmap/OpenAPI_Logo_Pantone.png">
   </a></p>
     <h1 id="title" class="title">Overlay Specification v1.0.0 </h1> <h2 id="subtitle" class="subtitle">Version 1.0.0</h2>
-    <p id="w3c-state"> <time class="dt-published" datetime="2024-10-08">08 October 2024</time></p>
+    <p id="w3c-state"> <time class="dt-published" datetime="2024-10-14">14 October 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -353,16 +353,16 @@ The metadata <em class="rfc2119">MAY</em> be used by the clients if needed.</p>
 <tr>
 <td><span id="action-update"></span>update</td>
 <td style="text-align:center">Any</td>
-<td>If the <code>target</code> selects an object node, the value of this field should be an object with the properties and values to merge with the node. If the <code>target</code> selects an array, the value of this field should be an entry to append to the array. This field has no impact if the <code>remove</code> field of this action object is <code>true</code>.</td>
+<td>If the <code>target</code> selects an object node, the value of this field <em class="rfc2119">MUST</em> be an object with the properties and values to merge with the selected node. If the <code>target</code> selects an array, the value of this field <em class="rfc2119">MUST</em> be an entry to append to the array. This field has no impact if the <code>remove</code> field of this action object is <code>true</code>.</td>
 </tr>
 <tr>
 <td><span id="action-remove"></span>remove</td>
 <td style="text-align:center"><code>boolean</code></td>
-<td>A boolean value that indicates that the target object is to be removed from the the map or array it is contained in. The default value is <code>false</code>.</td>
+<td>A boolean value that indicates that the target object or array <em class="rfc2119">MUST</em> be removed from the the map or array it is contained in. The default value is <code>false</code>.</td>
 </tr>
 </tbody>
 </table>
-<p>The result of the <code>target</code> JSONPath expression must be zero or more objects or arrays (not primitive types or <code>null</code> values).</p>
+<p>The result of the <code>target</code> JSONPath expression <em class="rfc2119">MUST</em> be zero or more objects or arrays (not primitive types or <code>null</code> values).</p>
 <p>To update a primitive property value such as a string, the <code>target</code> expression should select the <em>containing</em> object in the target document and <code>update</code> should contain an object with the property and its new primitive value.</p>
 <p>Primitive-valued items of an array cannot be replaced or removed individually, only the complete array can be replaced.</p>
 <p>The properties of the <code>update</code> object <em class="rfc2119">MUST</em> be compatible with the target object referenced by the JSONPath key. When the Overlay document is applied, the properties in the <code>update</code> object are recursively merged with the properties in the target object with the same names; new properties are added to the target object.</p>
