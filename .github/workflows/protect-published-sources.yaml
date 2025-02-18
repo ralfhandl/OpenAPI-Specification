@@ -7,7 +7,7 @@ name: protect-published-sources
 # This workflow prevents changes to the versions folder
 #
 
-# run this on creation of pull-requests
+# run this on creation of pull requests
 on:
   - pull_request
 
