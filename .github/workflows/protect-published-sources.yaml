@@ -1,0 +1,24 @@
+name: protect-published-sources
+
+# Author: @ralfhandl
+# Issue: https://github.com/OAI/OpenAPI-Specification/issues/3432
+
+#
+# This workflow prevents changes to the versions folder
+#
+
+# run this on creation of pull-requests
+on:
+  - pull_request
+
+jobs:
+  mdv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Prevent changes to versions folder
+        uses: xalvarez/prevent-file-change-action@v1
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          pattern: versions/.*
+          allowNewFiles: false
