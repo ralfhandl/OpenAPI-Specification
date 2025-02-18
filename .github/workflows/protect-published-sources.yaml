@@ -10,6 +10,7 @@ name: protect-published-sources
 # run this on creation of pull requests
 on:
   - pull_request_target
+  - push
 
 jobs:
   mdv:
