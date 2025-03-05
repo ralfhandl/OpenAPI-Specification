@@ -19,7 +19,7 @@ jobs:
         shell: bash
         run: |
           echo base.ref=${{ github.event.pull_request.base.ref }}
-          echo base.repo.name=${{ github.event.pull_request.base.repo.name }}
+          echo base.repo.full_name=${{ github.event.pull_request.base.repo.full_name }}
           echo
           echo This PR contains changes to files that should not be changed
           exit 1
