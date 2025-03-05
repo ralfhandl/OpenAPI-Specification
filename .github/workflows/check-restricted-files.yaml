@@ -18,5 +18,8 @@ jobs:
       - name: Check changed files
         shell: bash
         run: |
+          echo base.ref=${{ github.pull_request.base.ref }}
+          echo base.repo.name=${{ github.pull_request.base.repo.name }}
+          echo
           echo This PR contains changes to files that should not be changed
           exit 1
