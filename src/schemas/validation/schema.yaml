@@ -1,24 +1,19 @@
-$id: 'https://spec.openapis.org/oas/3.2/schema/WORK-IN-PROGRESS'
+$id: 'https://spec.openapis.org/oas/3.1/schema/WORK-IN-PROGRESS'
 $schema: 'https://json-schema.org/draft/2020-12/schema'
 
-description: The description of OpenAPI v3.2.x Documents without Schema Object validation
+description: The description of OpenAPI v3.1.x Documents without Schema Object validation
 
 type: object
 properties:
   openapi:
     type: string
-    pattern: '^3\.2\.\d+(-.+)?$'
-  $self:
-    type: string
-    format: uri-reference
-    $comment: MUST NOT contain a fragment
-    pattern: '^[^#]*$'
+    pattern: '^3\.1\.\d+(-.+)?$'
   info:
     $ref: '#/$defs/info'
   jsonSchemaDialect:
     type: string
-    format: uri-reference
-    default: 'https://spec.openapis.org/oas/3.2/dialect/WORK-IN-PROGRESS'
+    format: uri
+    default: 'https://spec.openapis.org/oas/3.1/dialect/WORK-IN-PROGRESS'
   servers:
     type: array
     items:
@@ -58,7 +53,7 @@ unevaluatedProperties: false
 
 $defs:
   info:
-    $comment: https://spec.openapis.org/oas/v3.2#info-object
+    $comment: https://spec.openapis.org/oas/v3.1#info-object
     type: object
     properties:
       title:
@@ -69,7 +64,7 @@ $defs:
         type: string
       termsOfService:
         type: string
-        format: uri-reference
+        format: uri
       contact:
         $ref: '#/$defs/contact'
       license:
@@ -83,14 +78,14 @@ $defs:
     unevaluatedProperties: false
 
   contact:
-    $comment: https://spec.openapis.org/oas/v3.2#contact-object
+    $comment: https://spec.openapis.org/oas/v3.1#contact-object
     type: object
     properties:
       name:
         type: string
       url:
         type: string
-        format: uri-reference
+        format: uri
       email:
         type: string
         format: email
@@ -98,7 +93,7 @@ $defs:
     unevaluatedProperties: false
 
   license:
-    $comment: https://spec.openapis.org/oas/v3.2#license-object
+    $comment: https://spec.openapis.org/oas/v3.1#license-object
     type: object
     properties:
       name:
@@ -107,7 +102,7 @@ $defs:
         type: string
       url:
         type: string
-        format: uri-reference
+        format: uri
     required:
       - name
     dependentSchemas:
@@ -119,14 +114,12 @@ $defs:
     unevaluatedProperties: false
 
   server:
-    $comment: https://spec.openapis.org/oas/v3.2#server-object
+    $comment: https://spec.openapis.org/oas/v3.1#server-object
     type: object
     properties:
       url:
         type: string
       description:
-        type: string
-      name:
         type: string
       variables:
         type: object
@@ -138,7 +131,7 @@ $defs:
     unevaluatedProperties: false
 
   server-variable:
-    $comment: https://spec.openapis.org/oas/v3.2#server-variable-object
+    $comment: https://spec.openapis.org/oas/v3.1#server-variable-object
     type: object
     properties:
       enum:
@@ -156,7 +149,7 @@ $defs:
     unevaluatedProperties: false
 
   components:
-    $comment: https://spec.openapis.org/oas/v3.2#components-object
+    $comment: https://spec.openapis.org/oas/v3.1#components-object
     type: object
     properties:
       schemas:
@@ -199,12 +192,8 @@ $defs:
         type: object
         additionalProperties:
           $ref: '#/$defs/path-item'
-      mediaTypes:
-        type: object
-        additionalProperties:
-          $ref: '#/$defs/media-type-or-reference'
     patternProperties:
-      '^(?:schemas|responses|parameters|examples|requestBodies|headers|securitySchemes|links|callbacks|pathItems|mediaTypes)$':
+      '^(schemas|responses|parameters|examples|requestBodies|headers|securitySchemes|links|callbacks|pathItems)$':
         $comment: Enumerating all of the property names in the regex above is necessary for unevaluatedProperties to work as expected
         propertyNames:
           pattern: '^[a-zA-Z0-9._-]+$'
@@ -212,7 +201,7 @@ $defs:
     unevaluatedProperties: false
 
   paths:
-    $comment: https://spec.openapis.org/oas/v3.2#paths-object
+    $comment: https://spec.openapis.org/oas/v3.1#paths-object
     type: object
     patternProperties:
       '^/':
@@ -221,7 +210,7 @@ $defs:
     unevaluatedProperties: false
 
   path-item:
-    $comment: https://spec.openapis.org/oas/v3.2#path-item-object
+    $comment: https://spec.openapis.org/oas/v3.1#path-item-object
     type: object
     properties:
       $ref:
@@ -236,25 +225,9 @@ $defs:
         items:
           $ref: '#/$defs/server'
       parameters:
-        $ref: '#/$defs/parameters'
-      additionalOperations:
-        type: object
-        additionalProperties:
-          $ref: '#/$defs/operation'
-        propertyNames:
-          $comment: RFC9110 restricts methods to "1*tchar" in ABNF
-          pattern: "^[a-zA-Z0-9!#$%&'*+.^_`|~-]+$"
-          not:
-            enum:
-              - GET
-              - PUT
-              - POST
-              - DELETE
-              - OPTIONS
-              - HEAD
-              - PATCH
-              - TRACE
-              - QUERY
+        type: array
+        items:
+          $ref: '#/$defs/parameter-or-reference'
       get:
         $ref: '#/$defs/operation'
       put:
@@ -271,13 +244,11 @@ $defs:
         $ref: '#/$defs/operation'
       trace:
         $ref: '#/$defs/operation'
-      query:
-        $ref: '#/$defs/operation'
     $ref: '#/$defs/specification-extensions'
     unevaluatedProperties: false
 
   operation:
-    $comment: https://spec.openapis.org/oas/v3.2#operation-object
+    $comment: https://spec.openapis.org/oas/v3.1#operation-object
     type: object
     properties:
       tags:
@@ -293,7 +264,9 @@ $defs:
       operationId:
         type: string
       parameters:
-        $ref: '#/$defs/parameters'
+        type: array
+        items:
+          $ref: '#/$defs/parameter-or-reference'
       requestBody:
         $ref: '#/$defs/request-body-or-reference'
       responses:
@@ -317,51 +290,21 @@ $defs:
     unevaluatedProperties: false
 
   external-documentation:
-    $comment: https://spec.openapis.org/oas/v3.2#external-documentation-object
+    $comment: https://spec.openapis.org/oas/v3.1#external-documentation-object
     type: object
     properties:
       description:
         type: string
       url:
         type: string
-        format: uri-reference
+        format: uri
     required:
       - url
     $ref: '#/$defs/specification-extensions'
     unevaluatedProperties: false
 
-  parameters:
-    type: array
-    items:
-      $ref: '#/$defs/parameter-or-reference'
-    not:
-      allOf:
-        - contains:
-            type: object
-            properties:
-              in:
-                const: query
-            required:
-              - in
-        - contains:
-            type: object
-            properties:
-              in:
-                const: querystring
-            required:
-              - in
-    contains:
-      type: object
-      properties:
-        in:
-          const: querystring
-      required:
-        - in
-    minContains: 0
-    maxContains: 1
-
   parameter:
-    $comment: https://spec.openapis.org/oas/v3.2#parameter-object
+    $comment: https://spec.openapis.org/oas/v3.1#parameter-object
     type: object
     properties:
       name:
@@ -369,7 +312,6 @@ $defs:
       in:
         enum:
           - query
-          - querystring
           - header
           - path
           - cookie
@@ -395,25 +337,17 @@ $defs:
         - schema
       - required:
         - content
-    allOf:
-      - $ref: '#/$defs/examples'
-      - $ref: '#/$defs/specification-extensions'
-      - if:
-          properties:
-            in:
-              const: query
-        then:
-          properties:
-            allowEmptyValue:
-              default: false
-              type: boolean
-      - if:
-          properties:
-            in:
-              const: querystring
-        then:
-          required:
-            - content
+    if:
+      properties:
+        in:
+          const: query
+      required:
+        - in
+    then:
+      properties:
+        allowEmptyValue:
+          default: false
+          type: boolean
     dependentSchemas:
       schema:
         properties:
@@ -421,10 +355,8 @@ $defs:
             type: string
           explode:
             type: boolean
-          allowReserved:
-            default: false
-            type: boolean
         allOf:
+          - $ref: '#/$defs/examples'
           - $ref: '#/$defs/parameter/dependentSchemas/schema/$defs/styles-for-path'
           - $ref: '#/$defs/parameter/dependentSchemas/schema/$defs/styles-for-header'
           - $ref: '#/$defs/parameter/dependentSchemas/schema/$defs/styles-for-query'
@@ -437,6 +369,8 @@ $defs:
               properties:
                 in:
                   const: path
+              required:
+                - in
             then:
               properties:
                 style:
@@ -455,6 +389,8 @@ $defs:
               properties:
                 in:
                   const: header
+              required:
+                - in
             then:
               properties:
                 style:
@@ -466,6 +402,8 @@ $defs:
               properties:
                 in:
                   const: query
+              required:
+                - in
             then:
               properties:
                 style:
@@ -475,20 +413,24 @@ $defs:
                     - spaceDelimited
                     - pipeDelimited
                     - deepObject
+                allowReserved:
+                  default: false
+                  type: boolean
 
           styles-for-cookie:
             if:
               properties:
                 in:
                   const: cookie
+              required:
+                - in
             then:
               properties:
                 style:
                   default: form
-                  enum:
-                    - form
-                    - cookie
+                  const: form
 
+    $ref: '#/$defs/specification-extensions'
     unevaluatedProperties: false
 
   parameter-or-reference:
@@ -502,7 +444,7 @@ $defs:
       $ref: '#/$defs/parameter'
 
   request-body:
-    $comment: https://spec.openapis.org/oas/v3.2#request-body-object
+    $comment: https://spec.openapis.org/oas/v3.1#request-body-object
     type: object
     properties:
       description:
@@ -528,55 +470,30 @@ $defs:
       $ref: '#/$defs/request-body'
 
   content:
-    $comment: https://spec.openapis.org/oas/v3.2#fixed-fields-10
+    $comment: https://spec.openapis.org/oas/v3.1#fixed-fields-10
     type: object
     additionalProperties:
-      $ref: '#/$defs/media-type-or-reference'
+      $ref: '#/$defs/media-type'
     propertyNames:
       format: media-range
 
   media-type:
-    $comment: https://spec.openapis.org/oas/v3.2#media-type-object
+    $comment: https://spec.openapis.org/oas/v3.1#media-type-object
     type: object
     properties:
-      description:
-        type: string
       schema:
-        $dynamicRef: '#meta'
-      itemSchema:
         $dynamicRef: '#meta'
       encoding:
         type: object
         additionalProperties:
           $ref: '#/$defs/encoding'
-      prefixEncoding:
-        type: array
-        items:
-          $ref: '#/$defs/encoding'
-      itemEncoding:
-        $ref: '#/$defs/encoding'
-    dependentSchemas:
-      encoding:
-        properties:
-          prefixEncoding: false
-          itemEncoding: false
     allOf:
-      - $ref: '#/$defs/examples'
       - $ref: '#/$defs/specification-extensions'
+      - $ref: '#/$defs/examples'
     unevaluatedProperties: false
 
-  media-type-or-reference:
-    if:
-      type: object
-      required:
-        - $ref
-    then:
-      $ref: '#/$defs/reference'
-    else:
-      $ref: '#/$defs/media-type'
-
   encoding:
-    $comment: https://spec.openapis.org/oas/v3.2#encoding-object
+    $comment: https://spec.openapis.org/oas/v3.1#encoding-object
     type: object
     properties:
       contentType:
@@ -587,6 +504,7 @@ $defs:
         additionalProperties:
           $ref: '#/$defs/header-or-reference'
       style:
+        default: form
         enum:
           - form
           - spaceDelimited
@@ -595,43 +513,15 @@ $defs:
       explode:
         type: boolean
       allowReserved:
+        default: false
         type: boolean
-      encoding:
-        type: object
-        additionalProperties:
-          $ref: '#/$defs/encoding'
-      prefixEncoding:
-        type: array
-        items:
-          $ref: '#/$defs/encoding'
-      itemEncoding:
-        $ref: '#/$defs/encoding'
-    dependentSchemas:
-      encoding:
-        properties:
-          prefixEncoding: false
-          itemEncoding: false
-      style:
-        properties:
-          allowReserved:
-            default: false
-      explode:
-        properties:
-          style:
-            default: form
-          allowReserved:
-            default: false
-      allowReserved:
-        properties:
-          style:
-            default: form
     allOf:
       - $ref: '#/$defs/specification-extensions'
       - $ref: '#/$defs/styles-for-form'
     unevaluatedProperties: false
 
   responses:
-    $comment: https://spec.openapis.org/oas/v3.2#responses-object
+    $comment: https://spec.openapis.org/oas/v3.1#responses-object
     type: object
     properties:
       default:
@@ -650,11 +540,9 @@ $defs:
       required: [default]
 
   response:
-    $comment: https://spec.openapis.org/oas/v3.2#response-object
+    $comment: https://spec.openapis.org/oas/v3.1#response-object
     type: object
     properties:
-      summary:
-        type: string
       description:
         type: string
       headers:
@@ -667,6 +555,8 @@ $defs:
         type: object
         additionalProperties:
           $ref: '#/$defs/link-or-reference'
+    required:
+      - description
     $ref: '#/$defs/specification-extensions'
     unevaluatedProperties: false
 
@@ -681,7 +571,7 @@ $defs:
       $ref: '#/$defs/response'
 
   callbacks:
-    $comment: https://spec.openapis.org/oas/v3.2#callback-object
+    $comment: https://spec.openapis.org/oas/v3.1#callback-object
     type: object
     $ref: '#/$defs/specification-extensions'
     additionalProperties:
@@ -698,37 +588,21 @@ $defs:
       $ref: '#/$defs/callbacks'
 
   example:
-    $comment: https://spec.openapis.org/oas/v3.2#example-object
+    $comment: https://spec.openapis.org/oas/v3.1#example-object
     type: object
     properties:
       summary:
         type: string
       description:
         type: string
-      dataValue: true
-      serializedValue:
-        type: string
       value: true
       externalValue:
         type: string
-        format: uri-reference
-    allOf:
-    - not:
-        required:
-        - value
-        - externalValue
-    - not:
-        required:
-        - value
-        - dataValue
-    - not:
-        required:
-        - value
-        - serializedValue
-    - not:
-        required:
-        - serializedValue
-        - externalValue
+        format: uri
+    not:
+      required:
+      - value
+      - externalValue
     $ref: '#/$defs/specification-extensions'
     unevaluatedProperties: false
 
@@ -743,7 +617,7 @@ $defs:
       $ref: '#/$defs/example'
 
   link:
-    $comment: https://spec.openapis.org/oas/v3.2#link-object
+    $comment: https://spec.openapis.org/oas/v3.1#link-object
     type: object
     properties:
       operationRef:
@@ -756,7 +630,7 @@ $defs:
       requestBody: true
       description:
         type: string
-      server:
+      body:
         $ref: '#/$defs/server'
     oneOf:
       - required:
@@ -777,7 +651,7 @@ $defs:
       $ref: '#/$defs/link'
 
   header:
-    $comment: https://spec.openapis.org/oas/v3.2#header-object
+    $comment: https://spec.openapis.org/oas/v3.1#header-object
     type: object
     properties:
       description:
@@ -808,12 +682,8 @@ $defs:
           explode:
             default: false
             type: boolean
-          allowReserved:
-            default: false
-            type: boolean
-    allOf:
-    - $ref: '#/$defs/examples'
-    - $ref: '#/$defs/specification-extensions'
+        $ref: '#/$defs/examples'
+    $ref: '#/$defs/specification-extensions'
     unevaluatedProperties: false
 
   header-or-reference:
@@ -827,28 +697,22 @@ $defs:
       $ref: '#/$defs/header'
 
   tag:
-    $comment: https://spec.openapis.org/oas/v3.2#tag-object
+    $comment: https://spec.openapis.org/oas/v3.1#tag-object
     type: object
     properties:
       name:
-        type: string
-      summary:
         type: string
       description:
         type: string
       externalDocs:
         $ref: '#/$defs/external-documentation'
-      parent:
-        type: string
-      kind:
-        type: string
     required:
       - name
     $ref: '#/$defs/specification-extensions'
     unevaluatedProperties: false
 
   reference:
-    $comment: https://spec.openapis.org/oas/v3.2#reference-object
+    $comment: https://spec.openapis.org/oas/v3.1#reference-object
     type: object
     properties:
       $ref:
@@ -860,14 +724,14 @@ $defs:
         type: string
 
   schema:
-    $comment: https://spec.openapis.org/oas/v3.2#schema-object
+    $comment: https://spec.openapis.org/oas/v3.1#schema-object
     $dynamicAnchor: meta
     type:
       - object
       - boolean
 
   security-scheme:
-    $comment: https://spec.openapis.org/oas/v3.2#security-scheme-object
+    $comment: https://spec.openapis.org/oas/v3.1#security-scheme-object
     type: object
     properties:
       type:
@@ -879,9 +743,6 @@ $defs:
           - openIdConnect
       description:
         type: string
-      deprecated:
-        default: false
-        type: boolean
     required:
       - type
     allOf:
@@ -899,6 +760,8 @@ $defs:
           properties:
             type:
               const: apiKey
+          required:
+            - type
         then:
           properties:
             name:
@@ -917,6 +780,8 @@ $defs:
           properties:
             type:
               const: http
+          required:
+            - type
         then:
           properties:
             scheme:
@@ -945,13 +810,12 @@ $defs:
           properties:
             type:
               const: oauth2
+          required:
+            - type
         then:
           properties:
             flows:
               $ref: '#/$defs/oauth-flows'
-            oauth2MetadataUrl:
-              type: string
-              format: uri-reference
           required:
             - flows
 
@@ -960,11 +824,13 @@ $defs:
           properties:
             type:
               const: openIdConnect
+          required:
+            - type
         then:
           properties:
             openIdConnectUrl:
               type: string
-              format: uri-reference
+              format: uri
           required:
             - openIdConnectUrl
 
@@ -989,8 +855,6 @@ $defs:
         $ref: '#/$defs/oauth-flows/$defs/client-credentials'
       authorizationCode:
         $ref: '#/$defs/oauth-flows/$defs/authorization-code'
-      deviceAuthorization:
-        $ref: '#/$defs/oauth-flows/$defs/device-authorization'
     $ref: '#/$defs/specification-extensions'
     unevaluatedProperties: false
 
@@ -1000,10 +864,10 @@ $defs:
         properties:
           authorizationUrl:
             type: string
-            format: uri-reference
+            format: uri
           refreshUrl:
             type: string
-            format: uri-reference
+            format: uri
           scopes:
             $ref: '#/$defs/map-of-strings'
         required:
@@ -1017,10 +881,10 @@ $defs:
         properties:
           tokenUrl:
             type: string
-            format: uri-reference
+            format: uri
           refreshUrl:
             type: string
-            format: uri-reference
+            format: uri
           scopes:
             $ref: '#/$defs/map-of-strings'
         required:
@@ -1034,10 +898,10 @@ $defs:
         properties:
           tokenUrl:
             type: string
-            format: uri-reference
+            format: uri
           refreshUrl:
             type: string
-            format: uri-reference
+            format: uri
           scopes:
             $ref: '#/$defs/map-of-strings'
         required:
@@ -1051,13 +915,13 @@ $defs:
         properties:
           authorizationUrl:
             type: string
-            format: uri-reference
+            format: uri
           tokenUrl:
             type: string
-            format: uri-reference
+            format: uri
           refreshUrl:
             type: string
-            format: uri-reference
+            format: uri
           scopes:
             $ref: '#/$defs/map-of-strings'
         required:
@@ -1067,29 +931,8 @@ $defs:
         $ref: '#/$defs/specification-extensions'
         unevaluatedProperties: false
 
-      device-authorization:
-        type: object
-        properties:
-          deviceAuthorizationUrl:
-            type: string
-            format: uri-reference
-          tokenUrl:
-            type: string
-            format: uri-reference
-          refreshUrl:
-            type: string
-            format: uri-reference
-          scopes:
-            $ref: '#/$defs/map-of-strings'
-        required:
-          - deviceAuthorizationUrl
-          - tokenUrl
-          - scopes
-        $ref: '#/$defs/specification-extensions'
-        unevaluatedProperties: false
-
   security-requirement:
-    $comment: https://spec.openapis.org/oas/v3.2#security-requirement-object
+    $comment: https://spec.openapis.org/oas/v3.1#security-requirement-object
     type: object
     additionalProperties:
       type: array
@@ -1097,7 +940,7 @@ $defs:
         type: string
 
   specification-extensions:
-    $comment: https://spec.openapis.org/oas/v3.2#specification-extensions
+    $comment: https://spec.openapis.org/oas/v3.1#specification-extensions
     patternProperties:
       '^x-': true
 
@@ -1108,10 +951,6 @@ $defs:
         type: object
         additionalProperties:
           $ref: '#/$defs/example-or-reference'
-    not:
-      required:
-        - example
-        - examples
 
   map-of-strings:
     type: object
