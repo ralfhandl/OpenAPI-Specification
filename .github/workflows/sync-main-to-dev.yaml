@@ -38,9 +38,7 @@ jobs:
           git config user.email "a@b.c"
           SYNC="$BASE-sync-with-$HEAD"
 
-          git fetch origin -v
           git checkout -b $SYNC origin/$SYNC || git checkout -b $SYNC origin/$BASE
-
           git merge origin/$HEAD -m "Merge $HEAD into $SYNC" --allow-unrelated-histories
           git checkout origin/dev src/*
           git checkout origin/dev tests/*
