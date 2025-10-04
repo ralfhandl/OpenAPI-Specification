@@ -41,7 +41,7 @@ jobs:
           git merge origin/$HEAD -m "Merge $HEAD into $SYNC" --allow-unrelated-histories
           git checkout origin/dev src/*
           git checkout origin/dev tests/*
-          git commit -m "Restored src/* and tests/*"
+          git commit -m "Restored src/* and tests/*" || echo ""
           git push -u origin $SYNC
 
           EXISTS=$(gh pr list --base $BASE --head $SYNC \
