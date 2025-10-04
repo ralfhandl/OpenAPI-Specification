@@ -38,6 +38,7 @@ jobs:
           git fetch origin -v
           git checkout -b $SYNC origin/$SYNC || git checkout -b $SYNC origin/$BASE
           git status
+          git pull --allow-unrelated-histories
 
           git merge origin/$HEAD
           git checkout origin/dev src/*
