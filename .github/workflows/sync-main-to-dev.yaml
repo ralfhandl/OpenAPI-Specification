@@ -31,17 +31,28 @@ jobs:
         id: pull_request
         shell: bash
         run: |
-          EXISTS=$(gh pr list --base $BASE --head $HEAD \
+          git config user.name ${GITHUB_ACTOR}
+          git config user.email "a@b.c"
+          SYNC="$BASE-sync-with-$HEAD"
+          git fetch origin $HEAD $BASE
+          git checkout -b $SYNC origin/$SYNC || git checkout -b $SYNC origin/$BASE
+          git merge origin/$HEAD
+          git checkout origin/dev src/*
+          git checkout origin/dev tests/*
+          git commit -m "Restored src/* and tests/*"
+          git push -u origin $SYNC
+
+          EXISTS=$(gh pr list --base $BASE --head $SYNC \
             --json number --jq '.[] | .number')
           if [ ! -z "$EXISTS" ]; then
-            echo "PR #$EXISTS already wants to merge $HEAD into $BASE"
+            echo "PR #$EXISTS already wants to merge $SYNC into $BASE"
             exit 0
           fi
 
-          gh pr create --base $BASE --head $HEAD \
+          gh pr create --base $BASE --head $SYNC \
             --label "Housekeeping" \
-            --title "$BASE: update from $HEAD" \
-            --body "Merge \`$HEAD\` into \`$BASE\`."
+            --title "$BASE: sync with $HEAD" \
+            --body "Merge relevant changes from \`$HEAD\` into \`$BASE\`."
         env:
           GH_TOKEN: ${{ steps.generate-token.outputs.token }}
           HEAD: main
