@@ -36,6 +36,7 @@ jobs:
           SYNC="$BASE-sync-with-$HEAD"
           git fetch origin $HEAD $BASE
           git checkout -b $SYNC origin/$BASE
+          git pull
           git merge origin/$HEAD
           git checkout origin/dev src/*
           git checkout origin/dev tests/*
