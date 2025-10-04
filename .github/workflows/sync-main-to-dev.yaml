@@ -34,9 +34,11 @@ jobs:
           git config user.name ${GITHUB_ACTOR}
           git config user.email "a@b.c"
           SYNC="$BASE-sync-with-$HEAD"
-          git fetch origin $HEAD $BASE
-          git checkout -b $SYNC origin/$BASE
-          git pull
+
+          git fetch origin -v
+          git checkout -b $SYNC origin/$SYNC || git checkout -b $SYNC origin/$BASE
+          git status
+
           git merge origin/$HEAD
           git checkout origin/dev src/*
           git checkout origin/dev tests/*
