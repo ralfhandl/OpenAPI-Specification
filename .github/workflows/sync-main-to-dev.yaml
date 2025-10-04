@@ -26,13 +26,16 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ steps.generate-token.outputs.token }}
 
       - name: Create pull request
         id: pull_request
         shell: bash
         run: |
-          git config user.name ${GITHUB_ACTOR}
-          git config user.email "a@b.c"
+          # git config user.name ${GITHUB_ACTOR}
+          # git config user.email "a@b.c"
           SYNC="$BASE-sync-with-$HEAD"
 
           git fetch origin -v
