@@ -40,8 +40,8 @@ jobs:
 
           git checkout -b $SYNC origin/$SYNC || git checkout -b $SYNC origin/$BASE
           git merge origin/$HEAD -m "Merge $HEAD into $SYNC"
-          git checkout origin/dev src/*
-          git checkout origin/dev tests/*
+          git checkout origin/$BASE src/*
+          git checkout origin/$BASE tests/*
           git commit -m "Restored src/* and tests/*" || echo ""
           git push -u origin $SYNC
 
