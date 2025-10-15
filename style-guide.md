@@ -4,7 +4,7 @@ Contributions to this repository should follow the style guide as described in t
 
 ## Markdown
 
-Markdown files in this project should follow the style enforced by the [markdownlint tool](https://www.npmjs.com/package/markdownlint),
+Markdown files in this project should follow the style enforced by the [markdownlint tool](https://github.com/DavidAnson/markdownlint),
 as configured by the `.markdownlint.yaml` file in the root of the project.
 The `markdownlint` tool can also fix formatting, which can save time with tables in particular.
 
