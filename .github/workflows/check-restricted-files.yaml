@@ -8,8 +8,7 @@ name: check-restricted-files
 on:
   pull_request:
     paths:
-      - 'schemas/**/*.yaml'
-      - 'versions/*.md'
+      - "versions/*.md"
 
 jobs:
   check-files:
@@ -20,16 +19,17 @@ jobs:
         run: |
           if [[ "${{ github.event.pull_request.head.repo.full_name }}" == "OAI/OpenAPI-Specification" ]] && \
              [[ "${{ github.event.pull_request.base.repo.full_name }}" == "OAI/OpenAPI-Specification" ]]; then
- 
-            if [[ "${{ github.event.pull_request.head.ref }}" == "main" ]] && \
+
+            if [[ "${{ github.event.pull_request.head.ref }}" == "dev-sync-with-main" ]] && \
                [[ "${{ github.event.pull_request.base.ref }}" == "dev" ]]; then
-              echo Sync from main to dev
+              echo Sync from main to dev via ${{ github.event.pull_request.head.ref }}
               exit 0
             fi
 
-            if [[ "${{ github.event.pull_request.head.ref }}" == "dev" ]] && \
-               [[ "${{ github.event.pull_request.base.ref }}" =~ ^v[0-9]+\.[0-9]+-dev$ ]]; then
-              echo Sync from dev to ${{ github.event.pull_request.base.ref }}
+            if [[ "${{ github.event.pull_request.head.ref }}" =~ ^v[0-9]+\.[0-9]+-dev-sync-with-dev$ ]] && \
+               [[ "${{ github.event.pull_request.base.ref }}" =~ ^v[0-9]+\.[0-9]+-dev$ ]] && \
+               [[ ${{ github.event.pull_request.head.ref }} == ${{ github.event.pull_request.base.sha }}* ]]; then
+              echo Sync from dev to ${{ github.event.pull_request.base.ref }} via ${{ github.event.pull_request.head.ref }}
               exit 0
             fi
 
@@ -41,4 +41,10 @@ jobs:
           fi
 
           echo This PR contains changes to files that should not be changed
+          echo
+          git diff --compact-summary upstream/v3.2-dev upstream/v3.2-dev-sync-with-dev -- versions
+
+          echo ${{ github.event.pull_request.head.label }}
+          echo ${{ github.event.pull_request.base.label }}
+
           exit 1
