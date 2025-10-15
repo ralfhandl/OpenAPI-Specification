@@ -42,9 +42,6 @@ jobs:
 
           echo This PR contains changes to files that should not be changed
           echo
-          # git diff --compact-summary upstream/v3.2-dev upstream/v3.2-dev-sync-with-dev -- versions
-
-          echo ${{ github.event.pull_request.head.label }}
-          echo ${{ github.event.pull_request.base.label }}
+          git diff --compact-summary origin/${{ github.event.pull_request.base.ref }} origin/${{ github.event.pull_request.head.ref }} -- versions
 
           exit 1
